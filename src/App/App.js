@@ -1,11 +1,11 @@
 import "./App.css";
-
+import LogoStack from "../components/LogoStack/LogoStack";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <img src={process.env.PUBLIC_URL + 'images/logos/cherry-blossom-tree.svg'} alt="logo" />
+        <LogoStack />
         <p>Writing Tree</p>
       </header>
     </div>
