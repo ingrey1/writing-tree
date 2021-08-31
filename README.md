@@ -2,8 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-* Deployed via Heroku
-* Soon to be available at www.writingtree.tech
+* Deployed via Heroku: https://young-hollows-42094.herokuapp.com/
+* Soon to be available at: www.writingtree.tech
 
 
 
