@@ -1,7 +1,9 @@
-.logo-stack-image {
+.cherry-blossom-logo-svg {
   width: 100px;
   height: 100px;
+}
+
+.cherry-blossom-logo-div {
   display: flex;
   align-items: center;
-  padding-bottom: 10px;
 }
