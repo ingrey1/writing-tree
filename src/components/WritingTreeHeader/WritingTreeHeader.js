@@ -3,9 +3,11 @@ import CherryBlossomLogo from "../CherryBlossomLogo/CherryBlossomLogo";
 
 function WritingTreeHeader() {
   return (
-    <div>
+    <div className="writing-tree-header-container">
+      <Header as="h1" style={{ marginTop: "10px" }}>
+        Writing Tree
+      </Header>
       <CherryBlossomLogo />
-      <Header as="h1">Writing Tree</Header>
     </div>
   );
 }
