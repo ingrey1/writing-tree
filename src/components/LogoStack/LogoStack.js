@@ -1,29 +1,21 @@
 import "./LogoStack.css";
-import Logo from "../Logo/Logo"
+import { ReactComponent as GrowingBookLogo } from "../../assets/images/logos/growing-book.svg";
+import { ReactComponent as CuriousOwlLogo } from "../../assets/images/logos/curious-owl.svg";
+import { ReactComponent as CherryBlossomBranchLogo } from "../../assets/images/logos/cherry-blossom-branch.svg";
 
 function LogoStack() {
+  const growingBookText = "growing book logo";
+  const curiousOwlText = "curious owl logo";
+  const cherryBlossomBranchText = "cherry blossom branch logo";
 
-  const growingBookPath = "images/logos/growing-book.svg"
-  const growingBookText = "growing book logo"
-  const curiousOwlPath = "images/logos/curious-owl.svg"
-  const curiousOwlText = "curious owl logo"
-  const cherryBlossomTreePath = "images/logos/cherry-blossom-tree.svg"
-  const cherryBlossomTreeText = "cherry blossom tree logo"
-  
   return (
     <div className="LogoStack">
-         <Logo
-          relativePath={growingBookPath}
-          altText={growingBookText}
-        />
-        <Logo
-          relativePath={curiousOwlPath}
-          altText={curiousOwlText}
-        />
-        <Logo
-          relativePath={cherryBlossomTreePath}
-          altText={cherryBlossomTreeText}
-        />
+      <GrowingBookLogo className="logo-stack-image" alt={growingBookText} />
+      <CuriousOwlLogo className="logo-stack-image" alt={curiousOwlText} />
+      <CherryBlossomBranchLogo
+        className="logo-stack-image"
+        alt={cherryBlossomBranchText}
+      />
     </div>
   );
 }
