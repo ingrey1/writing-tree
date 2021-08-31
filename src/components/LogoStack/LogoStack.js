@@ -10,7 +10,6 @@ function LogoStack() {
   const cherryBlossomTreePath = "images/logos/cherry-blossom-tree.svg"
   const cherryBlossomTreeText = "cherry blossom tree logo"
   
-
   return (
     <div className="LogoStack">
          <Logo
