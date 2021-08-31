@@ -1,3 +1,4 @@
+import { Header } from "semantic-ui-react";
 import "./App.css";
 import LogoStack from "../components/LogoStack/LogoStack";
 
@@ -6,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <LogoStack />
-        <p>Writing Tree</p>
+        <Header as="h1">Writing Tree</Header>
       </header>
     </div>
   );
