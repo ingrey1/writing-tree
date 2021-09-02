@@ -28,7 +28,7 @@ function App() {
           </Grid.Row>
         </Grid.Column>
         <Grid.Column width={3}>
-          <h2>Updates/News</h2>
+          <h2>Updates</h2>
         </Grid.Column>
       </Grid.Row>
     </Grid>
