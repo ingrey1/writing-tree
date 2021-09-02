@@ -1,64 +1,130 @@
-import React from "react";
-import {
-  Checkbox,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Menu,
-  Segment,
-  Sidebar,
-} from "semantic-ui-react";
+import React, { Component } from "react";
+import { Menu } from "semantic-ui-react";
 
-const MainMenu = () => {
-  const [visible, setVisible] = React.useState(false);
+export default class MainMenu extends Component {
+  state = {};
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-  return (
-    <>
-      <Grid.Column style={{ height: "5%" }}>
-        <Checkbox
-          checked={visible}
-          label={{ children: <code>Show Menu</code> }}
-          onChange={(e, data) => setVisible(data.checked)}
-        />
-      </Grid.Column>
+  render() {
+    const { activeItem } = this.state;
 
-      <Grid.Column style={{ height: "95%" }}>
-        <Sidebar.Pushable as={Segment}>
-          <Sidebar
-            as={Menu}
-            animation="overlay"
-            icon="labeled"
-            inverted
-            onHide={() => setVisible(false)}
-            vertical
-            visible={visible}
-            width="thin"
-          >
-            <Menu.Item as="a">
-              <Icon name="home" />
-              Home
+    return (
+      <Menu vertical>
+        <Menu.Menu>
+          <Menu.Item
+            name="home"
+            active={activeItem === "home"}
+            onClick={this.handleItemClick}
+          />
+        </Menu.Menu>
+        <Menu.Item>
+          <Menu.Header>The Code For This Site</Menu.Header>
+          <Menu.Menu>
+            <Menu.Item
+              name="start here"
+              active={activeItem === "start here"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="frontend"
+              active={activeItem === "frontend"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="backend"
+              active={activeItem === "backend"}
+              onClick={this.handleItemClick}
+            />
+          </Menu.Menu>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Menu.Header>Web API Documentation</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item
+              name="introduction"
+              active={activeItem === "introduction"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="open api"
+              active={activeItem === "open api"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="tutorials"
+              active={activeItem === "tutorials"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="examples"
+              active={activeItem === "examples"}
+              onClick={this.handleItemClick}
+            />
+          </Menu.Menu>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Menu.Header>Native API Documentation</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item
+              name="introduction"
+              active={activeItem === "introduction"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="tutorials"
+              active={activeItem === "tutorials"}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              name="examples"
+              active={activeItem === "examples"}
+              onClick={this.handleItemClick}
+            />
+          </Menu.Menu>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Menu.Header>Additional Resources</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item
+              name="blog"
+              active={activeItem === "blog"}
+              onClick={this.handleItemClick}
+            >
+              Blog
             </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="gamepad" />
-              Games
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="camera" />
-              Channels
-            </Menu.Item>
-          </Sidebar>
 
-          <Sidebar.Pusher dimmed={visible}>
-            <Segment basic>
-              <Header as="h3">Application Content</Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Grid.Column>
-    </>
-  );
-};
+            <Menu.Item
+              name="articles"
+              active={activeItem === "articles"}
+              onClick={this.handleItemClick}
+            >
+              Articles And Books
+            </Menu.Item>
 
-export default MainMenu;
+            <Menu.Item
+              name="glossary"
+              active={activeItem === "glossary"}
+              onClick={this.handleItemClick}
+            >
+              Glossary
+            </Menu.Item>
+
+            <Menu.Item
+              name="references"
+              active={activeItem === "references"}
+              onClick={this.handleItemClick}
+            >
+              References
+            </Menu.Item>
+          </Menu.Menu>
+        </Menu.Item>
+      </Menu>
+    );
+  }
+}

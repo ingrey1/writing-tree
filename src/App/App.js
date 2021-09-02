@@ -1,5 +1,5 @@
 import { Grid, Image } from "semantic-ui-react";
-import { TopMenu } from "../TopMenu/TopMenu";
+import TopMenu from "../TopMenu/TopMenu";
 import "./App.css";
 import WritingTreeHeader from "../components/WritingTreeHeader/WritingTreeHeader";
 import MainMenu from "../MainMenu/MainMenu";
@@ -8,11 +8,13 @@ function App() {
   return (
     <Grid celled="internally" style={{ height: "100vh" }}>
       <Grid.Row>
-        <Grid.Column width={3}>
+        <Grid.Column width={3} style={{ height: "100%" }}>
           <Grid.Row style={{ height: "20%" }}>
             <WritingTreeHeader />
           </Grid.Row>
-          <MainMenu />
+          <Grid.Row style={{ height: "80%" }}>
+            <MainMenu />
+          </Grid.Row>
         </Grid.Column>
         <Grid.Column width={10}>
           <Grid.Row style={{ height: "10%" }}>
@@ -26,7 +28,7 @@ function App() {
           </Grid.Row>
         </Grid.Column>
         <Grid.Column width={3}>
-          <Image src="https://react.semantic-ui.com/images/wireframe/image.png" />
+          <h2>Updates/News</h2>
         </Grid.Column>
       </Grid.Row>
     </Grid>

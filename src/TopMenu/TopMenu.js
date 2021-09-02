@@ -43,4 +43,3 @@ export default class TopMenu extends Component {
   }
 }
 
-export { TopMenu };
