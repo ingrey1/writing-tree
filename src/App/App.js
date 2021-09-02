@@ -9,11 +9,9 @@ import { getMainContentComponent, getMainContentProps } from "../utils";
 
 function App() {
   const [mainContent, setMainContent] = useState({
-    mainContent: "Home",
+    mainContent: "Introduction",
     mainContentSection: { name: "Introduction" },
   });
-
-  console.info("mainContent", mainContent);
 
   return (
     <Grid celled="internally" style={{ height: "100vh" }}>
@@ -28,7 +26,7 @@ function App() {
         </Grid.Column>
         <Grid.Column width={10}>
           <Grid.Row style={{ height: "10%" }}>
-            <TopMenu />
+            <TopMenu setMainContent={setMainContent} />
           </Grid.Row>
           <Grid.Row style={{ height: "70%" }}>
             <MainContent

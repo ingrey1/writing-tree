@@ -21,25 +21,48 @@ export default class TopMenu extends Component {
         <Menu.Item
           name="Introduction"
           active={activeItem === "Introduction"}
-          onClick={this.handleItemClick}
+          onClick={(e, state) => {
+            this.handleItemClick(e, state);
+            this.props.setMainContent({
+              mainContent: "Introduction",
+              mainContentSection: { name: "Introduction" },
+            });
+          }}
         />
         <Menu.Item
           name="Methodology"
           active={activeItem === "Methodology"}
-          onClick={this.handleItemClick}
+          onClick={(e, state) => {
+            this.handleItemClick(e, state);
+            this.props.setMainContent({
+              mainContent: "Methodology",
+              mainContentSection: { name: "Methodology" },
+            });
+          }}
         />
         <Menu.Item
           name="Using This Site"
           active={activeItem === "Using This Site"}
-          onClick={this.handleItemClick}
+          onClick={(e, state) => {
+            this.handleItemClick(e, state);
+            this.props.setMainContent({
+              mainContent: "UsingThisSite",
+              mainContentSection: { name: "UsingThisSite" },
+            });
+          }}
         />
         <Menu.Item
           name="Contact Me"
           active={activeItem === "Contact Me"}
-          onClick={this.handleItemClick}
+          onClick={(e, state) => {
+            this.handleItemClick(e, state);
+            this.props.setMainContent({
+              mainContent: "ContactMe",
+              mainContentSection: { name: "ContactMe" },
+            });
+          }}
         />
       </Menu>
     );
   }
 }
-
