@@ -1,10 +1,20 @@
-import { Grid, Image } from "semantic-ui-react";
+import { useState } from "react";
+import { Grid } from "semantic-ui-react";
 import TopMenu from "../TopMenu/TopMenu";
 import "./App.css";
 import WritingTreeHeader from "../components/WritingTreeHeader/WritingTreeHeader";
 import MainMenu from "../MainMenu/MainMenu";
+import MainContent from "../MainContent/MainContent";
+import { getMainContentComponent, getMainContentProps } from "../utils";
 
 function App() {
+  const [mainContent, setMainContent] = useState({
+    mainContent: "Home",
+    mainContentSection: { name: "Introduction" },
+  });
+
+  console.info("mainContent", mainContent);
+
   return (
     <Grid celled="internally" style={{ height: "100vh" }}>
       <Grid.Row>
@@ -21,7 +31,12 @@ function App() {
             <TopMenu />
           </Grid.Row>
           <Grid.Row style={{ height: "70%" }}>
-            <h2>Main Content</h2>
+            <MainContent
+              MainContentComponent={getMainContentComponent(
+                mainContent.mainContent
+              )}
+              contentProps={getMainContentProps(mainContent.mainContentSection)}
+            />
           </Grid.Row>
           <Grid.Row style={{ height: "20%" }}>
             <h2>Supplemental Content</h2>
