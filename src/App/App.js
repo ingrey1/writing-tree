@@ -8,7 +8,7 @@ function App() {
   return (
     <Grid celled="internally" style={{ height: "100vh" }}>
       <Grid.Row>
-        <Grid.Column width={3} style={{ height: "100%" }}>
+        <Grid.Column width={3} style={{ overflow: "auto", height: "100%" }}>
           <Grid.Row style={{ height: "20%" }}>
             <WritingTreeHeader />
           </Grid.Row>
