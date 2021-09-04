@@ -25,7 +25,7 @@ function App() {
             <WritingTreeHeader />
           </Grid.Row>
           <Grid.Row style={{ height: "80%" }}>
-            <MainMenu />
+            <MainMenu setMainContent={setMainContent} />
           </Grid.Row>
         </Grid.Column>
         <Grid.Column width={10}>
@@ -34,6 +34,7 @@ function App() {
           >
             <MainContent
               TopMenu={getTopMenu(mainContent.name)}
+              topMenuSection={mainContent.mainContentSection.name}
               showTopMenu={mainContent.showTopMenu}
               setMainContent={setMainContent}
               ContentSection={getSectionContent(

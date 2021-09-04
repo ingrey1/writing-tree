@@ -14,7 +14,14 @@ export default class MainMenu extends Component {
           <Menu.Item
             name="home"
             active={activeItem === "home"}
-            onClick={this.handleItemClick}
+            onClick={(e, state) => {
+              this.props.setMainContent({
+                name: "Home",
+                mainContentSection: { name: "Introduction" },
+                showTopMenu: true,
+              });
+              this.handleItemClick(e, state);
+            }}
           />
         </Menu.Menu>
         <Menu.Item>
