@@ -35,6 +35,19 @@ function App() {
           <Grid.Row
             style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
           >
+            {window.screen.width <= 650 && (
+              <Grid.Column
+                width={3}
+                style={{ overflow: "auto", height: "100%" }}
+              >
+                <Grid.Row style={{ height: "20%" }}>
+                  <WritingTreeHeader />
+                </Grid.Row>
+                <Grid.Row style={{ height: "80%" }}>
+                  <MainMenu horizontal setMainContent={setMainContent} />
+                </Grid.Row>
+              </Grid.Column>
+            )}
             <Grid.Column
               width={10}
               style={{

@@ -9,7 +9,7 @@ export default class MainMenu extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu vertical>
+      <Menu vertical={!this.props.horizontal}>
         <Menu.Menu>
           <Menu.Item
             name="home"
