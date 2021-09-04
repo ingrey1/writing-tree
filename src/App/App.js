@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { Grid } from "semantic-ui-react";
-import TopMenu from "../TopMenu/TopMenu";
 import "./App.css";
 import WritingTreeHeader from "../components/WritingTreeHeader/WritingTreeHeader";
 import MainMenu from "../MainMenu/MainMenu";
 import MainContent from "../MainContent/MainContent";
-import { getMainContentComponent, getMainContentProps } from "../utils";
+import { getSectionContent, getTopMenu } from "../utils";
 
 function App() {
   const [mainContent, setMainContent] = useState({
-    mainContent: "Introduction",
+    name: "Home",
     mainContentSection: { name: "Introduction" },
+    showTopMenu: true,
+  });
+
+  const [supplementalContent, setSupplementalContent] = useState({
+    show: true,
   });
 
   return (
@@ -25,20 +29,24 @@ function App() {
           </Grid.Row>
         </Grid.Column>
         <Grid.Column width={10}>
-          <Grid.Row style={{ height: "10%" }}>
-            <TopMenu setMainContent={setMainContent} />
-          </Grid.Row>
-          <Grid.Row style={{ height: "70%" }}>
+          <Grid.Row
+            style={{ height: supplementalContent.show ? "80%" : "100%" }}
+          >
             <MainContent
-              MainContentComponent={getMainContentComponent(
-                mainContent.mainContent
+              TopMenu={getTopMenu(mainContent.name)}
+              showTopMenu={mainContent.showTopMenu}
+              setMainContent={setMainContent}
+              ContentSection={getSectionContent(
+                mainContent.name,
+                mainContent.mainContentSection
               )}
-              contentProps={getMainContentProps(mainContent.mainContentSection)}
             />
           </Grid.Row>
-          <Grid.Row style={{ height: "20%" }}>
-            <h2>Supplemental Content</h2>
-          </Grid.Row>
+          {supplementalContent.show && (
+            <Grid.Row style={{ height: "20%" }}>
+              <h2>Supplemental Content</h2>
+            </Grid.Row>
+          )}
         </Grid.Column>
         <Grid.Column width={3}>
           <h2>Updates</h2>

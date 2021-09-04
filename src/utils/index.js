@@ -1,3 +1,3 @@
-import { getMainContentComponent, getMainContentProps } from "./components";
+import { getSectionContent, getTopMenu } from "./components";
 
-export { getMainContentComponent, getMainContentProps };
+export { getSectionContent, getTopMenu };
