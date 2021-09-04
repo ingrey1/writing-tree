@@ -4,6 +4,7 @@ import "./App.css";
 import WritingTreeHeader from "../common/WritingTreeHeader/WritingTreeHeader";
 import MainMenu from "../Menus/MainMenu/MainMenu";
 import MainContent from "../MainContent/MainContent";
+import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import { getSectionContent, getTopMenu } from "../utils";
 
 function App() {
@@ -25,23 +26,36 @@ function App() {
             <WritingTreeHeader />
           </Grid.Row>
           <Grid.Row style={{ height: "80%" }}>
-            <MainMenu />
+            <MainMenu setMainContent={setMainContent} />
           </Grid.Row>
         </Grid.Column>
-        <Grid.Column width={10}>
+        <Grid.Column width={10} style={{ height: "100vh" }}>
           <Grid.Row
-            style={{ height: supplementalContent.show ? "80%" : "100%" }}
+            style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
           >
-            <MainContent
-              TopMenu={getTopMenu(mainContent.name)}
-              showTopMenu={mainContent.showTopMenu}
-              setMainContent={setMainContent}
-              ContentSection={getSectionContent(
-                mainContent.name,
-                mainContent.mainContentSection
-              )}
-            />
+            <Grid.Column
+              width={10}
+              style={{
+                overflow: "auto",
+                maxHeight: supplementalContent.show ? "80vh" : "100vh",
+                height: supplementalContent.show ? "80vh" : "100vh",
+              }}
+            >
+              <MainContent
+                supplementalContent={supplementalContent}
+                setSupplementalContent={setSupplementalContent}
+                TopMenu={getTopMenu(mainContent.name)}
+                topMenuSection={mainContent.mainContentSection.name}
+                showTopMenu={mainContent.showTopMenu}
+                setMainContent={setMainContent}
+                ContentSection={getSectionContent(
+                  mainContent.name,
+                  mainContent.mainContentSection
+                )}
+              />
+            </Grid.Column>
           </Grid.Row>
+
           {supplementalContent.show && (
             <Grid.Row style={{ height: "20%" }}>
               <h2>Supplemental Content</h2>
@@ -49,7 +63,13 @@ function App() {
           )}
         </Grid.Column>
         <Grid.Column width={3}>
-          <h2>Updates</h2>
+          <h2>Actions</h2>
+          <Grid.Row>
+            <ToggleSupplementalContentAction
+              supplementalContent={supplementalContent}
+              setSupplementalContent={setSupplementalContent}
+            />
+          </Grid.Row>
         </Grid.Column>
       </Grid.Row>
     </Grid>

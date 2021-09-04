@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
+const mapSectionToItemName = (topMenuSection) => {
+  if (topMenuSection === "ContactMe") return "Contact Me";
+  else if (topMenuSection === "UsingThisSite") return "UsingThisSite";
+  else return topMenuSection;
+};
+
 export default class HomeTopMenu extends Component {
-  state = { activeItem: "Introduction" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { activeItem } = this.state;
+    const activeItem = mapSectionToItemName(this.props.topMenuSelection);
 
     return (
       <Menu fluid tabular widths={5}>
@@ -15,7 +17,6 @@ export default class HomeTopMenu extends Component {
           name="Introduction"
           active={activeItem === "Introduction"}
           onClick={(e, state) => {
-            this.handleItemClick(e, state);
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
@@ -27,7 +28,6 @@ export default class HomeTopMenu extends Component {
           name="Methodology"
           active={activeItem === "Methodology"}
           onClick={(e, state) => {
-            this.handleItemClick(e, state);
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
@@ -39,7 +39,6 @@ export default class HomeTopMenu extends Component {
           name="Using This Site"
           active={activeItem === "Using This Site"}
           onClick={(e, state) => {
-            this.handleItemClick(e, state);
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
@@ -51,7 +50,6 @@ export default class HomeTopMenu extends Component {
           name="Contact Me"
           active={activeItem === "Contact Me"}
           onClick={(e, state) => {
-            this.handleItemClick(e, state);
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
