@@ -1,8 +1,8 @@
-import Introduction from "../Introduction/Introduction";
-import ContactMe from "../ContactMe/ContactMe";
-import Methodology from "../Methodology/Methodology";
-import UsingThisSite from "../UsingThisSite/UsingThisSite";
-import HomeTopMenu from "../HomeTopMenu/HomeTopMenu";
+import Introduction from "../ContentSections/Home/Introduction/Introduction";
+import ContactMe from "../ContentSections/Home/ContactMe/ContactMe";
+import Methodology from "../ContentSections/Home/Methodology/Methodology";
+import UsingThisSite from "../ContentSections/Home/UsingThisSite/UsingThisSite";
+import HomeTopMenu from "../Menus/HomeTopMenu/HomeTopMenu";
 
 const getSectionContent = (mainContentName, mainContentSection) => {
   if (!mainContentName || !mainContentSection) return null;

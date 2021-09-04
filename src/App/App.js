@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Grid } from "semantic-ui-react";
 import "./App.css";
-import WritingTreeHeader from "../components/WritingTreeHeader/WritingTreeHeader";
-import MainMenu from "../MainMenu/MainMenu";
+import WritingTreeHeader from "../common/WritingTreeHeader/WritingTreeHeader";
+import MainMenu from "../Menus/MainMenu/MainMenu";
 import MainContent from "../MainContent/MainContent";
 import { getSectionContent, getTopMenu } from "../utils";
 

@@ -1,10 +1,4 @@
-
-function MainContent({
-  TopMenu,
-  showTopMenu,
-  setMainContent,
-  ContentSection
-}) {
+function MainContent({ TopMenu, showTopMenu, setMainContent, ContentSection }) {
   return (
     <div className="main-content-container">
       {showTopMenu && <TopMenu setMainContent={setMainContent} />}
