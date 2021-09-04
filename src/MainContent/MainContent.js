@@ -1,14 +1,10 @@
-import Introduction from "../Introduction/Introduction";
-
-function MainContent({ MainContentComponent, mainContentProps }) {
-
-   
-
-  return !MainContentComponent ? <Introduction /> : (
+function MainContent({ TopMenu, showTopMenu, setMainContent, ContentSection }) {
+  return (
     <div className="main-content-container">
-      <MainContentComponent {...mainContentProps} />
+      {showTopMenu && <TopMenu setMainContent={setMainContent} />}
+      <ContentSection />
     </div>
   );
 }
 
-export default MainContent
+export default MainContent;
