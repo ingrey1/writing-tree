@@ -35,7 +35,7 @@ function App() {
           <Grid.Row
             style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
           >
-            {window.screen.width <= 650 && (
+            {window.screen.width >= 650 && (
               <Grid.Column
                 width={3}
                 style={{ overflow: "auto", height: "100%" }}

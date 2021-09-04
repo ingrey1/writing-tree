@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 
 export default class MainMenu extends Component {
   state = {};
@@ -10,8 +10,17 @@ export default class MainMenu extends Component {
 
     return (
       <Menu vertical={!this.props.horizontal}>
+        {this.props.horizontal && (
+          <Dropdown item text="The Code For This Site">
+            <Dropdown.Menu>
+              <Dropdown.Item>Start Here</Dropdown.Item>
+              <Dropdown.Item>Frontend</Dropdown.Item>
+              <Dropdown.Item>Backend</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        )}
         <Menu.Menu>
-          <Menu.Item
+          {/* <Menu.Item
             name="home"
             active={activeItem === "home"}
             onClick={(e, state) => {
@@ -22,7 +31,7 @@ export default class MainMenu extends Component {
               });
               this.handleItemClick(e, state);
             }}
-          />
+          /> */}
         </Menu.Menu>
         <Menu.Item>
           <Menu.Header>The Code For This Site</Menu.Header>
@@ -96,7 +105,6 @@ export default class MainMenu extends Component {
 
         <Menu.Item>
           <Menu.Header>Additional Resources</Menu.Header>
-
           <Menu.Menu>
             <Menu.Item
               name="blog"
