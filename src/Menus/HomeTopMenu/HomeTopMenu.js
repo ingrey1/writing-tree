@@ -1,14 +1,7 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
-// const items = [
-//   { key: "introduction", active: true, name: "Introduction" },
-//   { key: "methodology", name: "Methodology" },
-//   { key: "usingSite", name: "How To Use This Site" },
-//   { key: "contact", name: "Contact" },
-// ];
-
-export default class TopMenu extends Component {
+export default class HomeTopMenu extends Component {
   state = { activeItem: "Introduction" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -24,7 +17,8 @@ export default class TopMenu extends Component {
           onClick={(e, state) => {
             this.handleItemClick(e, state);
             this.props.setMainContent({
-              mainContent: "Introduction",
+              showTopMenu: true,
+              name: "Home",
               mainContentSection: { name: "Introduction" },
             });
           }}
@@ -35,7 +29,8 @@ export default class TopMenu extends Component {
           onClick={(e, state) => {
             this.handleItemClick(e, state);
             this.props.setMainContent({
-              mainContent: "Methodology",
+              showTopMenu: true,
+              name: "Home",
               mainContentSection: { name: "Methodology" },
             });
           }}
@@ -46,7 +41,8 @@ export default class TopMenu extends Component {
           onClick={(e, state) => {
             this.handleItemClick(e, state);
             this.props.setMainContent({
-              mainContent: "UsingThisSite",
+              showTopMenu: true,
+              name: "Home",
               mainContentSection: { name: "UsingThisSite" },
             });
           }}
@@ -57,7 +53,8 @@ export default class TopMenu extends Component {
           onClick={(e, state) => {
             this.handleItemClick(e, state);
             this.props.setMainContent({
-              mainContent: "ContactMe",
+              showTopMenu: true,
+              name: "Home",
               mainContentSection: { name: "ContactMe" },
             });
           }}
