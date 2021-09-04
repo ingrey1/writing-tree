@@ -41,6 +41,99 @@ function Introduction() {
         </p>
         <i>--gozilla gravity fluctuator weapon image--</i>
         <b>To be continued…</b>
+        <p>
+          Lorem ipsum dolor sit amet, an vix augue scripta suavitate, principes
+          honestatis id eum. Ius tation quidam at, per ne partiendo urbanitas.
+          Ea sed verear consulatu percipitur, te magna iracundia vim, vim
+          nostrud fabulas ad. An eam nisl impedit invenire. Reque malis recusabo
+          id ius. Choro iuvaret per ad, per nulla dissentiet ei, inani accusam
+          vis ex. Eu mei duis noster. Illum error simul te pri, lorem omittam
+          nec ea. Nonumes admodum no cum, pri debitis repudiare an, ceteros
+          propriae consetetur at pro. Sea eruditi labores ut, eam minim quodsi
+          ut, ubique omittantur sed ad. In eripuit eruditi disputationi pro, usu
+          cu nemore consectetuer. Adipisci consectetuer vel ad, usu id liber
+          dicunt.Lorem ipsum dolor sit amet, an vix augue scripta suavitate,
+          principes honestatis id eum. Ius tation quidam at, per ne partiendo
+          urbanitas. Ea sed verear consulatu percipitur, te magna iracundia vim,
+          vim nostrud fabulas ad. An eam nisl impedit invenire. Reque malis
+          recusabo id ius. Choro iuvaret per ad, per nulla dissentiet ei, inani
+          accusam vis ex. Eu mei duis noster. Illum error simul te pri, lorem
+          omittam nec ea. Nonumes admodum no cum, pri debitis repudiare an,
+          ceteros propriae consetetur at pro. Sea eruditi labores ut, eam minim
+          quodsi ut, ubique omittantur sed ad. In eripuit eruditi disputationi
+          pro, usu cu nemore consectetuer. Adipisci consectetuer vel ad, usu id
+          liber dicunt.Lorem ipsum dolor sit amet, an vix augue scripta
+          suavitate, principes honestatis id eum. Ius tation quidam at, per ne
+          partiendo urbanitas. Ea sed verear consulatu percipitur, te magna
+          iracundia vim, vim nostrud fabulas ad. An eam nisl impedit invenire.
+          Reque malis recusabo id ius. Choro iuvaret per ad, per nulla
+          dissentiet ei, inani accusam vis ex. Eu mei duis noster. Illum error
+          simul te pri, lorem omittam nec ea. Nonumes admodum no cum, pri
+          debitis repudiare an, ceteros propriae consetetur at pro. Sea eruditi
+          labores ut, eam minim quodsi ut, ubique omittantur sed ad. In eripuit
+          eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.Lorem ipsum dolor sit amet,
+          an vix augue scripta suavitate, principes honestatis id eum. Ius
+          tation quidam at, per ne partiendo urbanitas. Ea sed verear consulatu
+          percipitur, te magna iracundia vim, vim nostrud fabulas ad. An eam
+          nisl impedit invenire. Reque malis recusabo id ius. Choro iuvaret per
+          ad, per nulla dissentiet ei, inani accusam vis ex. Eu mei duis noster.
+          Illum error simul te pri, lorem omittam nec ea. Nonumes admodum no
+          cum, pri debitis repudiare an, ceteros propriae consetetur at pro. Sea
+          eruditi labores ut, eam minim quodsi ut, ubique omittantur sed ad. In
+          eripuit eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.Lorem ipsum dolor sit amet,
+          an vix augue scripta suavitate, principes honestatis id eum. Ius
+          tation quidam at, per ne partiendo urbanitas. Ea sed verear consulatu
+          percipitur, te magna iracundia vim, vim nostrud fabulas ad. An eam
+          nisl impedit invenire. Reque malis recusabo id ius. Choro iuvaret per
+          ad, per nulla dissentiet ei, inani accusam vis ex. Eu mei duis noster.
+          Illum error simul te pri, lorem omittam nec ea. Nonumes admodum no
+          cum, pri debitis repudiare an, ceteros propriae consetetur at pro. Sea
+          eruditi labores ut, eam minim quodsi ut, ubique omittantur sed ad. In
+          eripuit eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.Lorem ipsum dolor sit amet,
+          an vix augue scripta suavitate, principes honestatis id eum. Ius
+          tation quidam at, per ne partiendo urbanitas. Ea sed verear consulatu
+          percipitur, te magna iracundia vim, vim nostrud fabulas ad. An eam
+          nisl impedit invenire. Reque malis recusabo id ius. Choro iuvaret per
+          ad, per nulla dissentiet ei, inani accusam vis ex. Eu mei duis noster.
+          Illum error simul te pri, lorem omittam nec ea. Nonumes admodum no
+          cum, pri debitis repudiare an, ceteros propriae consetetur at pro. Sea
+          eruditi labores ut, eam minim quodsi ut, ubique omittantur sed ad. In
+          eripuit eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.Lorem ipsum dolor sit amet,
+          an vix augue scripta suavitate, principes honestatis id eum. Ius
+          tation quidam at, per ne partiendo urbanitas. Ea sed verear consulatu
+          percipitur, te magna iracundia vim, vim nostrud fabulas ad. An eam
+          nisl impedit invenire. Reque malis recusabo id ius. Choro iuvaret per
+          ad, per nulla dissentiet ei, inani accusam vis ex. Eu mei duis noster.
+          Illum error simul te pri, lorem omittam nec ea. Nonumes admodum no
+          cum, pri debitis repudiare an, ceteros propriae consetetur at pro. Sea
+          eruditi labores ut, eam minim quodsi ut, ubique omittantur sed ad. In
+          eripuit eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.Lorem ipsum dolor sit amet,
+          an vix augue scripta suavitate, principes honestatis id eum. Ius
+          tation quidam at, per ne partiendo urbanitas. Ea sed verear consulatu
+          percipitur, te magna iracundia vim, vim nostrud fabulas ad. An eam
+          nisl impedit invenire. Reque malis recusabo id ius. Choro iuvaret per
+          ad, per nulla dissentiet ei, inani accusam vis ex. Eu mei duis noster.
+          Illum error simul te pri, lorem omittam nec ea. Nonumes admodum no
+          cum, pri debitis repudiare an, ceteros propriae consetetur at pro. Sea
+          eruditi labores ut, eam minim quodsi ut, ubique omittantur sed ad. In
+          eripuit eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.Lorem ipsum dolor sit amet,
+          an vix augue scripta suavitate, principes honestatis id eum. Ius
+          tation quidam at, per ne partiendo urbanitas. Ea sed verear consulatu
+          percipitur, te magna iracundia vim, vim nostrud fabulas ad. An eam
+          nisl impedit invenire. Reque malis recusabo id ius. Choro iuvaret per
+          ad, per nulla dissentiet ei, inani accusam vis ex. Eu mei duis noster.
+          Illum error simul te pri, lorem omittam nec ea. Nonumes admodum no
+          cum, pri debitis repudiare an, ceteros propriae consetetur at pro. Sea
+          eruditi labores ut, eam minim quodsi ut, ubique omittantur sed ad. In
+          eripuit eruditi disputationi pro, usu cu nemore consectetuer. Adipisci
+          consectetuer vel ad, usu id liber dicunt.
+        </p>
       </section>
     </div>
   );
