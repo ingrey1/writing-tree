@@ -6,14 +6,11 @@ import MainMenu from "../Menus/MainMenu/MainMenu";
 import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import MainContent from "../MainContent/MainContent";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
-import { getSectionContent, getTopMenu } from "../utils";
-
-const calculateMainContentHeight = (showSupplementalContent) => {
-  if (window.screen.width <= 650 && showSupplementalContent) return "50vh";
-  else if (showSupplementalContent) return "60vh";
-  else if (window.screen.width <= 650) return "90vh";
-  else return "100vh";
-};
+import {
+  getSectionContent,
+  getTopMenu,
+  calculateMainContentHeight,
+} from "../utils";
 
 function App() {
   const [mainContent, setMainContent] = useState({
@@ -54,7 +51,7 @@ function App() {
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
-              {window.screen.width <= 650 && (
+              {window.screen.width >= 650 && (
                 <Grid.Column
                   width={3}
                   style={{ overflow: "auto", height: "10vh" }}

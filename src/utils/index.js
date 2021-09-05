@@ -1,3 +1,7 @@
-import { getSectionContent, getTopMenu } from "./components";
+import {
+  getSectionContent,
+  getTopMenu,
+  calculateMainContentHeight,
+} from "./components";
 
-export { getSectionContent, getTopMenu };
+export { getSectionContent, getTopMenu, calculateMainContentHeight };
