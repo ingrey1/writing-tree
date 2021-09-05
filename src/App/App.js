@@ -38,12 +38,15 @@ function App() {
             </Grid.Row>
           </Grid.Column>
         )}
-        <Grid.Column width={10} style={{ height: "100vh" }}>
+        <Grid.Column
+          width={window.screen.width >= 650 ? 10 : 16}
+          style={{ height: "100vh" }}
+        >
           <Grid.Row
             style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
           >
             <Grid.Column
-              width={10}
+              width={window.screen.width >= 650 ? 10 : 16}
               style={{
                 overflow: "auto",
                 maxHeight: calculateMainContentHeight(supplementalContent.show),
