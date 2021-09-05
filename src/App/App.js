@@ -32,12 +32,16 @@ function App() {
           style={{ height: "100vh" }}
         >
           <Grid.Row
-            style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
+            style={{
+              height: supplementalContent.show ? "80vh" : "100vh",
+              "overflow-x": "hidden",
+            }}
           >
             <Grid.Column
               width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
               style={{
                 overflow: "auto",
+                "overflow-x": "hidden",
                 maxHeight: calculateMainContentHeight(supplementalContent.show),
                 height: calculateMainContentHeight(supplementalContent.show),
               }}

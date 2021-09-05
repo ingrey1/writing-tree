@@ -12,7 +12,10 @@ export default function MainContentColumn({
   return (
     <>
       {window.screen.width <= 650 && (
-        <Grid.Column width={3} style={{ overflow: "auto", height: "10vh" }}>
+        <Grid.Column
+          width={3}
+          style={{ overflow: "auto", height: "10vh" }}
+        >
           <Grid.Row style={{ height: "10vh" }}>
             <MobileMainMenu
               setMainContent={setMainContent}
