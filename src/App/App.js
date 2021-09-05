@@ -7,6 +7,13 @@ import MainContent from "../MainContent/MainContent";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import { getSectionContent, getTopMenu } from "../utils";
 
+const calculateMainContentHeight = (showSupplementalContent) => {
+  if (window.screen.width >= 650 && showSupplementalContent) return "50vh";
+  else if (showSupplementalContent) return "60vh";
+  else if (window.screen.width >= 650) return "90vh";
+  else return "100vh";
+};
+
 function App() {
   const [mainContent, setMainContent] = useState({
     name: "Home",
@@ -35,27 +42,24 @@ function App() {
           <Grid.Row
             style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
           >
-            {window.screen.width >= 650 && (
-              <Grid.Column
-                width={3}
-                style={{ overflow: "auto", height: "100%" }}
-              >
-                <Grid.Row style={{ height: "20%" }}>
-                  <WritingTreeHeader />
-                </Grid.Row>
-                <Grid.Row style={{ height: "80%" }}>
-                  <MainMenu horizontal setMainContent={setMainContent} />
-                </Grid.Row>
-              </Grid.Column>
-            )}
             <Grid.Column
               width={10}
               style={{
                 overflow: "auto",
-                maxHeight: supplementalContent.show ? "80vh" : "100vh",
-                height: supplementalContent.show ? "80vh" : "100vh",
+                maxHeight: calculateMainContentHeight(supplementalContent.show),
+                height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
+              {window.screen.width >= 650 && (
+                <Grid.Column
+                  width={3}
+                  style={{ overflow: "auto", height: "10vh" }}
+                >
+                  <Grid.Row style={{ height: "10vh" }}>
+                    <MainMenu horizontal setMainContent={setMainContent} />
+                  </Grid.Row>
+                </Grid.Column>
+              )}
               <MainContent
                 supplementalContent={supplementalContent}
                 setSupplementalContent={setSupplementalContent}
@@ -72,7 +76,7 @@ function App() {
           </Grid.Row>
 
           {supplementalContent.show && (
-            <Grid.Row style={{ height: "20%" }}>
+            <Grid.Row style={{ height: "40%" }}>
               <h2>Supplemental Content</h2>
             </Grid.Row>
           )}
