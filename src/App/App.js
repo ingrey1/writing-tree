@@ -3,6 +3,7 @@ import { Grid } from "semantic-ui-react";
 import "./App.css";
 import WritingTreeHeader from "../common/WritingTreeHeader/WritingTreeHeader";
 import MainMenu from "../Menus/MainMenu/MainMenu";
+import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import MainContent from "../MainContent/MainContent";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import { getSectionContent, getTopMenu } from "../utils";
@@ -53,13 +54,13 @@ function App() {
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
-              {window.screen.width <= 650 && (
+              {window.screen.width >= 650 && (
                 <Grid.Column
                   width={3}
                   style={{ overflow: "auto", height: "10vh" }}
                 >
                   <Grid.Row style={{ height: "10vh" }}>
-                    <MainMenu horizontal setMainContent={setMainContent} />
+                    <MobileMainMenu setMainContent={setMainContent} />
                   </Grid.Row>
                 </Grid.Column>
               )}
