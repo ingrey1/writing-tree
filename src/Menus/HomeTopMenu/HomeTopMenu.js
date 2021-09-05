@@ -14,13 +14,13 @@ export default class HomeTopMenu extends Component {
     return (
       <Menu fluid tabular widths={5}>
         <Menu.Item
-          name="Introduction"
-          active={activeItem === "Introduction"}
+          name="Intro"
+          active={activeItem === "Intro"}
           onClick={(e, state) => {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "Introduction" },
+              mainContentSection: { name: "Intro" },
             });
           }}
         />
@@ -36,24 +36,24 @@ export default class HomeTopMenu extends Component {
           }}
         />
         <Menu.Item
-          name="Using This Site"
-          active={activeItem === "Using This Site"}
+          name="Navigation"
+          active={activeItem === "Navigation"}
           onClick={(e, state) => {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "UsingThisSite" },
+              mainContentSection: { name: "Navigation" },
             });
           }}
         />
         <Menu.Item
-          name="Contact Me"
-          active={activeItem === "Contact Me"}
+          name="Contact"
+          active={activeItem === "Contact"}
           onClick={(e, state) => {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "ContactMe" },
+              mainContentSection: { name: "Contact" },
             });
           }}
         />

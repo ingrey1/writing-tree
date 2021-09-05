@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Dropdown, Sticky } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 
 export default class MainMenu extends Component {
   state = {};
@@ -32,7 +32,7 @@ export default class MainMenu extends Component {
           />
         </Menu.Menu>
         {this.props.horizontal ? (
-          <Dropdown item text="The Code For This Site">
+          <Dropdown item text="Site Code">
             <Dropdown.Menu>
               <Dropdown.Item>Start Here</Dropdown.Item>
               <Dropdown.Item>Frontend</Dropdown.Item>
@@ -41,7 +41,7 @@ export default class MainMenu extends Component {
           </Dropdown>
         ) : (
           <Menu.Item>
-            <Menu.Header>The Code For This Site</Menu.Header>
+            <Menu.Header>Site Code</Menu.Header>
             <Menu.Menu>
               <Menu.Item
                 name="start here"
@@ -63,7 +63,7 @@ export default class MainMenu extends Component {
         )}
 
         {this.props.horizontal ? (
-          <Dropdown item text="Web API Documentation">
+          <Dropdown item text="Web APIs">
             <Dropdown.Menu>
               <Dropdown.Item>Introduction</Dropdown.Item>
               <Dropdown.Item>Open API</Dropdown.Item>
@@ -73,7 +73,7 @@ export default class MainMenu extends Component {
           </Dropdown>
         ) : (
           <Menu.Item>
-            <Menu.Header>Web API Documentation</Menu.Header>
+            <Menu.Header>Web APIs</Menu.Header>
 
             <Menu.Menu>
               <Menu.Item
@@ -101,7 +101,7 @@ export default class MainMenu extends Component {
         )}
 
         {this.props.horizontal ? (
-          <Dropdown item text="Native API Documentation">
+          <Dropdown item text="Native APIs">
             <Dropdown.Menu>
               <Dropdown.Item>Introduction</Dropdown.Item>
               <Dropdown.Item>Tutorials</Dropdown.Item>
@@ -110,7 +110,7 @@ export default class MainMenu extends Component {
           </Dropdown>
         ) : (
           <Menu.Item>
-            <Menu.Header>Native API Documentation</Menu.Header>
+            <Menu.Header>Native APIs</Menu.Header>
 
             <Menu.Menu>
               <Menu.Item
@@ -133,7 +133,37 @@ export default class MainMenu extends Component {
         )}
 
         {this.props.horizontal ? (
-          <Dropdown item text="Additional Resources">
+          <Dropdown item text="Miscellaneous">
+            <Dropdown.Menu>
+              <Dropdown.Item>Microservices</Dropdown.Item>
+              <Dropdown.Item>Data Flows</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        ) : (
+          <Menu.Item>
+            <Menu.Header>Miscellaneous</Menu.Header>
+            <Menu.Menu>
+              <Menu.Item
+                name="microservices"
+                active={activeItem === "microservices"}
+                onClick={this.handleItemClick}
+              >
+                Microservices
+              </Menu.Item>
+
+              <Menu.Item
+                name="data flows"
+                active={activeItem === "data flows"}
+                onClick={this.handleItemClick}
+              >
+                Data Flows
+              </Menu.Item>
+            </Menu.Menu>
+          </Menu.Item>
+        )}
+
+        {this.props.horizontal ? (
+          <Dropdown item text="Resources">
             <Dropdown.Menu>
               <Dropdown.Item>Blog</Dropdown.Item>
               <Dropdown.Item>Articles</Dropdown.Item>
@@ -143,7 +173,7 @@ export default class MainMenu extends Component {
           </Dropdown>
         ) : (
           <Menu.Item>
-            <Menu.Header>Additional Resources</Menu.Header>
+            <Menu.Header>Resources</Menu.Header>
             <Menu.Menu>
               <Menu.Item
                 name="blog"
