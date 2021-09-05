@@ -12,7 +12,7 @@ export default class HomeTopMenu extends Component {
     const activeItem = mapSectionToItemName(this.props.topMenuSelection);
 
     return (
-      <Menu fluid tabular widths={5}>
+      <Menu fluid tabular widths={4}>
         <Menu.Item
           name="Intro"
           active={activeItem === "Intro"}
