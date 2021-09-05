@@ -54,7 +54,7 @@ function App() {
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
-              {window.screen.width >= 650 && (
+              {window.screen.width <= 650 && (
                 <Grid.Column
                   width={3}
                   style={{ overflow: "auto", height: "10vh" }}
@@ -85,7 +85,7 @@ function App() {
             </Grid.Row>
           )}
         </Grid.Column>
-        {window.screen.width <= 650 && (
+        {window.screen.width >= 650 && (
           <Grid.Column width={3}>
             <h2>Actions</h2>
             <Grid.Row>
