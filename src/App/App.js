@@ -60,7 +60,11 @@ function App() {
                   style={{ overflow: "auto", height: "10vh" }}
                 >
                   <Grid.Row style={{ height: "10vh" }}>
-                    <MobileMainMenu setMainContent={setMainContent} />
+                    <MobileMainMenu
+                      setMainContent={setMainContent}
+                      supplementalContent={supplementalContent}
+                      setSupplementalContent={setSupplementalContent}
+                    />
                   </Grid.Row>
                 </Grid.Column>
               )}

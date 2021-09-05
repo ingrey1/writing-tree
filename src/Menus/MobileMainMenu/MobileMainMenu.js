@@ -72,6 +72,20 @@ export default class MobileMainMenu extends Component {
               <Dropdown.Item>References</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          <Dropdown item text="Actions">
+            <Dropdown.Menu>
+              <Dropdown.Item
+                onClick={(e, state) => {
+                  this.props.setSupplementalContent({
+                    show: !this.props.setSupplementalContent.show,
+                  });
+                  this.handleItemClick(e, state);
+                }}
+              >
+                Toggle Supplemental Content
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Dropdown.Menu>
       </Dropdown>
     );
