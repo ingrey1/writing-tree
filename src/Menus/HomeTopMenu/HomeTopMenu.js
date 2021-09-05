@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
 const mapSectionToItemName = (topMenuSection) => {
-  if (topMenuSection === "ContactMe") return "Contact Me";
-  else if (topMenuSection === "UsingThisSite") return "UsingThisSite";
+  if (topMenuSection === "UsingThisSite") return "UsingThisSite";
   else return topMenuSection;
 };
 

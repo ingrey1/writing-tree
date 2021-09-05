@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Dropdown } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 
 export default class MainMenu extends Component {
   state = {};

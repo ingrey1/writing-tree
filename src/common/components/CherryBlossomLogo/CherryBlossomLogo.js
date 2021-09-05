@@ -1,5 +1,5 @@
 import "./CherryBlossomLogo.css";
-import { ReactComponent as Logo } from "../../assets/images/logos/cherry-blossom-branch.svg";
+import { ReactComponent as Logo } from "../../../assets/images/logos/cherry-blossom-branch.svg";
 
 function CherryBlossomLogo() {
   const cherryBlossomBranchText = "cherry blossom branch logo";

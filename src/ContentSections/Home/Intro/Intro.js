@@ -1,4 +1,4 @@
-function Introduction() {
+function Intro() {
   return (
     <div className="introduction-container">
       <h1>The Parable of the Forgotten API Documentation</h1>
@@ -139,4 +139,4 @@ function Introduction() {
   );
 }
 
-export default Introduction;
+export default Intro;

@@ -1,7 +1,7 @@
-import Introduction from "../ContentSections/Home/Introduction/Introduction";
-import ContactMe from "../ContentSections/Home/ContactMe/ContactMe";
+import Intro from "../ContentSections/Home/Intro/Intro";
+import Contact from "../ContentSections/Home/Contact/Contact";
 import Methodology from "../ContentSections/Home/Methodology/Methodology";
-import UsingThisSite from "../ContentSections/Home/UsingThisSite/UsingThisSite";
+import Navigation from "../ContentSections/Home/Navigation/Navigation";
 import HomeTopMenu from "../Menus/HomeTopMenu/HomeTopMenu";
 
 const getSectionContent = (mainContentName, mainContentSection) => {
@@ -10,16 +10,16 @@ const getSectionContent = (mainContentName, mainContentSection) => {
   switch (mainContentName) {
     case "Home":
       switch (mainContentSection.name) {
-        case "Introd":
-          return Introduction;
+        case "Intro":
+          return Intro;
         case "Methodology":
           return Methodology;
         case "Navigation":
-          return UsingThisSite;
+          return Navigation;
         case "Contact":
-          return ContactMe;
+          return Contact;
         default:
-          return Introduction;
+          return Intro;
       }
     default:
       return "Home";

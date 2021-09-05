@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Grid } from "semantic-ui-react";
 import "./App.css";
-import WritingTreeHeader from "../common/WritingTreeHeader/WritingTreeHeader";
-import MainMenu from "../Menus/MainMenu/MainMenu";
-import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
-import MainContent from "../MainContent/MainContent";
-import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
+import MainMenuColumn from "../layout/MainMenuColumn";
+import MainContentColumn from "../layout/MainContentColumn";
+import ActionsColumn from "../layout/ActionsColumn";
+import SupplementalContentRow from "../layout/SupplementalContentRow";
+import { calculateMainContentHeight } from "../utils";
 import {
-  getSectionContent,
-  getTopMenu,
-  calculateMainContentHeight,
-} from "../utils";
+  isLargeScreen,
+  fullHorizontalSize,
+  contentColumnSize,
+} from "../common/constants";
 
 function App() {
   const [mainContent, setMainContent] = useState({
@@ -26,76 +26,38 @@ function App() {
   return (
     <Grid celled="internally" style={{ height: "100vh" }}>
       <Grid.Row>
-        {window.screen.width >= 650 && (
-          <Grid.Column width={3} style={{ overflow: "auto", height: "100%" }}>
-            <Grid.Row style={{ height: "20%" }}>
-              <WritingTreeHeader />
-            </Grid.Row>
-            <Grid.Row style={{ height: "80%" }}>
-              <MainMenu setMainContent={setMainContent} />
-            </Grid.Row>
-          </Grid.Column>
-        )}
+        {isLargeScreen && <MainMenuColumn setMainContent={setMainContent} />}
         <Grid.Column
-          width={window.screen.width >= 650 ? 10 : 16}
+          width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
           style={{ height: "100vh" }}
         >
           <Grid.Row
             style={{ height: supplementalContent.show ? "80vh" : "100vh" }}
           >
             <Grid.Column
-              width={window.screen.width >= 650 ? 10 : 16}
+              width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
               style={{
                 overflow: "auto",
                 maxHeight: calculateMainContentHeight(supplementalContent.show),
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
-              {window.screen.width >= 650 && (
-                <Grid.Column
-                  width={3}
-                  style={{ overflow: "auto", height: "10vh" }}
-                >
-                  <Grid.Row style={{ height: "10vh" }}>
-                    <MobileMainMenu
-                      setMainContent={setMainContent}
-                      supplementalContent={supplementalContent}
-                      setSupplementalContent={setSupplementalContent}
-                    />
-                  </Grid.Row>
-                </Grid.Column>
-              )}
-              <MainContent
+              <MainContentColumn
+                mainContent={mainContent}
+                setMainContent={setMainContent}
                 supplementalContent={supplementalContent}
                 setSupplementalContent={setSupplementalContent}
-                TopMenu={getTopMenu(mainContent.name)}
-                topMenuSection={mainContent.mainContentSection.name}
-                showTopMenu={mainContent.showTopMenu}
-                setMainContent={setMainContent}
-                ContentSection={getSectionContent(
-                  mainContent.name,
-                  mainContent.mainContentSection
-                )}
               />
             </Grid.Column>
           </Grid.Row>
 
-          {supplementalContent.show && (
-            <Grid.Row style={{ height: "40%" }}>
-              <h2>Supplemental Content</h2>
-            </Grid.Row>
-          )}
+          {supplementalContent.show && <SupplementalContentRow />}
         </Grid.Column>
-        {window.screen.width >= 650 && (
-          <Grid.Column width={3}>
-            <h2>Actions</h2>
-            <Grid.Row>
-              <ToggleSupplementalContentAction
-                supplementalContent={supplementalContent}
-                setSupplementalContent={setSupplementalContent}
-              />
-            </Grid.Row>
-          </Grid.Column>
+        {isLargeScreen && (
+          <ActionsColumn
+            supplementalContent={supplementalContent}
+            setSupplementalContent={setSupplementalContent}
+          />
         )}
       </Grid.Row>
     </Grid>
