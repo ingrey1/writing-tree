@@ -10,19 +10,19 @@ const getSectionContent = (mainContentName, mainContentSection) => {
   switch (mainContentName) {
     case "Home":
       switch (mainContentSection.name) {
-        case "Intro":
+        case "Home.Introduction":
           return Intro;
-        case "Methodology":
+        case "Home.Methodology":
           return Methodology;
-        case "Navigation":
+        case "Home.Navigation":
           return Navigation;
-        case "Contact":
+        case "Home.Contact":
           return Contact;
         default:
           return Intro;
       }
     default:
-      return "Home";
+      return Intro;
   }
 };
 

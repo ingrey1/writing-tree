@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
 const mapSectionToItemName = (topMenuSection) => {
-  if (topMenuSection === "UsingThisSite") return "UsingThisSite";
-  else return topMenuSection;
+  const mapping = {
+    "Home.Introduction": "Intro",
+    "Home.Methodology": "Methodology",
+    "Home.Navigation": "Navigation",
+    "Home.Contact": "Contact",
+  };
+
+  return mapping[topMenuSection];
 };
 
 export default class HomeTopMenu extends Component {
@@ -19,7 +25,7 @@ export default class HomeTopMenu extends Component {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "Intro" },
+              mainContentSection: { name: "Home.Introduction" },
             });
           }}
         />
@@ -30,7 +36,7 @@ export default class HomeTopMenu extends Component {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "Methodology" },
+              mainContentSection: { name: "Home.Methodology" },
             });
           }}
         />
@@ -41,7 +47,7 @@ export default class HomeTopMenu extends Component {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "Navigation" },
+              mainContentSection: { name: "Home.Navigation" },
             });
           }}
         />
@@ -52,7 +58,7 @@ export default class HomeTopMenu extends Component {
             this.props.setMainContent({
               showTopMenu: true,
               name: "Home",
-              mainContentSection: { name: "Contact" },
+              mainContentSection: { name: "Home.Contact" },
             });
           }}
         />
