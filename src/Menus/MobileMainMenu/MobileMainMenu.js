@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Icon } from "semantic-ui-react";
 
 const dropDownstyle = {
-  height: "5vh",
   "z-index": 1,
   position: "absolute",
   color: "#000080",
-  "background-color": "teal",
-  "font-size": "100%",
 };
 
 export default class MobileMainMenu extends Component {
@@ -18,7 +15,7 @@ export default class MobileMainMenu extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Dropdown text="Menu" style={dropDownstyle}>
+      <Dropdown icon="bars" style={dropDownstyle}>
         <Dropdown.Menu vertical>
           <Dropdown.Item
             name="Home"
