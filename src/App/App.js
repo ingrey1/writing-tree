@@ -8,9 +8,9 @@ import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalConten
 import { getSectionContent, getTopMenu } from "../utils";
 
 const calculateMainContentHeight = (showSupplementalContent) => {
-  if (window.screen.width >= 650 && showSupplementalContent) return "50vh";
+  if (window.screen.width <= 650 && showSupplementalContent) return "50vh";
   else if (showSupplementalContent) return "60vh";
-  else if (window.screen.width >= 650) return "90vh";
+  else if (window.screen.width <= 650) return "90vh";
   else return "100vh";
 };
 
@@ -22,7 +22,7 @@ function App() {
   });
 
   const [supplementalContent, setSupplementalContent] = useState({
-    show: true,
+    show: false,
   });
 
   return (
@@ -50,7 +50,7 @@ function App() {
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
-              {window.screen.width >= 650 && (
+              {window.screen.width <= 650 && (
                 <Grid.Column
                   width={3}
                   style={{ overflow: "auto", height: "10vh" }}
@@ -81,15 +81,17 @@ function App() {
             </Grid.Row>
           )}
         </Grid.Column>
-        <Grid.Column width={3}>
-          <h2>Actions</h2>
-          <Grid.Row>
-            <ToggleSupplementalContentAction
-              supplementalContent={supplementalContent}
-              setSupplementalContent={setSupplementalContent}
-            />
-          </Grid.Row>
-        </Grid.Column>
+        {window.screen.width >= 650 && (
+          <Grid.Column width={3}>
+            <h2>Actions</h2>
+            <Grid.Row>
+              <ToggleSupplementalContentAction
+                supplementalContent={supplementalContent}
+                setSupplementalContent={setSupplementalContent}
+              />
+            </Grid.Row>
+          </Grid.Column>
+        )}
       </Grid.Row>
     </Grid>
   );
