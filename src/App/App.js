@@ -21,6 +21,8 @@ function App() {
 
   const [supplementalContent, setSupplementalContent] = useState({
     show: false,
+    name: "Home.Introduction",
+    supplementalContentSection: { name: "NoContent" },
   });
 
   return (
@@ -34,14 +36,14 @@ function App() {
           <Grid.Row
             style={{
               height: supplementalContent.show ? "60vh" : "100vh",
-              "overflow-x": "hidden",
+              overflowX: "hidden",
             }}
           >
             <Grid.Column
               width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
               style={{
                 overflow: "auto",
-                "overflow-x": "hidden",
+                overflowX: "hidden",
                 maxHeight: calculateMainContentHeight(supplementalContent.show),
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
@@ -55,7 +57,12 @@ function App() {
             </Grid.Column>
           </Grid.Row>
 
-          {supplementalContent.show && <SupplementalContentRow />}
+          {supplementalContent.show && (
+            <SupplementalContentRow
+              supplementalContent={supplementalContent}
+              setSupplementalContent={setSupplementalContent}
+            />
+          )}
         </Grid.Column>
         {isLargeScreen && (
           <ActionsColumn

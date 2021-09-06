@@ -3,6 +3,7 @@ function MainContent({
   topMenuSection,
   showTopMenu,
   setMainContent,
+  setSupplementalContent,
   ContentSection,
 }) {
   return (
@@ -11,6 +12,7 @@ function MainContent({
         <TopMenu
           topMenuSelection={topMenuSection}
           setMainContent={setMainContent}
+          setSupplementalContent={setSupplementalContent}
         />
       )}
       <ContentSection />

@@ -13,7 +13,7 @@ export default class MainMenu extends Component {
         vertical
         style={{
           height: "100vh",
-          "z-index": 1,
+          zIndex: 1,
           position: "absolute",
         }}
       >

@@ -2,6 +2,7 @@ import {
   getSectionContent,
   getTopMenu,
   calculateMainContentHeight,
+  getSupplementalSectionContent
 } from "./components";
 
-export { getSectionContent, getTopMenu, calculateMainContentHeight };
+export { getSectionContent, getTopMenu, getSupplementalSectionContent, calculateMainContentHeight };

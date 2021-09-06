@@ -4,12 +4,16 @@ function ToggleSupplementalContentAction({
   supplementalContent,
   setSupplementalContent,
 }) {
+  console.info(supplementalContent);
   return (
     <Button
       basic
       color="teal"
       onClick={() => {
-        setSupplementalContent({ show: !supplementalContent.show });
+        setSupplementalContent({
+          ...supplementalContent,
+          show: !supplementalContent.show,
+        });
       }}
     >
       {supplementalContent.show

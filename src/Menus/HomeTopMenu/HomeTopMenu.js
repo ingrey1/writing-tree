@@ -27,6 +27,11 @@ export default class HomeTopMenu extends Component {
               name: "Home",
               mainContentSection: { name: "Home.Introduction" },
             });
+            this.props.setSupplementalContent({
+              show: false,
+              name: "Home.Introduction",
+              supplementalContentSection: { name: "NoContent" },
+            });
           }}
         />
         <Menu.Item
@@ -37,6 +42,11 @@ export default class HomeTopMenu extends Component {
               showTopMenu: true,
               name: "Home",
               mainContentSection: { name: "Home.Methodology" },
+            });
+            this.props.setSupplementalContent({
+              show: false,
+              name: "Home.Methodology",
+              supplementalContentSection: { name: "NoContent" },
             });
           }}
         />
@@ -49,6 +59,11 @@ export default class HomeTopMenu extends Component {
               name: "Home",
               mainContentSection: { name: "Home.Navigation" },
             });
+            this.props.setSupplementalContent({
+              show: false,
+              name: "Home.Navigation",
+              supplementalContentSection: { name: "NoContent" },
+            });
           }}
         />
         <Menu.Item
@@ -59,6 +74,11 @@ export default class HomeTopMenu extends Component {
               showTopMenu: true,
               name: "Home",
               mainContentSection: { name: "Home.Contact" },
+            });
+            this.props.setSupplementalContent({
+              show: false,
+              name: "Home.Contact",
+              supplementalContentSection: { name: "NoContent" },
             });
           }}
         />

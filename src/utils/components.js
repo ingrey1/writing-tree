@@ -3,6 +3,7 @@ import Contact from "../ContentSections/Home/Contact/Contact";
 import Methodology from "../ContentSections/Home/Methodology/Methodology";
 import Navigation from "../ContentSections/Home/Navigation/Navigation";
 import HomeTopMenu from "../Menus/HomeTopMenu/HomeTopMenu";
+import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 
 const getSectionContent = (mainContentName, mainContentSection) => {
   if (!mainContentName || !mainContentSection) return null;
@@ -26,6 +27,26 @@ const getSectionContent = (mainContentName, mainContentSection) => {
   }
 };
 
+const getSupplementalSectionContent = (
+  supplementalContentName,
+  supplementalContentSection
+) => {
+  if (!supplementalContentName || !supplementalContentSection) return null;
+
+  switch (supplementalContentName) {
+    case "Home.Introduction":
+      return NoSupplementalContent;
+    case "Home.Methodology":
+      return NoSupplementalContent;
+    case "Home.Navigation":
+      return NoSupplementalContent;
+    case "Home.Contact":
+      return NoSupplementalContent;
+    default:
+      return Intro;
+  }
+};
+
 const getTopMenu = (contentName) => {
   switch (contentName) {
     case "Home":
@@ -42,4 +63,9 @@ const calculateMainContentHeight = (showSupplementalContent) => {
   else return "100vh";
 };
 
-export { getSectionContent, getTopMenu, calculateMainContentHeight };
+export {
+  getSectionContent,
+  getTopMenu,
+  getSupplementalSectionContent,
+  calculateMainContentHeight,
+};
