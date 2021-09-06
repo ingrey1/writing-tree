@@ -1,8 +1,10 @@
+import { Header, Container } from "semantic-ui-react";
+
 function Navigation() {
   return (
-    <div className="using-this-site-container">
-      <h1>Navigation</h1>
-    </div>
+    <Container text textAlign="center">
+      <Header as="h3">Navigation</Header>
+    </Container>
   );
 }
 

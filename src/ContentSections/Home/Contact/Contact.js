@@ -1,8 +1,10 @@
+import { Header, Container } from "semantic-ui-react";
+
 function Contact() {
   return (
-    <div className="contact-me-container">
-      <h1>Contact</h1>
-    </div>
+    <Container text textAlign="center">
+      <Header as="h3">Contact</Header>
+    </Container>
   );
 }
 

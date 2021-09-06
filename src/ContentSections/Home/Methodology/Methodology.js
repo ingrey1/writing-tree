@@ -1,8 +1,10 @@
+import { Header, Container } from "semantic-ui-react";
+
 function Methodology() {
     return (
-      <div className="methodology-container">
-        <h1>Methodology</h1>
-      </div>
+      <Container text textAlign="center">
+      <Header as="h3">Methodology</Header>
+    </Container>
     );
   }
   
