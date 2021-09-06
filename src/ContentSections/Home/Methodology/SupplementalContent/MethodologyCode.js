@@ -1,6 +1,8 @@
 import { CodeBlock } from "@atlaskit/code";
-import { Grid, Header, Segment } from "semantic-ui-react";
+import { Grid, Header, Segment, Icon, Button } from "semantic-ui-react";
 import MethodologyFolderTree from "./MethodologyFolderTree";
+import IconButtonLink from "../../../../common/components/IconButtonLink";
+import { githubHomeMethodologyUrl } from "../../../../common/constants";
 
 const relativeFolderStructure = {
   name: "Methodology",
@@ -146,7 +148,14 @@ const methodologyCodeCode = `export default function MethodologyCode() {
   return (
     <Segment style={{ overflow: "auto", maxHeight: 200 }}>
       <Grid.Row>
-        <Header as="h2">File Structure</Header>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeMethodologyUrl}
+          />
+        </Header>
         <MethodologyFolderTree data={relativeFolderStructure} />
         <Header as="h2">Main Content Code</Header>
 
@@ -215,7 +224,14 @@ export default function MethodologyCode() {
   return (
     <Segment style={{ overflow: "auto", maxHeight: 200 }}>
       <Grid.Row>
-        <Header as="h2">File Structure</Header>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeMethodologyUrl}
+          />
+        </Header>
         <MethodologyFolderTree data={relativeFolderStructure} />
         <Header as="h2">Main Content Code</Header>
 
