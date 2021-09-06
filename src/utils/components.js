@@ -3,6 +3,7 @@ import Contact from "../ContentSections/Home/Contact/Contact";
 import Methodology from "../ContentSections/Home/Methodology/Methodology";
 import Navigation from "../ContentSections/Home/Navigation/Navigation";
 import HomeTopMenu from "../Menus/HomeTopMenu/HomeTopMenu";
+import MethodologyCode from "../ContentSections/Home/Methodology/SupplementalContent/MethodologyCode";
 import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 
 const getSectionContent = (mainContentName, mainContentSection) => {
@@ -37,7 +38,7 @@ const getSupplementalSectionContent = (
     case "Home.Introduction":
       return NoSupplementalContent;
     case "Home.Methodology":
-      return NoSupplementalContent;
+      return MethodologyCode;
     case "Home.Navigation":
       return NoSupplementalContent;
     case "Home.Contact":
