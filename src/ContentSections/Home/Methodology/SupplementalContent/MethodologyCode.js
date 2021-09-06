@@ -1,5 +1,27 @@
 import { CodeBlock } from "@atlaskit/code";
 import { Grid, Header, Segment } from "semantic-ui-react";
+import MethodologyFolderTree from "./MethodologyFolderTree";
+
+const relativeFolderStructure = {
+  name: "Methodology",
+  isOpen: false,
+  children: [
+    {
+      name: "SupplementalContent",
+      isOpen: false,
+      children: [
+        { name: "MethodologyCode.js" },
+        { name: "MethodologyFolderTree.js" },
+        { name: "MethodologyFunFacts.js" },
+        { name: "MethodologyMenu.js" },
+        { name: "MethodologySupplementalContainer.js" },
+      ],
+    },
+    { name: "Methodology.css" },
+    { name: "Methodology.js" },
+    { name: "text.js" },
+  ],
+};
 
 const methodologyCode = `import { Header, Container } from "semantic-ui-react";
 import { paragraphs } from "./text";
@@ -124,7 +146,10 @@ const methodologyCodeCode = `export default function MethodologyCode() {
   return (
     <Segment style={{ overflow: "auto", maxHeight: 200 }}>
       <Grid.Row>
+        <Header as="h2">File Structure</Header>
+        <MethodologyFolderTree data={relativeFolderStructure} />
         <Header as="h2">Main Content Code</Header>
+
         <Header as="h3">Methodology.js</Header>
         <CodeBlock
           language="jsx"
@@ -158,16 +183,42 @@ const methodologyCodeCode = `export default function MethodologyCode() {
           showLineNumbers={true}
           text={methodologyCodeCode}
         />
+        <Header as="h3">MethodologyFolderTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFolderTreeCode}
+        />
       </Grid.Row>
     </Segment>
   );
-}`;
+}
+`;
+
+const methodologyFolderTreeCode = `import FolderTree from "react-folder-tree";
+import "react-folder-tree/dist/style.css";
+
+const FolderStructure = ({ data }) => {
+  return (
+    <FolderTree
+      data={data}
+      showCheckbox={false}
+      readOnly
+    />
+  );
+};
+
+export default FolderStructure;
+`;
 
 export default function MethodologyCode() {
   return (
     <Segment style={{ overflow: "auto", maxHeight: 200 }}>
       <Grid.Row>
+        <Header as="h2">File Structure</Header>
+        <MethodologyFolderTree data={relativeFolderStructure} />
         <Header as="h2">Main Content Code</Header>
+
         <Header as="h3">Methodology.js</Header>
         <CodeBlock
           language="jsx"
@@ -200,6 +251,12 @@ export default function MethodologyCode() {
           language="jsx"
           showLineNumbers={true}
           text={methodologyCodeCode}
+        />
+        <Header as="h3">MethodologyFolderTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFolderTreeCode}
         />
       </Grid.Row>
     </Segment>

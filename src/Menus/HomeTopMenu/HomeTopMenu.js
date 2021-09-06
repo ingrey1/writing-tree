@@ -51,7 +51,7 @@ export default class HomeTopMenu extends Component {
               name: "Home.Methodology",
               supplementalContentSection: {
                 name: "Home.Methodology",
-                subSection: "FunFacts",
+                subsection: "FunFacts",
               },
             });
           }}
