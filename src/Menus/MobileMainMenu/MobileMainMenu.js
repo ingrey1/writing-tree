@@ -24,7 +24,7 @@ export default class MobileMainMenu extends Component {
             onClick={(e, state) => {
               this.props.setMainContent({
                 name: "Home",
-                mainContentSection: { name: "Introduction" },
+                mainContentSection: { name: "Home.Introduction" },
                 showTopMenu: true,
               });
               this.handleItemClick(e, state);
@@ -75,6 +75,7 @@ export default class MobileMainMenu extends Component {
               <Dropdown.Item
                 onClick={(e, state) => {
                   this.props.setSupplementalContent({
+                    ...this.props.supplementalContent,
                     show: !this.props.supplementalContent.show,
                   });
                   this.handleItemClick(e, state);
