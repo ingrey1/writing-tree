@@ -28,6 +28,11 @@ export default class MainMenu extends Component {
                 mainContentSection: { name: "Home.Introduction" },
                 showTopMenu: true,
               });
+              this.props.setSupplementalContent({
+                name: "Home.Introduction",
+                supplementalContentSection: { name: "NoContent" },
+                show: false,
+              });
               this.handleItemClick(e, state);
             }}
           />

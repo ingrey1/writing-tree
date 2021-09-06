@@ -28,7 +28,14 @@ function App() {
   return (
     <Grid celled="internally" style={{ height: "100vh" }}>
       <Grid.Row>
-        {isLargeScreen && <MainMenuColumn setMainContent={setMainContent} />}
+        {isLargeScreen && (
+          <MainMenuColumn
+            mainContent={mainContent}
+            setMainContent={setMainContent}
+            supplementalContent={supplementalContent}
+            setSupplementalContent={setSupplementalContent}
+          />
+        )}
         <Grid.Column
           width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
           style={{ height: "100vh" }}

@@ -5,7 +5,7 @@ function Intro() {
   return (
     <Container className="introduction-container" text>
       <Header as="h3" textAlign="center">
-        The Parable of the Forgotten API Documentation
+        The Parable of the Forgotten Documentation
       </Header>
       {Object.keys(paragraphs).map((paragraphKey, index) => (
         <Paragraph key={index} content={paragraphs[paragraphKey]} />
