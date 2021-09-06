@@ -33,7 +33,7 @@ function App() {
         >
           <Grid.Row
             style={{
-              height: supplementalContent.show ? "80vh" : "100vh",
+              height: supplementalContent.show ? "60vh" : "100vh",
               "overflow-x": "hidden",
             }}
           >

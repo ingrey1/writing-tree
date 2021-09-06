@@ -1,4 +1,4 @@
-import { Grid } from "semantic-ui-react";
+import { Grid, Header } from "semantic-ui-react";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 export default function ActionsColumn({
   supplementalContent,
@@ -6,8 +6,10 @@ export default function ActionsColumn({
 }) {
   return (
     <Grid.Column width={3}>
-      <h2>Actions</h2>
-      <Grid.Row>
+      <Header as="h2" textAlign="center">
+        Actions
+      </Header>
+      <Grid.Row centered>
         <ToggleSupplementalContentAction
           supplementalContent={supplementalContent}
           setSupplementalContent={setSupplementalContent}

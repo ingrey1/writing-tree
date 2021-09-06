@@ -6,7 +6,7 @@ function MainContent({
   ContentSection,
 }) {
   return (
-    <div className="main-content-container">
+    <>
       {showTopMenu && (
         <TopMenu
           topMenuSelection={topMenuSection}
@@ -14,7 +14,7 @@ function MainContent({
         />
       )}
       <ContentSection />
-    </div>
+    </>
   );
 }
 
