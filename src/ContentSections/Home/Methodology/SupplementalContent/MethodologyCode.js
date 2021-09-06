@@ -1,6 +1,7 @@
 import { CodeBlock } from "@atlaskit/code";
+import { Grid, Header, Segment } from "semantic-ui-react";
 
-const code = `import { Header, Container } from "semantic-ui-react";
+const methodologyCode = `import { Header, Container } from "semantic-ui-react";
 import { paragraphs } from "./text";
 import Paragraph from "../../../common/components/Paragraph/Paragraph";
 
@@ -36,10 +37,171 @@ function Methodology() {
 export default Methodology;
 `;
 
-export default function MethodologyCode() {
+const methodologySupplementalContainerCode = `import { Grid } from "semantic-ui-react";
+import MethodologyMenu from "./MethodologyMenu";
+import MethodologyCode from "./MethodologyCode";
+import MethodologyFunFacts from "./MethodologyFunFacts";
+
+export default function MethodologySupplementalContainer({
+  supplementalContent,
+  setSupplementalContent,
+}) {
+  const { subsection: componentKey } =
+    supplementalContent.supplementalContentSection;
+  return (
+    <Grid.Row>
+      <Grid.Row>
+        <MethodologyMenu
+          methodologyMenuSelection={componentKey}
+          setSupplementalContent={setSupplementalContent}
+        />
+      </Grid.Row>
+      <Grid.Row>
+        {componentKey === "Code" ? (
+          <MethodologyCode />
+        ) : (
+          <MethodologyFunFacts />
+        )}
+      </Grid.Row>
+    </Grid.Row>
+  );
+}
+`;
+
+const methodologyMenuCode = `import React, { Component } from "react";
+import { Menu } from "semantic-ui-react";
+
+export default class MethodologyMenu extends Component {
+  render() {
+    const activeItem = this.props.methodologyMenuSelection;
+
+    return (
+      <Menu fluid tabular widths={2}>
+        <Menu.Item
+          name="FunFacts"
+          active={activeItem === "FunFacts"}
+          onClick={(e, state) => {
+            this.props.setSupplementalContent({
+              show: true,
+              name: "Home.Methodology",
+              supplementalContentSection: {
+                name: "Home.Methodology",
+                subsection: "FunFacts",
+              },
+            });
+          }}
+        />
+        <Menu.Item
+          name="Code"
+          active={activeItem === "Code"}
+          onClick={(e, state) => {
+            this.props.setSupplementalContent({
+              show: true,
+              name: "Home.Methodology",
+              supplementalContentSection: {
+                name: "Home.Methodology",
+                subsection: "Code",
+              },
+            });
+          }}
+        />
+      </Menu>
+    );
+  }
+}
+`;
+
+const methodologyFunFactsCode = `export default function FunFacts() {
   return (
     <div>
-      <CodeBlock language="jsx" showLineNumbers={true} text={code} />
+      <h1>Fun Facts</h1>
     </div>
+  );
+}
+`;
+
+const methodologyCodeCode = `export default function MethodologyCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: 200 }}>
+      <Grid.Row>
+        <Header as="h2">Main Content Code</Header>
+        <Header as="h3">Methodology.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCode}
+        />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">MethodologySupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologySupplementalContainerCode}
+        />
+        <Header as="h3">MethodologyMenu.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyMenuCode}
+        />
+        <Header as="h3">MethodologyFunFacts.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFunFactsCode}
+        />
+        <Header as="h3">MethodologyCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCodeCode}
+        />
+      </Grid.Row>
+    </Segment>
+  );
+}`;
+
+export default function MethodologyCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: 200 }}>
+      <Grid.Row>
+        <Header as="h2">Main Content Code</Header>
+        <Header as="h3">Methodology.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCode}
+        />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">MethodologySupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologySupplementalContainerCode}
+        />
+        <Header as="h3">MethodologyMenu.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyMenuCode}
+        />
+        <Header as="h3">MethodologyFunFacts.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFunFactsCode}
+        />
+        <Header as="h3">MethodologyCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCodeCode}
+        />
+      </Grid.Row>
+    </Segment>
   );
 }
