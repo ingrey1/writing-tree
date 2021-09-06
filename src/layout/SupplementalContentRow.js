@@ -10,15 +10,16 @@ export default function supplementalContentRow({
     <Grid.Row
       style={{
         height: "40%",
-        "border-top": "2px solid #000000",
-        "border-radius": "5px",
+        borderTop: "2px solid #000000",
+        borderRadius: "5px",
       }}
     >
       <SupplementalContent
+        supplementalContent={supplementalContent}
         setSupplementalContent={setSupplementalContent}
         SupplementalContentComponent={getSupplementalSectionContent(
           supplementalContent.name,
-          supplementalContent.supplementalContentSection.name
+          supplementalContent.supplementalContentSection
         )}
       />
     </Grid.Row>

@@ -22,7 +22,7 @@ function App() {
   const [supplementalContent, setSupplementalContent] = useState({
     show: false,
     name: "Home.Introduction",
-    supplementalContentSection: { name: "NoContent" },
+    supplementalContentSection: { name: "NoContent", subsection: "NoContent" },
   });
 
   return (

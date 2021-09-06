@@ -1,7 +1,14 @@
-function SupplementalContent({ SupplementalContentComponent }) {
+function SupplementalContent({
+  SupplementalContentComponent,
+  supplementalContent,
+  setSupplementalContent,
+}) {
   return (
     <div className="supplemental-content-container">
-      <SupplementalContentComponent />
+      <SupplementalContentComponent
+        setSupplementalContent={setSupplementalContent}
+        supplementalContent={supplementalContent}
+      />
     </div>
   );
 }

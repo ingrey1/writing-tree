@@ -30,7 +30,10 @@ export default class HomeTopMenu extends Component {
             this.props.setSupplementalContent({
               show: false,
               name: "Home.Introduction",
-              supplementalContentSection: { name: "NoContent" },
+              supplementalContentSection: {
+                name: "NoContent",
+                subSection: "NoContent",
+              },
             });
           }}
         />
@@ -46,7 +49,10 @@ export default class HomeTopMenu extends Component {
             this.props.setSupplementalContent({
               show: false,
               name: "Home.Methodology",
-              supplementalContentSection: { name: "Home.Methodology" },
+              supplementalContentSection: {
+                name: "Home.Methodology",
+                subSection: "FunFacts",
+              },
             });
           }}
         />
