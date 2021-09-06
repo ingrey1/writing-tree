@@ -22,7 +22,7 @@ function Methodology() {
       </Header>
       <Paragraph content={paragraphs[4]} />
       <Header as="h2" textAlign="center">
-        My View On References
+        References
       </Header>
       <Paragraph content={paragraphs[5]} />
       <Paragraph content={paragraphs[6]} />
