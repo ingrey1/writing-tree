@@ -1,9 +1,9 @@
 import { Button, Icon } from "semantic-ui-react";
 
-export default function IconButtonLink({ url, iconName, iconSize }) {
+export default function IconButtonLink({ url, iconName, iconSize, color }) {
   return (
-    <Button hre={url} target="_blank">
-      <Icon name={iconName} size={iconSize}></Icon>
+    <Button as="a" hre={url} target="_blank">
+      <Icon name={iconName} size={iconSize} color={color || "teal"}></Icon>
     </Button>
   );
 }

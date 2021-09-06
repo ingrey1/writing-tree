@@ -1,4 +1,6 @@
-import { Header, Container, Icon, Button } from "semantic-ui-react";
+import { Header, Container } from "semantic-ui-react";
+import IconButtonLink from "../../../common/components/IconButtonLink";
+import { linkedinUrl } from "../../../common/constants";
 import CopyTextToClipboard from "../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
 
 function Contact() {
@@ -7,15 +9,7 @@ function Contact() {
       <Header as="h3">Contact</Header>
       Email: <CopyTextToClipboard text="ingrey1@gmail.com" />
       <div>
-        <Button
-          style={{ marginTop: "10px" }}
-          as="a"
-          target="_blank"
-          href="https://www.linkedin.com/in/ingrey1/"
-          color="teal"
-        >
-          <Icon name="linkedin in" size="huge"></Icon>
-        </Button>
+        <IconButtonLink iconName="linkedin in" url={linkedinUrl} size="huge" />
       </div>
     </Container>
   );

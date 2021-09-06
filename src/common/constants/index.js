@@ -1,9 +1,10 @@
 import { fullHorizontalSize, isLargeScreen, contentColumnSize } from "./layout";
-import { githubHomeMethodologyUrl } from "./urls";
+import { githubHomeMethodologyUrl, linkedinUrl } from "./urls";
 
 export {
   fullHorizontalSize,
   isLargeScreen,
   contentColumnSize,
   githubHomeMethodologyUrl,
+  linkedinUrl
 };
