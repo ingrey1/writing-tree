@@ -1,4 +1,4 @@
-import { Container, Grid, Header } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
 import Paragraph from "../../../common/components/Paragraph/Paragraph";
 import { paragraphs } from "./text";
 function Intro() {
