@@ -1,12 +1,17 @@
 import "./CherryBlossomLogo.css";
-import { ReactComponent as Logo } from "../../../assets/images/logos/cherry-blossom-branch.svg";
+import { Image } from "semantic-ui-react";
+import cherryBlossomLogo from "../../../assets/images/logos/cherry-blossom-tree.png";
 
 function CherryBlossomLogo() {
   const cherryBlossomBranchText = "cherry blossom branch logo";
 
   return (
     <div className="cherry-blossom-logo-div">
-      <Logo className="cherry-blossom-logo-svg" alt={cherryBlossomBranchText} />
+      <Image
+        className="cherry-blossom-logo"
+        src={cherryBlossomLogo}
+        alt={cherryBlossomBranchText}
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { CodeBlock } from "@atlaskit/code";
-import { Grid, Header, Segment, Icon, Button } from "semantic-ui-react";
+import { Grid, Header, Segment } from "semantic-ui-react";
 import MethodologyFolderTree from "./MethodologyFolderTree";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
 import { githubHomeMethodologyUrl } from "../../../../common/constants";
