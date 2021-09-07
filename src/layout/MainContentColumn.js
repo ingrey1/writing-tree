@@ -1,6 +1,7 @@
 import { Grid } from "semantic-ui-react";
 import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import MainContent from "../MainContent/MainContent";
+import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import { getTopMenu, getSectionContent } from "../utils";
 
 export default function MainContentColumn({
@@ -12,10 +13,11 @@ export default function MainContentColumn({
   return (
     <>
       {window.screen.width <= 650 && (
-        <Grid.Column
-          width={3}
-          style={{ overflow: "auto", height: "10vh" }}
-        >
+        <Grid.Column width={3} style={{ overflow: "auto", height: "10vh" }}>
+          <ToggleSupplementalContentAction
+            supplementalContent={supplementalContent}
+            setSupplementalContent={setSupplementalContent}
+          />
           <Grid.Row style={{ height: "10vh" }}>
             <MobileMainMenu
               setMainContent={setMainContent}
