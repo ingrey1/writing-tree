@@ -27,7 +27,7 @@ function App() {
   });
 
   return (
-    <Grid celled="internally" style={{ height: "100vh" }}>
+    <Grid celled="internally">
       <Grid.Row>
         {isLargeScreen && (
           <MainMenuColumn

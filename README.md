@@ -3,7 +3,7 @@
 - React frontend web application
 - The content of the application concerns documenting code
 - Deployed via Heroku: https://young-hollows-42094.herokuapp.com/
-- Soon to be available at: www.writingtree.tech
+- Available at: www.writingtree.tech
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
