@@ -23,6 +23,14 @@ function Navigation() {
         You will find this icon next to certain code snippets and text blocks.
         Clicking it will copy the relevant text
       </p>
+      <Icon name="amazon" color="teal" size="large" />
+      <p>
+        You will sometimes find this icon next to the names of books. Click the
+        icon to open up a new tab with the book in Amazon. These aren't
+        affiliatized links (I dont make money from them). This is just a quick
+        way for you to read the summary of the book and glance at the reviews to
+        see if it's something you might be interested in purchasing.
+      </p>
       <Header as="h4">Actions</Header>
       <Button basic color="teal">
         Show Extra Content

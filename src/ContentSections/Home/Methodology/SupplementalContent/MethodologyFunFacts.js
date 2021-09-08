@@ -6,7 +6,7 @@ export default function FunFacts() {
   return (
     <Container text>
       <p></p>
-      <Header as="h3">Appeal to Scientific Authority: a Cautionary Tale</Header>
+      <Header as="h3">Appeal to Scientific Authority: A Cautionary Tale</Header>
       <p>
         In the main content section, I mentioned the fact that we sometimes must
         rely on experts as a matter of practical necessity. In this section, I
