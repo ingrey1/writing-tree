@@ -45,7 +45,7 @@ function App() {
             style={{
               height: supplementalContent.show
                 ? supplementalContent.expand
-                  ? "0vh"
+                  ? "5vh"
                   : "60vh"
                 : "100vh",
               overflowX: "hidden",
