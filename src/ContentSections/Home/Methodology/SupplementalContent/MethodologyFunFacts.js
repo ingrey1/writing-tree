@@ -8,10 +8,10 @@ export default function FunFacts() {
       <p></p>
       <Header as="h3">Appeal to Scientific Authority: A Cautionary Tale</Header>
       <p>
-        In the main content section, I mentioned the fact that we sometimes must
-        rely on experts as a matter of practical necessity. In this section, I
-        will clarify what I mean by that, and provide an interesting example
-        gleaned from science writer Gary Taubes' seminal work.
+        In the main content section, I mentioned that we sometimes must rely on
+        experts as a matter of practical necessity. In this section, I will
+        elaborate on this theme with an interesting example gleaned from science
+        writer Gary Taubes' seminal work.
       </p>
       <p>
         <i>
@@ -27,6 +27,36 @@ export default function FunFacts() {
           />
         </i>
       </p>
+      <p>
+        Once upon a time, the sum of human knowledge was very small. As little
+        as ten thousand years ago, only a few people could engage in the basics
+        of farming. Until two thousand years ago, humanity had no idea how
+        useful wheels could be.
+      </p>
+      <p>
+        There were not many experts because humans had not advanced far upon the
+        path of knowledge. And so in most cases, they did not have the choice to
+        rely on experts. They either made do with what meager scraps of
+        knowledge they could ferret out themselves, or turned to myths and
+        fables for comfort.
+      </p>
+      <p>
+        But eventually we built the tools to elevate ourselves. We learned to
+        farm, and that surplus of food enabled larger populations that could
+        afford to support specialization. And so bar for human knowledge grew,
+        and more subject matter experts started to appear.
+      </p>
+      <p>
+        However, compared to the modern world, there was still much less
+        complexity, and that meant our relationship with experts was much less
+        complicated than it is today. Until a few hundred years ago, the
+        sciences were all lumped together, and hadn't yet begun to develop their
+        own sophisticated models, methodologies, and enormous domain knowledge
+        bases. You could still find the Rennaisance (wo)man: The person who
+        could come near the limits of the standards of human knowledge in many
+        different fields, for a given historical period.
+      </p>
+      <p></p>
     </Container>
   );
 }
