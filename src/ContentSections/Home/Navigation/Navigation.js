@@ -37,6 +37,11 @@ function Navigation() {
         way for you to read the summary of the book and glance at the reviews to
         see if it's something you might be interested in purchasing.
       </p>
+      <Icon name="tree" color="teal" size="large" />
+      <p>
+        This icon represents an external link to an article or book. You will
+        find it occasionally in the supplemental content sections.
+      </p>
       <Header as="h4">Actions</Header>
       <Button basic color="teal">
         Show Extra Content

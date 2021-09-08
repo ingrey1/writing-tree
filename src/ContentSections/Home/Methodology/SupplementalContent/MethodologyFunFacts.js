@@ -1,6 +1,9 @@
 import { Container, Header } from "semantic-ui-react";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
-import { goodCaloriesBadCaloriesOnAmazon } from "../../../../common/constants";
+import {
+  goodCaloriesBadCaloriesOnAmazon,
+  philosophyScientificRepresentation,
+} from "../../../../common/constants";
 
 export default function FunFacts() {
   return (
@@ -43,8 +46,8 @@ export default function FunFacts() {
       <p>
         But eventually we built the tools to elevate ourselves. We learned to
         farm, and that surplus of food enabled larger populations that could
-        afford to support specialization. And so bar for human knowledge grew,
-        and more subject matter experts started to appear.
+        afford to support specialization. And so the bar for human knowledge
+        grew, and more subject matter experts started to appear.
       </p>
       <p>
         However, compared to the modern world, there was still much less
@@ -56,7 +59,30 @@ export default function FunFacts() {
         could come near the limits of the standards of human knowledge in many
         different fields, for a given historical period.
       </p>
-      <p></p>
+      <p>
+        But the industrial revolution occurred, and with it the beginnnings of
+        the technological revolution. People built more complex tools, and those
+        tools allowed us to further specialize. Soon enough the scope of human
+        knowledge grew dramatically. We didn't have just biology, we had
+        biochemistry, biophysics, genetics--the list goes on. New disciplines
+        arose (e.g., information science). Old disciplines, like psychology,
+        were formalized and advanced in unprecedented fashion.
+      </p>
+      <p>
+        Even philosophy, that oldest of disciplines, had gotten a make over
+        since Plato tried to grasp the Real, the Good, and True from his arm
+        chair in ancient Greece. Philosophy of science wasn't a thing back then
+        because the sciences weren't what they are now. Here's a look at what
+        philosophers of science talk about.{" "}
+        <IconButtonLink
+          inverted
+          iconName="tree"
+          url={philosophyScientificRepresentation}
+          buttonColor="white"
+          buttonSize="large"
+          iconSize="large"
+        />
+      </p>
     </Container>
   );
 }

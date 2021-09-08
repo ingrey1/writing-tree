@@ -3,6 +3,7 @@ import {
   githubHomeMethodologyUrl,
   linkedinUrl,
   goodCaloriesBadCaloriesOnAmazon,
+  philosophyScientificRepresentation
 } from "./urls";
 
 export {
@@ -12,4 +13,5 @@ export {
   githubHomeMethodologyUrl,
   linkedinUrl,
   goodCaloriesBadCaloriesOnAmazon,
+  philosophyScientificRepresentation
 };
