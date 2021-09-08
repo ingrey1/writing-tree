@@ -1,27 +1,29 @@
 import { Button, Icon } from "semantic-ui-react";
 
-export default function IconButtonLink({
-  url,
+export default function IconButtonContentLink({
+  state,
+  setState,
+  newStateContent,
   iconName,
-  inverted,
-  className,
   iconSize,
   iconColor,
   buttonColor,
   buttonSize,
+  className,
+  inverted,
 }) {
   return (
     <Button
-      as="a"
-      target="_blank"
-      href={url}
+      className={className}
       inverted={inverted}
-      size={buttonSize}
       color={buttonColor || "white"}
+      onClick={() => {
+        setState({ ...state, ...newStateContent });
+      }}
+      size={buttonSize || "large"}
     >
       <Icon
         name={iconName}
-        className={className}
         size={iconSize || "large"}
         color={iconColor || "teal"}
       ></Icon>

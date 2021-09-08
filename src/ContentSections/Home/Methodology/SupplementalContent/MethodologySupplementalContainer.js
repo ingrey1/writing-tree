@@ -1,4 +1,4 @@
-import { Grid, Button, Icon } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import MethodologyMenu from "./MethodologyMenu";
 import MethodologySupplementalContentRow from "./MethodologySupplementalContentRow";
 

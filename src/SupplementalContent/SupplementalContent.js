@@ -8,6 +8,8 @@ function SupplementalContent({
   return (
     <Grid.Row>
       <IconButtonExpand
+        iconName="expand"
+        inverted
         setSupplementalContent={setSupplementalContent}
         supplementalContent={supplementalContent}
       />

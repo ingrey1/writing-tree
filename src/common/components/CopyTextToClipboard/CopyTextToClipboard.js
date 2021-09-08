@@ -27,10 +27,13 @@ export default function CopyTextToClipboard({ text }) {
       </div>
       <div>
         <Button
+          inverted
           style={{ marginLeft: "5px" }}
           onClick={copyToClipboard}
-          icon="copy"
-        ></Button>
+          color="white"
+        >
+          <Icon name="copy" color="teal"></Icon>
+        </Button>
       </div>
       <div>{copySuccess && <Icon name="check" color="green"></Icon>}</div>
     </div>

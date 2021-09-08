@@ -18,7 +18,14 @@ function Contact() {
       </Grid.Row>
       <Grid.Row>
         <Header as="h4">Social Links</Header>
-        <IconButtonLink iconName="linkedin in" url={linkedinUrl} size="huge" />
+        <IconButtonLink
+          inverted
+          iconName="linkedin in"
+          url={linkedinUrl}
+          buttonColor="white"
+          buttonSize="large"
+          iconSize="large"
+        />
       </Grid.Row>
     </Container>
   );

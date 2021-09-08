@@ -1,11 +1,10 @@
-import { Grid, Button, Icon } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import SupplementalContent from "../SupplementalContent/SupplementalContent";
 import { getSupplementalSectionContent } from "../utils";
 export default function supplementalContentRow({
   supplementalContent,
   setSupplementalContent,
 }) {
-  console.info("here", supplementalContent);
   return (
     <Grid.Row
       style={{

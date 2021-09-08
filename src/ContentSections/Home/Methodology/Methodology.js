@@ -1,8 +1,10 @@
 import { Header, Container } from "semantic-ui-react";
+import "./Methodology.css";
 import { paragraphs } from "./text";
 import Paragraph from "../../../common/components/Paragraph/Paragraph";
+import IconButtonContentLink from "../../../common/components/IconButtonContentLink";
 
-function Methodology() {
+function Methodology({ supplementalContent, setSupplementalContent }) {
   return (
     <Container text>
       <Header as="h3" textAlign="center">
@@ -26,6 +28,22 @@ function Methodology() {
       </Header>
       <Paragraph content={paragraphs[5]} />
       <Paragraph content={paragraphs[6]} />
+      <IconButtonContentLink
+        inverted
+        className="center"
+        iconName="book"
+        buttonColor="white"
+        state={supplementalContent}
+        setState={setSupplementalContent}
+        newStateContent={{
+          show: true,
+          expand: true,
+          supplementalContentSection: {
+            ...supplementalContent.supplementalContentSection,
+            subsection: "FunFacts",
+          },
+        }}
+      />
       <Paragraph content={paragraphs[7]} />
     </Container>
   );
