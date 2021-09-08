@@ -1,7 +1,6 @@
 import { Grid } from "semantic-ui-react";
 import MethodologyMenu from "./MethodologyMenu";
-import MethodologyCode from "./MethodologyCode";
-import MethodologyFunFacts from "./MethodologyFunFacts";
+import MethodologySupplementalContentRow from "./MethodologySupplementalContentRow";
 
 export default function MethodologySupplementalContainer({
   supplementalContent,
@@ -17,13 +16,7 @@ export default function MethodologySupplementalContainer({
           setSupplementalContent={setSupplementalContent}
         />
       </Grid.Row>
-      <Grid.Row>
-        {componentKey === "Code" ? (
-          <MethodologyCode />
-        ) : (
-          <MethodologyFunFacts />
-        )}
-      </Grid.Row>
+      <MethodologySupplementalContentRow componentKey={componentKey} />
     </Grid.Row>
   );
 }

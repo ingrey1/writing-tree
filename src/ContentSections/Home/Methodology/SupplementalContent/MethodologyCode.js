@@ -1,29 +1,9 @@
 import { CodeBlock } from "@atlaskit/code";
 import { Grid, Header, Segment } from "semantic-ui-react";
 import MethodologyFolderTree from "./MethodologyFolderTree";
+import MethodologyComponentTree from "./MethodologyComponentTree";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
 import { githubHomeMethodologyUrl } from "../../../../common/constants";
-
-const relativeFolderStructure = {
-  name: "Methodology",
-  isOpen: false,
-  children: [
-    {
-      name: "SupplementalContent",
-      isOpen: false,
-      children: [
-        { name: "MethodologyCode.js" },
-        { name: "MethodologyFolderTree.js" },
-        { name: "MethodologyFunFacts.js" },
-        { name: "MethodologyMenu.js" },
-        { name: "MethodologySupplementalContainer.js" },
-      ],
-    },
-    { name: "Methodology.css" },
-    { name: "Methodology.js" },
-    { name: "text.js" },
-  ],
-};
 
 const methodologyCode = `import { Header, Container } from "semantic-ui-react";
 import { paragraphs } from "./text";
@@ -232,7 +212,9 @@ export default function MethodologyCode() {
             url={githubHomeMethodologyUrl}
           />
         </Header>
-        <MethodologyFolderTree data={relativeFolderStructure} />
+        <MethodologyFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <MethodologyComponentTree />
         <Header as="h2">Main Content Code</Header>
 
         <Header as="h3">Methodology.js</Header>
