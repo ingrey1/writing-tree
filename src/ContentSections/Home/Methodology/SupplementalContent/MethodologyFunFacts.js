@@ -70,10 +70,11 @@ export default function FunFacts() {
       </p>
       <p>
         Even philosophy, that oldest of disciplines, had gotten a make over
-        since Plato tried to grasp the Real, the Good, and True from his arm
+        since Plato tried to grasp the Real, the Good, and the True from his arm
         chair in ancient Greece. Philosophy of science wasn't a thing back then
-        because the sciences weren't what they are now. Here's a look at what
-        philosophers of science talk about.{" "}
+        because the sciences weren't what they are now. Here's a look at one
+        thing philosophers of science talk about. Feel free to check it out if
+        you're interested.
         <IconButtonLink
           inverted
           iconName="tree"
@@ -82,6 +83,42 @@ export default function FunFacts() {
           buttonSize="large"
           iconSize="large"
         />
+      </p>
+      <p>
+        The world only continues to grow more complex. Just look at the strange
+        turn things have taken with the rise of automation, and the promise of
+        computer science--the speculative fiction writers of the past might have
+        been more right than they knew. We can all appreciate the advantages
+        this complexity has given us. We are healthier, live longer, enjoy
+        access to lots of shiny toys, and have eliminated many types of
+        suffering that were once thought part and parcel of the human condition.
+      </p>
+      <p>
+        And yet this complexity also brings with it a strong sense of
+        bewilderment and discomfort. Where our ancestors could take solace in
+        their fables and myths because there were no other options, we now have
+        to make decisions about which experts to rely on, when to rely on them,
+        and to what degree. This gives rise to the problem of the tyranny of
+        experts (I just made this name up, but maybe it exists already).
+      </p>
+      <p>
+        Given the critical importance of the disciplines that relate to human
+        health, these questions become even more pertinent. For example, however
+        much you might wonder now and again whether your doctor is a
+        con(fidence) man, most of us cannot be our own medical practitioners.
+      </p>
+      <p>
+        But we can practice a bit of healthy skepticism, and be judicious in
+        which experts we rely on, in what circumstances, and to what degree. The
+        democratization of information via the internet has given us access to
+        some wonderful resources, despite all the outrage directed toward the
+        phenomenon of misinformation.
+      </p>
+      <p>
+        That said, I want to return to where I started, with Taubes' book,
+        because it beautifully illustrates how even with the hardest of
+        empirical sciences, despite agreement among practitioners of the
+        discipline, they can still get things wrong.
       </p>
     </Container>
   );
