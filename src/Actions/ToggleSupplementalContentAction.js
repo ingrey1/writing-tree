@@ -16,9 +16,7 @@ function ToggleSupplementalContentAction({
         });
       }}
     >
-      {supplementalContent.show
-        ? "Hide Extra Content"
-        : "Show Extra  Content"}
+      {supplementalContent.show ? "Hide Extra Content" : "Show Extra  Content"}
     </Button>
   );
 }

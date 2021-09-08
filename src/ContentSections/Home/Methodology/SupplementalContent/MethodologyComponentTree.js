@@ -5,7 +5,7 @@ const FileIcon = (...args) => null;
 const FolderIcon = (...args) => null;
 
 const componentStructure = {
-  name: "Methodology",
+  name: "SupplementalContentRow",
   isOpen: false,
   children: [
     {

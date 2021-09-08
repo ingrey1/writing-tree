@@ -12,6 +12,7 @@ export default class MethodologyMenu extends Component {
           active={activeItem === "FunFacts"}
           onClick={(e, state) => {
             this.props.setSupplementalContent({
+              ...this.props.supplementalContent,
               show: true,
               name: "Home.Methodology",
               supplementalContentSection: {
@@ -26,6 +27,7 @@ export default class MethodologyMenu extends Component {
           active={activeItem === "Code"}
           onClick={(e, state) => {
             this.props.setSupplementalContent({
+              ...this.props.supplementalContent,
               show: true,
               name: "Home.Methodology",
               supplementalContentSection: {

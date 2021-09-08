@@ -1,4 +1,4 @@
-import { Grid } from "semantic-ui-react";
+import { Grid, Button, Icon } from "semantic-ui-react";
 import SupplementalContent from "../SupplementalContent/SupplementalContent";
 import { getSupplementalSectionContent } from "../utils";
 export default function supplementalContentRow({
@@ -9,7 +9,6 @@ export default function supplementalContentRow({
   return (
     <Grid.Row
       style={{
-        height: "40%",
         borderTop: "2px solid #000000",
         borderRadius: "5px",
       }}

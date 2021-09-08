@@ -136,7 +136,9 @@ const methodologyCodeCode = `export default function MethodologyCode() {
             url={githubHomeMethodologyUrl}
           />
         </Header>
-        <MethodologyFolderTree data={relativeFolderStructure} />
+        <MethodologyFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <MethodologyComponentTree />
         <Header as="h2">Main Content Code</Header>
 
         <Header as="h3">Methodology.js</Header>
@@ -178,29 +180,19 @@ const methodologyCodeCode = `export default function MethodologyCode() {
           showLineNumbers={true}
           text={methodologyFolderTreeCode}
         />
+        <Header as="h3">MethodologyComponentTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyComponentTreeCode}
+        />
       </Grid.Row>
     </Segment>
   );
 }
 `;
 
-const methodologyFolderTreeCode = `import FolderTree from "react-folder-tree";
-import "react-folder-tree/dist/style.css";
-
-const FolderStructure = ({ data }) => {
-  return (
-    <FolderTree
-      data={data}
-      showCheckbox={false}
-      readOnly
-    />
-  );
-};
-
-export default FolderStructure;
-`;
-
-export default function MethodologyCode() {
+const methodologyFolderTreeCode = `export default function MethodologyCode() {
   return (
     <Segment style={{ overflow: "auto", maxHeight: 200 }}>
       <Grid.Row>
@@ -255,6 +247,134 @@ export default function MethodologyCode() {
           language="jsx"
           showLineNumbers={true}
           text={methodologyFolderTreeCode}
+        />
+        <Header as="h3">MethodologyComponentTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyComponentTreeCode}
+        />
+      </Grid.Row>
+    </Segment>
+  );
+}
+
+
+const MethodologyFolderTree = () => {
+  return (
+    <FolderTree data={relativeFolderStructure} showCheckbox={false} readOnly />
+  );
+};
+
+export default MethodologyFolderTree;
+`;
+
+const methodologyComponentTreeCode = `import FolderTree from "react-folder-tree";
+import "react-folder-tree/dist/style.css";
+
+const FileIcon = (...args) => null;
+const FolderIcon = (...args) => null;
+
+const componentStructure = {
+  name: "SupplementalContentRow",
+  isOpen: false,
+  children: [
+    {
+      name: "GridRow",
+      isOpen: false,
+      children: [
+        {
+          name: "SupplementalContent",
+          children: [
+            {
+              name: "MethodologySupplementalContainer",
+              children: [
+                { name: "MethodologyMenu" },
+                { name: "MethodologySupplementalContentRow" },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+const MethodologyComponentTree = () => {
+  return (
+    <FolderTree
+      data={componentStructure}
+      iconComponents={{ FileIcon, FolderIcon }}
+      showCheckbox={false}
+      readOnly
+    />
+  );
+};
+
+export default MethodologyComponentTree;
+`;
+
+export default function MethodologyCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
+      <Grid.Row>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeMethodologyUrl}
+          />
+        </Header>
+        <MethodologyFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <MethodologyComponentTree />
+        <Header as="h2">Main Content Code</Header>
+
+        <Header as="h3">Methodology.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCode}
+        />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">MethodologySupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologySupplementalContainerCode}
+        />
+        <Header as="h3">MethodologyMenu.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyMenuCode}
+        />
+        <Header as="h3">MethodologyFunFacts.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFunFactsCode}
+        />
+        <Header as="h3">MethodologyCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCodeCode}
+        />
+        <Header as="h3">MethodologyFolderTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFolderTreeCode}
+        />
+        <Header as="h3">MethodologyComponentTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyComponentTreeCode}
         />
       </Grid.Row>
     </Segment>

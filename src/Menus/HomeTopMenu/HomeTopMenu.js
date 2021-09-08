@@ -29,6 +29,7 @@ export default class HomeTopMenu extends Component {
             });
             this.props.setSupplementalContent({
               show: false,
+              expand: false,
               name: "Home.Introduction",
               supplementalContentSection: {
                 name: "NoContent",
@@ -48,6 +49,7 @@ export default class HomeTopMenu extends Component {
             });
             this.props.setSupplementalContent({
               show: false,
+              expand: false,
               name: "Home.Methodology",
               supplementalContentSection: {
                 name: "Home.Methodology",
@@ -67,6 +69,7 @@ export default class HomeTopMenu extends Component {
             });
             this.props.setSupplementalContent({
               show: false,
+              expand: false,
               name: "Home.Navigation",
               supplementalContentSection: { name: "NoContent" },
             });
@@ -83,6 +86,7 @@ export default class HomeTopMenu extends Component {
             });
             this.props.setSupplementalContent({
               show: false,
+              expand: false,
               name: "Home.Contact",
               supplementalContentSection: { name: "NoContent" },
             });

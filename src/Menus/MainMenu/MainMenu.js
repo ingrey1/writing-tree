@@ -32,6 +32,7 @@ export default class MainMenu extends Component {
                 name: "Home.Introduction",
                 supplementalContentSection: { name: "NoContent" },
                 show: false,
+                expand: false,
               });
               this.handleItemClick(e, state);
             }}

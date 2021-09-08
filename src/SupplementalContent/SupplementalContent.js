@@ -1,15 +1,21 @@
+import { Grid } from "semantic-ui-react";
+import IconButtonExpand from "../common/components/IconButtonExpand";
 function SupplementalContent({
   SupplementalContentComponent,
   supplementalContent,
   setSupplementalContent,
 }) {
   return (
-    <div className="supplemental-content-container">
+    <Grid.Row>
+      <IconButtonExpand
+        setSupplementalContent={setSupplementalContent}
+        supplementalContent={supplementalContent}
+      />
       <SupplementalContentComponent
         setSupplementalContent={setSupplementalContent}
         supplementalContent={supplementalContent}
       />
-    </div>
+    </Grid.Row>
   );
 }
 

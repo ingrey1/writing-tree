@@ -21,6 +21,7 @@ function App() {
 
   const [supplementalContent, setSupplementalContent] = useState({
     show: false,
+    expand: false,
     name: "Home.Introduction",
     supplementalContentSection: { name: "NoContent", subsection: "NoContent" },
   });
@@ -42,7 +43,11 @@ function App() {
         >
           <Grid.Row
             style={{
-              height: supplementalContent.show ? "60vh" : "100vh",
+              height: supplementalContent.show
+                ? supplementalContent.expand
+                  ? "0vh"
+                  : "60vh"
+                : "100vh",
               overflowX: "hidden",
             }}
           >

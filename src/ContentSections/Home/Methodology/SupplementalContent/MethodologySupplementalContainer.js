@@ -1,4 +1,4 @@
-import { Grid } from "semantic-ui-react";
+import { Grid, Button, Icon } from "semantic-ui-react";
 import MethodologyMenu from "./MethodologyMenu";
 import MethodologySupplementalContentRow from "./MethodologySupplementalContentRow";
 
@@ -14,6 +14,7 @@ export default function MethodologySupplementalContainer({
         <MethodologyMenu
           methodologyMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
+          supplementalContent={supplementalContent}
         />
       </Grid.Row>
       <MethodologySupplementalContentRow componentKey={componentKey} />
