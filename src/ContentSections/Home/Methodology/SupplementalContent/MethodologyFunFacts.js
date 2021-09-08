@@ -1,4 +1,4 @@
-import { Container, Header } from "semantic-ui-react";
+import { Container, Header, Message } from "semantic-ui-react";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
 import {
   goodCaloriesBadCaloriesOnAmazon,
@@ -117,9 +117,53 @@ export default function FunFacts() {
       <p>
         That said, I want to return to where I started, with Taubes' book,
         because it beautifully illustrates how even with the hardest of
-        empirical sciences, despite agreement among practitioners of the
-        discipline, they can still get things wrong.
+        empirical sciences, despite majority agreement among practitioners of
+        the discipline, they may still have gotten things terribly wrong. It is
+        also one of the most meticulously researched and well-written pieces of
+        scientific journalism I've encountered. I'd recommend you read it, and
+        form your own opinion.
       </p>
+      <p>In the Prologue, Taubes writes:</p>
+      <Message>
+        <p>
+          The reason for this book is straightforward: despite the depth and
+          certainty of our faith that saturated fat is the nutritional bane of
+          our lives and that obesity is caused by overeating and sedentary
+          behavior, there has always been copious evidence to suggest that those
+          assumptions are incorrect and that evidence is continuing to mount.
+          "There is always an easy solution to every human problem," H.L.
+          Mencken once said--"neat, plausible, and wrong." It is quite possible,
+          despite all our faith to the contrary, that these concepts are such
+          neat, plausible, and wrong solutions. Moreover, it's also quite
+          possible that the low-fat, high-carbohydrate diets we've been told to
+          eat for the past thirty years are not only making us heavier but
+          contributing to other chronic diseases as well.
+        </p>
+        ...
+        <p>
+          In this book my aim is to look critically at a straightforward
+          question to which most of us believe we know the answer. What
+          constitutes a healthy diet? What should we eat if we want to live a
+          long and a healthy life? To address this question, we'll examine the
+          evidence supporting both the prevailing wisdom and this alternative
+          hypothesis, and we'll confront the possibility that much of what we've
+          come to believe is wrong.
+        </p>
+        ...
+        <p>
+          By critically examining the research that led to the prevailing wisdom
+          of nutrition and health, this book may appear to be one-sided, but
+          only in that it presents a side that is not often voiced publicly.
+          Since the 1970s, the belief that saturated fat causes heart disease
+          and perhaps other chronic diseases has been justified by a series of
+          expoert reports--from the U.S. Department of Agriculture, the Surgeon
+          General's Office, the National Academy of Sciences, and the Department
+          of Health in the U.K., among others. These reports present the
+          evidence in support of the fat-cholesterol hypothesis and mostly omit
+          the evidence in contradiction. This makes for a very compelling case,
+          but it is not how science is best served.
+        </p>
+      </Message>
     </Container>
   );
 }
