@@ -120,8 +120,7 @@ export default function FunFacts() {
         empirical sciences, despite majority agreement among practitioners of
         the discipline, they may still have gotten things terribly wrong. It is
         also one of the most meticulously researched and well-written pieces of
-        scientific journalism I've encountered. I'd recommend you read it, and
-        form your own opinion.
+        scientific journalism I've encountered.
       </p>
       <p>In the Prologue, Taubes writes:</p>
       <Message>
@@ -169,6 +168,123 @@ export default function FunFacts() {
         believer in the purity of scientific progress. But it turned out that
         things just aren't that simple. Science is messy, and that food pyramid
         they teach you about in school in the US is an awful thing.
+      </p>
+      From Chapter 2:
+      <Message>
+        <p>
+          From the 1950s onward, researchers worldwide set out to test Ancel
+          Key's hypothesis that coronary heart disease is strongly influenced by
+          fats in the diet. The resulting literature very quickly grew to what
+          one Columbia University pathologist in 1977 described as "unmanageable
+          proportions." By that time, proponents of Keys's hypothesis had
+          amassed a body of evidence--a "totality of data", in the words of
+          Chicago cardiologist Jeremiah Stamler.--that to them appeared
+          unambiguously to support the hypothesis. Actually, those data
+          constituted only half the evidence at best, and the other half did not
+          support the hypothesis. As a result, "two strikingly polar attitudes
+          persist on this subject, with much talk from each and little listening
+          between", wrote Henry Blackburn, a protege of Keys at the University
+          of Minnesota, in 1975.
+        </p>
+        <p>
+          Confusion reigned. "It must still be admitted that the diet-heart
+          relation is an unproved hypothesis that needs much more
+          investigation," Thomas Dawber, the Boston University physician who
+          founded the famous Framingham Heart Study, wrote in 1978. Two years
+          later, however, he insisted the Framingham Study had provided
+          "overwhelming evidence" that Keys's hypothesis was correct. "Yet," he
+          noted, "many physicians and investigators of considerable renown still
+          doubt the validity of the fat hypothesis....Some even question the
+          relationship of blood cholesterol to disease."
+        </p>
+        <p>
+          Understanding this difference of opinion is crucial to understanding
+          why we all came to believe that dietary fat, or at least saturated
+          fat, causes heart disease. How could a contention that incited such
+          contention for the first twenty years of its existence become so
+          quickly established as dogma? If two decades' worth of research was
+          unable to convince half the investigators involved in this controversy
+          of the validity of the dietary-fat/cholesterol hypothesis of heart
+          disease, why did it convince the other half that they were absolutely
+          right?
+        </p>
+      </Message>
+      <p>
+        I think these passages are very instructive because they convey the fact
+        that consensus is not always reached through rigorously evaluating the
+        evidence. It can be influenced by cultural and historical factors.
+        Especially in cases in which it is difficult and expensive to perform
+        studies on humans.
+      </p>
+      <p>
+        Another interesting discussion in the book concerns the "Diseases of
+        Civilization.".
+      </p>
+      From chapter 5:
+      <Message>
+        <p>
+          the original concept of the diseases of civilization dates to the
+          mid-nineteenth century, primarily to Stanislas Tanchou, a French
+          physician who served with Napoleon before entering private practice
+          and studying the statistical distribution of cancer. Tanchou's
+          analysis of death registries led him to conclude that cancer was more
+          common in cities than in rural areas, and that the incidence of cancer
+          was increasing throughout Europe. "Cancer, like insanity," He said,
+          "seems to increase with the progress of civilization." He supported
+          this hypothesis with communications from physicians working in North
+          Africa, who reported that the disease had once been rare or
+          nonexistent in their regions, but that the number of cancer cases was
+          "increasing from year to year, and that this increase stands in
+          connection with the advance of civilization."
+        </p>
+        ...
+        <p>
+          In The Natural History of Cancer, Williams marched from continent to
+          continent, region to region. In Fiji, for instance, in 1900, among
+          120,000 aborigines, Melanesians, Polynesians, and "Indian Coolies",
+          there were only two recorded deaths from Malignant tumors
+        </p>
+        ...
+        <p>
+          In the United States, the proportional number of cancer deaths rose
+          dramatically in the latter part of the nineteenth century: in New
+          York, from thirty-two per thousand deaths in 1864, to sixty-seven in
+          1900; in Philedelphia, rom thirty-one in 1861 to seventy in 1904.
+        </p>
+        ...
+        <p>
+          The absence of malignant cancer in isolated populations prompted
+          questions about why cancer did develop elsewhere. One early hypothesis
+          was that meat-eating was the problem, and that primitive populations
+          were protected from cancer by eating mostly vegetarian diets. But this
+          failed to explain why malignancies were prevalent among Hindus in
+          India--"to whom the fleshpot is an abomination"--and rare to absent in
+          the Inuit, Masai, and other decidedly carnivorous populations.
+        </p>
+        ...
+        <p>
+          By the late 1920s, the meat-eating hypothesis had given way to the
+          notion that it was overnutrition in general, in conjunction with
+          modern processed foods, lacking the vital elements necessary for
+          health, that were to blame.
+        </p>
+        ...
+        <p>
+          White flour and sugar were singled out as particularly noxious,
+          because these had been increasing dramatically in Western diets during
+          the latter half of the nineteenth century, coincident with the
+          reported increase in cancer mortality. (they would also be implicated
+          in the growing incidence of diabetes, as we'll discuss, and
+          appendicitis)
+        </p>
+      </Message>
+      <p>
+        I find it fascinating how scientific opinion can shift like in this
+        situation, without dramatic changes in the evidence.
+      </p>
+      <p>
+        I'll stop here. If these passages sound interesting to you, I'd
+        recommend you read the book, and form your own opinion.
       </p>
     </Container>
   );
