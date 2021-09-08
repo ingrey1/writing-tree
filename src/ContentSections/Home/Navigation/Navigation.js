@@ -30,9 +30,8 @@ function Navigation() {
       <p>
         This button can be found in the actions panel on the right, visible in
         large screen mode. Clicking it will toggle the supplemental content
-        section. Alternatively, on mobile, you can click on the toggle
-        supplemental content option in the main menu located at the top of the
-        screen.
+        section. Alternatively, on mobile, you can click on the toggle extra
+        content option in the main menu located at the top of the screen.
       </p>
     </Container>
   );

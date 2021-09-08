@@ -81,7 +81,7 @@ export default class MobileMainMenu extends Component {
                   this.handleItemClick(e, state);
                 }}
               >
-                Toggle Supplemental Content
+                Toggle Extra Content
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
