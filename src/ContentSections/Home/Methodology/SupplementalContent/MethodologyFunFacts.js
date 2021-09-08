@@ -156,7 +156,7 @@ export default function FunFacts() {
           only in that it presents a side that is not often voiced publicly.
           Since the 1970s, the belief that saturated fat causes heart disease
           and perhaps other chronic diseases has been justified by a series of
-          expoert reports--from the U.S. Department of Agriculture, the Surgeon
+          expert reports--from the U.S. Department of Agriculture, the Surgeon
           General's Office, the National Academy of Sciences, and the Department
           of Health in the U.K., among others. These reports present the
           evidence in support of the fat-cholesterol hypothesis and mostly omit
@@ -164,6 +164,12 @@ export default function FunFacts() {
           but it is not how science is best served.
         </p>
       </Message>
+      <p>
+        I first read this book many years ago. At the time, I had been a firm
+        believer in the purity of scientific progress. But it turned out that
+        things just aren't that simple. Science is messy, and that food pyramid
+        they teach you about in school in the US is an awful thing.
+      </p>
     </Container>
   );
 }
