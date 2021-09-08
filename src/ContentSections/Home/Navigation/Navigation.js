@@ -23,6 +23,12 @@ function Navigation() {
         You will find this icon next to certain code snippets and text blocks.
         Clicking it will copy the relevant text
       </p>
+      <Icon name="bars" color="teal" size="large" />
+      <p>
+        This icon is a menu. You can click on it to bring up various options.
+        The main menu for the mobile layout uses this icon: you can find it on
+        the top left on the main content area.
+      </p>
       <Icon name="amazon" color="teal" size="large" />
       <p>
         You will sometimes find this icon next to the names of books. Click the
