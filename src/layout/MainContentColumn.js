@@ -20,6 +20,7 @@ export default function MainContentColumn({
           />
           <Grid.Row style={{ height: "10vh" }}>
             <MobileMainMenu
+              mainContent={mainContent}
               setMainContent={setMainContent}
               supplementalContent={supplementalContent}
               setSupplementalContent={setSupplementalContent}
@@ -33,6 +34,7 @@ export default function MainContentColumn({
         TopMenu={getTopMenu(mainContent.name)}
         topMenuSection={mainContent.mainContentSection.name}
         showTopMenu={mainContent.showTopMenu}
+        mainContent={mainContent}
         setMainContent={setMainContent}
         ContentSection={getSectionContent(
           mainContent.name,

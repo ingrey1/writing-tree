@@ -2,6 +2,7 @@ function MainContent({
   TopMenu,
   topMenuSection,
   showTopMenu,
+  mainContent,
   setMainContent,
   supplementalContent,
   setSupplementalContent,
@@ -17,6 +18,8 @@ function MainContent({
         />
       )}
       <ContentSection
+        mainContent={mainContent}
+        setMainContent={setMainContent}
         supplementalContent={supplementalContent}
         setSupplementalContent={setSupplementalContent}
       />

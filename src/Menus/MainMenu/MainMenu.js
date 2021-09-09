@@ -30,7 +30,10 @@ export default class MainMenu extends Component {
               });
               this.props.setSupplementalContent({
                 name: "Home.Introduction",
-                supplementalContentSection: { name: "NoContent" },
+                supplementalContentSection: {
+                  name: "Home.Introduction",
+                  subsection: "Code",
+                },
                 show: false,
                 expand: false,
               });
@@ -45,7 +48,23 @@ export default class MainMenu extends Component {
             <Menu.Item
               name="start here"
               active={activeItem === "start here"}
-              onClick={this.handleItemClick}
+              onClick={(e, state) => {
+                this.props.setMainContent({
+                  name: "Overview",
+                  mainContentSection: { name: "Overview.Introduction" },
+                  showTopMenu: false,
+                });
+                this.props.setSupplementalContent({
+                  name: "Overview.Introduction",
+                  supplementalContentSection: {
+                    name: "Overview.Introduction",
+                    subsection: "Introduction",
+                  },
+                  show: false,
+                  expand: false,
+                });
+                this.handleItemClick(e, state);
+              }}
             />
             <Menu.Item
               name="frontend"
@@ -161,19 +180,19 @@ export default class MainMenu extends Component {
               name="references"
               active={activeItem === "references"}
               onClick={(e, state) => {
-              this.props.setMainContent({
-                name: "Resources",
-                mainContentSection: { name: "Resources.References" },
-                showTopMenu: false,
-              });
-              this.props.setSupplementalContent({
-                name: "Resources.References",
-                supplementalContentSection: { name: "NoContent" },
-                show: false,
-                expand: false,
-              });
-              this.handleItemClick(e, state);
-            }}
+                this.props.setMainContent({
+                  name: "Resources",
+                  mainContentSection: { name: "Resources.References" },
+                  showTopMenu: false,
+                });
+                this.props.setSupplementalContent({
+                  name: "Resources.References",
+                  supplementalContentSection: { name: "NoContent" },
+                  show: false,
+                  expand: false,
+                });
+                this.handleItemClick(e, state);
+              }}
             >
               References
             </Menu.Item>
