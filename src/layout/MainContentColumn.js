@@ -2,7 +2,7 @@ import { Grid } from "semantic-ui-react";
 import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import MainContent from "../MainContent/MainContent";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
-import { getTopMenu, getSectionContent } from "../utils";
+import { getTopMenu, getSectionContent } from "../utils/components";
 
 export default function MainContentColumn({
   mainContent,

@@ -1,6 +1,6 @@
 import { Grid } from "semantic-ui-react";
 import SupplementalContent from "../SupplementalContent/SupplementalContent";
-import { getSupplementalSectionContent } from "../utils";
+import { getSupplementalSectionContent } from "../utils/components";
 export default function supplementalContentRow({
   supplementalContent,
   setSupplementalContent,

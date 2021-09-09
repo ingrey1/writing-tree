@@ -5,7 +5,7 @@ import MainMenuColumn from "../layout/MainMenuColumn";
 import MainContentColumn from "../layout/MainContentColumn";
 import ActionsColumn from "../layout/ActionsColumn";
 import SupplementalContentRow from "../layout/SupplementalContentRow";
-import { calculateMainContentHeight } from "../utils";
+import { calculateMainContentHeight } from "../utils/components";
 import {
   isLargeScreen,
   fullHorizontalSize,

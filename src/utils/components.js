@@ -68,5 +68,5 @@ export {
   getSectionContent,
   getTopMenu,
   getSupplementalSectionContent,
-  calculateMainContentHeight,
+  calculateMainContentHeight
 };
