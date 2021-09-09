@@ -1,6 +1,6 @@
 import { Container, Header, Message } from "semantic-ui-react";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
-import Reference from "../../../../common/components/Reference";
+import Reference from "../../../../common/components/Reference/Reference";
 import Paragraph from "../../../../common/components/Paragraph/Paragraph";
 import { paragraphs } from "./funFactsText";
 import { home } from "../../../../common/data/references";
@@ -13,9 +13,7 @@ import { generateArrayFromRange } from "../../../../utils/general";
 
 const {
   methodology: {
-    funFacts: {
-      calories,
-    },
+    funFacts: { calories },
   },
 } = home;
 

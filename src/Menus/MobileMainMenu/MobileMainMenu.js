@@ -66,7 +66,24 @@ export default class MobileMainMenu extends Component {
               <Dropdown.Item>Blog</Dropdown.Item>
               <Dropdown.Item>Articles</Dropdown.Item>
               <Dropdown.Item>Glossary</Dropdown.Item>
-              <Dropdown.Item>References</Dropdown.Item>
+              <Dropdown.Item
+                onClick={(e, state) => {
+                  this.props.setMainContent({
+                    name: "Resources",
+                    mainContentSection: { name: "Resources.References" },
+                    showTopMenu: false,
+                  });
+                  this.props.setSupplementalContent({
+                    name: "Resources.References",
+                    supplementalContentSection: { name: "NoContent" },
+                    show: false,
+                    expand: false,
+                  });
+                  this.handleItemClick(e, state);
+                }}
+              >
+                References
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown.Divider />

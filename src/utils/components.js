@@ -3,6 +3,7 @@ import Contact from "../ContentSections/Home/Contact/Contact";
 import Methodology from "../ContentSections/Home/Methodology/Methodology";
 import Navigation from "../ContentSections/Home/Navigation/Navigation";
 import HomeTopMenu from "../Menus/HomeTopMenu/HomeTopMenu";
+import References from "../References/References";
 import MethodologySupplementalContainer from "../ContentSections/Home/Methodology/SupplementalContent/MethodologySupplementalContainer";
 import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 
@@ -22,6 +23,13 @@ const getSectionContent = (mainContentName, mainContentSection) => {
           return Contact;
         default:
           return Intro;
+      }
+    case "Resources":
+      switch (mainContentSection.name) {
+        case "Resources.References":
+          return References;
+        default:
+          return References;
       }
     default:
       return Intro;
@@ -68,5 +76,5 @@ export {
   getSectionContent,
   getTopMenu,
   getSupplementalSectionContent,
-  calculateMainContentHeight
+  calculateMainContentHeight,
 };

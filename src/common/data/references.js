@@ -9,7 +9,8 @@ const home = {
           "Good Calories, Bad Calories: Fats, Carbs, and the Controversial Science of Diet and Health",
         edition: "Reprint",
         publisher: "Anchor",
-        context: "my context",
+        about:
+          "You're interested in writing, science, journalism, or health and nutrition",
       },
     },
   },

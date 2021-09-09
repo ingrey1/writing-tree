@@ -160,7 +160,20 @@ export default class MainMenu extends Component {
             <Menu.Item
               name="references"
               active={activeItem === "references"}
-              onClick={this.handleItemClick}
+              onClick={(e, state) => {
+              this.props.setMainContent({
+                name: "Resources",
+                mainContentSection: { name: "Resources.References" },
+                showTopMenu: false,
+              });
+              this.props.setSupplementalContent({
+                name: "Resources.References",
+                supplementalContentSection: { name: "NoContent" },
+                show: false,
+                expand: false,
+              });
+              this.handleItemClick(e, state);
+            }}
             >
               References
             </Menu.Item>
