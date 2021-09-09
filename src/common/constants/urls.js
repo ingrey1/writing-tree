@@ -4,7 +4,15 @@ const linkedinUrl = "https://www.linkedin.com/in/ingrey1/";
 // code links
 const githubHomeMethodologyUrl =
   "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Methodology";
-const githubHomeIntroUrl = "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Intro"
+
+const githubHomeIntroUrl =
+  "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Intro";
+
+const githubHomeContactUrl =
+  "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Contact";
+
+const githubHomeNavigationUrl =
+  "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Navigation";
 // content links
 const goodCaloriesBadCaloriesOnAmazon =
   "https://www.amazon.com/Good-Calories-Bad-Controversial-Science/dp/1400033462/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1631080913&sr=8-2";
@@ -13,8 +21,10 @@ const philosophyScientificRepresentation =
 
 export {
   githubHomeMethodologyUrl,
+  githubHomeIntroUrl,
+  githubHomeContactUrl,
+  githubHomeNavigationUrl,
   linkedinUrl,
   goodCaloriesBadCaloriesOnAmazon,
   philosophyScientificRepresentation,
-  githubHomeIntroUrl
 };

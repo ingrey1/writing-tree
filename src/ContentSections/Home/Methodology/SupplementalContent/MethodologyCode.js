@@ -474,13 +474,13 @@ export default function MethodologyCode() {
           showLineNumbers={true}
           text={methodologyCodeCode}
         />
-        <Header as="h3">MethodologyFolderTreeCode.js</Header>
+        <Header as="h3">MethodologyFolderTree.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
           text={methodologyFolderTreeCode}
         />
-        <Header as="h3">MethodologyComponentTreeCode.js</Header>
+        <Header as="h3">MethodologyComponentTree.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}

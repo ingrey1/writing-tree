@@ -235,13 +235,13 @@ export default function IntroCode() {
         <CodeBlock language="jsx" showLineNumbers={true} text={introMenuCode} />
         <Header as="h3">IntroCode.js</Header>
         <CodeBlock language="jsx" showLineNumbers={true} text={introCodeCode} />
-        <Header as="h3">IntroFolderTreeCode.js</Header>
+        <Header as="h3">IntroFolderTree.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
           text={introFolderTreeCode}
         />
-        <Header as="h3">IntroComponentTreeCode.js</Header>
+        <Header as="h3">IntroComponentTree.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
