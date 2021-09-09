@@ -8,9 +8,7 @@ import MethodologySupplementalContainer from "../ContentSections/Home/Methodolog
 import NavigationSupplementalContainer from "../ContentSections/Home/Navigation/SupplementalContent/NavigationSupplementalContainer";
 import ContactSupplementalContainer from "../ContentSections/Home/Contact/SupplementalContent/ContactSupplementalContainer";
 import MainMenuColumn from "../layout/MainMenuColumn";
-//import MainContentColumn from "../layout/MainContentColumn";
 import ActionsColumn from "../layout/ActionsColumn";
-//import SupplementalContentRow from "../layout/SupplementalContentRow";
 import { calculateMainContentHeight } from "../utils/components";
 import {
   isLargeScreen,
@@ -35,11 +33,9 @@ const SupplementalComponent = (supplementalContent, props) => {
     name,
     supplementalContentSection: { name: section },
   } = supplementalContent;
-  console.info("sectionName", section);
-  console.info("name", name);
+
   switch (name) {
     case "Home":
-      console.info("home triggered");
       switch (section) {
         case "Introduction":
           return (
@@ -70,7 +66,6 @@ const SupplementalComponent = (supplementalContent, props) => {
             />
           );
         default:
-          console.info("default triggered");
           return (
             <IntroSupplementalContainer
               supplementalContent={supplementalContent}
@@ -84,7 +79,6 @@ const SupplementalComponent = (supplementalContent, props) => {
         <HomeContainer supplementalContent={supplementalContent} {...props} />
       );
     default:
-      console.info("default triggered");
       return (
         <HomeContainer SupplementalContent={supplementalContent} {...props} />
       );
@@ -147,19 +141,8 @@ function App() {
                 supplementalContent,
                 setSupplementalContent,
               })}
-              {/* <MainContentColumn
-                mainContent={mainContent}
-                setMainContent={setMainContent}
-                supplementalContent={supplementalContent}
-                setSupplementalContent={setSupplementalContent}
-              /> */}
             </Grid.Column>
           </Grid.Row>
-
-          {/* <SupplementalContentRow
-              supplementalContent={supplementalContent}
-              setSupplementalContent={setSupplementalContent}
-            /> */}
           {supplementalContent.show &&
             SupplementalComponent(supplementalContent, {
               setSupplementalContent,
