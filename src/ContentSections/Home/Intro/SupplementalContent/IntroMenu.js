@@ -14,9 +14,9 @@ export default class IntroMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Introduction",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Introduction",
+                name: "Introduction",
                 subsection: "Code",
               },
             });

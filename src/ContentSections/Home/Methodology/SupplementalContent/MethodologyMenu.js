@@ -14,9 +14,9 @@ export default class MethodologyMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Methodology",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Methodology",
+                name: "Methodology",
                 subsection: "FunFacts",
               },
             });
@@ -29,9 +29,9 @@ export default class MethodologyMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Methodology",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Methodology",
+                name: "Methodology",
                 subsection: "Code",
               },
             });

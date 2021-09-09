@@ -20,8 +20,8 @@ export default function CopyTextToClipboard({ text }) {
             className="disable-resize"
             name="email"
             ref={textAreaRef}
-            value={text}
-            readonly
+            defaultValue={text}
+            readOnly
           />
         </form>
       </div>

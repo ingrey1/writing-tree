@@ -14,10 +14,10 @@ export default class ContactMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Contact",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Contact",
-                subsection: "Contact",
+                name: "Contact",
+                subsection: "Code",
               },
             });
           }}

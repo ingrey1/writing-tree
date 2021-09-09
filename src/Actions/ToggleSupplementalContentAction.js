@@ -4,7 +4,6 @@ function ToggleSupplementalContentAction({
   supplementalContent,
   setSupplementalContent,
 }) {
-  console.info(supplementalContent);
   return (
     <Button
       basic

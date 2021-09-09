@@ -6,18 +6,16 @@ export default function NavigationSupplementalContainer({
   supplementalContent,
   setSupplementalContent,
 }) {
-  const { subsection: componentKey } =
-    supplementalContent.supplementalContentSection;
+
   return (
     <Grid.Row>
       <Grid.Row>
         <NavigationMenu
-          contactMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <NavigationSupplementalContentRow componentKey={componentKey} />
+      <NavigationSupplementalContentRow />
     </Grid.Row>
   );
 }

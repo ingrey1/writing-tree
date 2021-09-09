@@ -25,13 +25,13 @@ export default class MainMenu extends Component {
             onClick={(e, state) => {
               this.props.setMainContent({
                 name: "Home",
-                mainContentSection: { name: "Home.Introduction" },
+                mainContentSection: { name: "Introduction" },
                 showTopMenu: true,
               });
               this.props.setSupplementalContent({
-                name: "Home.Introduction",
+                name: "Home",
                 supplementalContentSection: {
-                  name: "Home.Introduction",
+                  name: "Introduction",
                   subsection: "Code",
                 },
                 show: false,
@@ -51,14 +51,14 @@ export default class MainMenu extends Component {
               onClick={(e, state) => {
                 this.props.setMainContent({
                   name: "Overview",
-                  mainContentSection: { name: "Overview.Introduction" },
+                  mainContentSection: { name: "Introduction" },
                   showTopMenu: false,
                 });
                 this.props.setSupplementalContent({
-                  name: "Overview.Introduction",
+                  name: "Overview",
                   supplementalContentSection: {
-                    name: "Overview.Introduction",
-                    subsection: "Introduction",
+                    name: "Introduction",
+                    subsection: "Code",
                   },
                   show: false,
                   expand: false,
@@ -182,12 +182,15 @@ export default class MainMenu extends Component {
               onClick={(e, state) => {
                 this.props.setMainContent({
                   name: "Resources",
-                  mainContentSection: { name: "Resources.References" },
+                  mainContentSection: { name: "References" },
                   showTopMenu: false,
                 });
                 this.props.setSupplementalContent({
-                  name: "Resources.References",
-                  supplementalContentSection: { name: "NoContent" },
+                  name: "Resources",
+                  supplementalContentSection: {
+                    name: "References",
+                    subsection: "Code",
+                  },
                   show: false,
                   expand: false,
                 });

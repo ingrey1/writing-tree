@@ -14,10 +14,10 @@ export default class NavigationMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Navigation",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Navigation",
-                subsection: "Navigation",
+                name: "Navigation",
+                subsection: "Code",
               },
             });
           }}
