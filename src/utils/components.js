@@ -7,7 +7,7 @@ import References from "../References/References";
 import MethodologySupplementalContainer from "../ContentSections/Home/Methodology/SupplementalContent/MethodologySupplementalContainer";
 import IntroSupplementalContainer from "../ContentSections/Home/Intro/SupplementalContent/IntroSupplementalContainer";
 import ContactSupplementalContainer from "../ContentSections/Home/Contact/SupplementalContent/ContactSupplementalContainer";
-
+import NavigationSupplementalContainer from "../ContentSections/Home/Navigation/SupplementalContent/NavigationSupplementalContainer";
 import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 
 const getSectionContent = (mainContentName, mainContentSection) => {
@@ -51,7 +51,7 @@ const getSupplementalSectionContent = (
     case "Home.Methodology":
       return MethodologySupplementalContainer;
     case "Home.Navigation":
-      return NoSupplementalContent;
+      return NavigationSupplementalContainer;
     case "Home.Contact":
       return ContactSupplementalContainer;
     case "Resources.References":
