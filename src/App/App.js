@@ -23,7 +23,10 @@ function App() {
     show: false,
     expand: false,
     name: "Home.Introduction",
-    supplementalContentSection: { name: "NoContent", subsection: "NoContent" },
+    supplementalContentSection: {
+      name: "Home.Introduction",
+      subsection: "Code",
+    },
   });
 
   return (

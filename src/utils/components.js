@@ -5,6 +5,7 @@ import Navigation from "../ContentSections/Home/Navigation/Navigation";
 import HomeTopMenu from "../Menus/HomeTopMenu/HomeTopMenu";
 import References from "../References/References";
 import MethodologySupplementalContainer from "../ContentSections/Home/Methodology/SupplementalContent/MethodologySupplementalContainer";
+import IntroSupplementalContainer from "../ContentSections/Home/Intro/SupplementalContent/IntroSupplementalContainer";
 import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 
 const getSectionContent = (mainContentName, mainContentSection) => {
@@ -44,12 +45,14 @@ const getSupplementalSectionContent = (
 
   switch (supplementalContentName) {
     case "Home.Introduction":
-      return NoSupplementalContent;
+      return IntroSupplementalContainer;
     case "Home.Methodology":
       return MethodologySupplementalContainer;
     case "Home.Navigation":
       return NoSupplementalContent;
     case "Home.Contact":
+      return NoSupplementalContent;
+    case "Resources.References":
       return NoSupplementalContent;
     default:
       return Intro;
