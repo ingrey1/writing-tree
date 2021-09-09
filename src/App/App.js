@@ -9,6 +9,8 @@ import NavigationSupplementalContainer from "../ContentSections/Home/Navigation/
 import ContactSupplementalContainer from "../ContentSections/Home/Contact/SupplementalContent/ContactSupplementalContainer";
 import MainMenuColumn from "../layout/MainMenuColumn";
 import ActionsColumn from "../layout/ActionsColumn";
+import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
+import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import { calculateMainContentHeight } from "../utils/components";
 import {
   isLargeScreen,
@@ -89,7 +91,6 @@ function App() {
   const [mainContent, setMainContent] = useState({
     name: "Home",
     mainContentSection: { name: "Introduction" },
-    showTopMenu: false,
   });
 
   const [supplementalContent, setSupplementalContent] = useState({
@@ -136,6 +137,25 @@ function App() {
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
+              {window.screen.width <= 650 && (
+                <Grid.Column
+                  width={3}
+                  style={{ overflow: "auto", height: "10vh" }}
+                >
+                  <ToggleSupplementalContentAction
+                    supplementalContent={supplementalContent}
+                    setSupplementalContent={setSupplementalContent}
+                  />
+                  <Grid.Row style={{ height: "10vh" }}>
+                    <MobileMainMenu
+                      mainContent={mainContent}
+                      setMainContent={setMainContent}
+                      supplementalContent={supplementalContent}
+                      setSupplementalContent={setSupplementalContent}
+                    />
+                  </Grid.Row>
+                </Grid.Column>
+              )}
               {MainComponent(mainContent, {
                 setMainContent,
                 supplementalContent,

@@ -7,14 +7,14 @@ export default function OverviewContentRow({ mainContent, setMainContent }) {
     const {
       mainContentSection: { name },
     } = mainContent;
-    if (name === "Overview.ReactPrimer") {
+    if (name === "ReactPrimer") {
       return (
         <ReactPrimer
           mainContent={mainContent}
           setMainContent={setMainContent}
         />
       );
-    } else if (name === "Overview.Introduction") {
+    } else if (name === "Introduction") {
       return (
         <Overview mainContent={mainContent} setMainContent={setMainContent} />
       );

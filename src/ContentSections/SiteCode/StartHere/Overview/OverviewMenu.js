@@ -3,8 +3,7 @@ import { Menu } from "semantic-ui-react";
 
 export default class OverviewMenu extends Component {
   render() {
-    const activeItem =
-      this.props.mainContent.mainContentSection.name.split(".")[1];
+    const activeItem = this.props.mainContent.mainContentSection.name;
     return (
       <Menu fluid tabular widths={4}>
         <Menu.Item
@@ -15,8 +14,7 @@ export default class OverviewMenu extends Component {
               showTopMenu: false,
               name: "Overview",
               mainContentSection: {
-                name: "Overview.Introduction",
-                subsection: "Code",
+                name: "Introduction",
               },
             });
             this.props.setSupplementalContent({
@@ -24,8 +22,8 @@ export default class OverviewMenu extends Component {
               expand: false,
               name: "Overview",
               supplementalContentSection: {
-                name: "Overview.Introduction",
-                subsection: "Introduction",
+                name: "Introduction",
+                subsection: "Code",
               },
             });
           }}
@@ -38,8 +36,7 @@ export default class OverviewMenu extends Component {
               showTopMenu: false,
               name: "Overview",
               mainContentSection: {
-                name: "Overview.ReactPrimer",
-                subsection: "Code",
+                name: "ReactPrimer",
               },
             });
             this.props.setSupplementalContent({
@@ -47,7 +44,7 @@ export default class OverviewMenu extends Component {
               expand: false,
               name: "Overview",
               supplementalContentSection: {
-                name: "Overview.ReactPrimer",
+                name: "ReactPrimer",
                 subsection: "Code",
               },
             });
@@ -61,8 +58,7 @@ export default class OverviewMenu extends Component {
               showTopMenu: false,
               name: "Overview",
               mainContentSection: {
-                name: "Overview.Resources",
-                subsection: "Code",
+                name: "Resources",
               },
             });
             this.props.setSupplementalContent({
@@ -70,7 +66,7 @@ export default class OverviewMenu extends Component {
               expand: false,
               name: "Overview",
               supplementalContentSection: {
-                name: "Overview.Resources",
+                name: "Resources",
                 subsection: "Code",
               },
             });
