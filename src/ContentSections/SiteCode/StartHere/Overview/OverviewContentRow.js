@@ -1,8 +1,13 @@
 import { Grid } from "semantic-ui-react";
 import ReactPrimer from "./ReactPrimer/ReactPrimer";
 import Resources from "./Resources/Resources";
-import Overview from "./Overview";
-export default function OverviewContentRow({ mainContent, setMainContent }) {
+import Intro from "./Intro/Intro";
+export default function OverviewContentRow({
+  mainContent,
+  setMainContent,
+  supplementalContent,
+  setSupplementalContent,
+}) {
   const component = (mainContent) => {
     const {
       mainContentSection: { name },
@@ -16,7 +21,7 @@ export default function OverviewContentRow({ mainContent, setMainContent }) {
       );
     } else if (name === "Introduction") {
       return (
-        <Overview mainContent={mainContent} setMainContent={setMainContent} />
+        <Intro mainContent={mainContent} setMainContent={setMainContent} />
       );
     } else {
       return (

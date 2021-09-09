@@ -7,6 +7,7 @@ import {
   githubHomeIntroUrl,
   githubHomeContactUrl,
   githubHomeNavigationUrl,
+  githubOverviewIntroUrl,
 } from "./urls";
 
 export {
@@ -20,4 +21,5 @@ export {
   githubHomeIntroUrl,
   githubHomeNavigationUrl,
   githubHomeContactUrl,
+  githubOverviewIntroUrl,
 };

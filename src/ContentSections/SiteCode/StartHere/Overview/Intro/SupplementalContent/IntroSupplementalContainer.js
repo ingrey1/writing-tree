@@ -6,18 +6,18 @@ export default function IntroSupplementalContainer({
   supplementalContent,
   setSupplementalContent,
 }) {
-  const { subsection: componentKey } =
-    supplementalContent.supplementalContentSection;
   return (
     <Grid.Row>
       <Grid.Row>
         <IntroMenu
-          introMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <IntroSupplementalContentRow componentKey={componentKey} />
+      <IntroSupplementalContentRow
+        supplementalContent={supplementalContent}
+        setSupplementalContent={setSupplementalContent}
+      />
     </Grid.Row>
   );
 }
