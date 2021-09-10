@@ -20,79 +20,38 @@ import {
   contentColumnSize,
 } from "../common/constants";
 
+const mainContentMappings = {
+  Overview: OverviewContainer,
+  Home: HomeContainer,
+};
+
 const MainComponent = (mainContent, props) => {
   const { name } = mainContent;
-  switch (name) {
-    case "Overview":
-      return <OverviewContainer mainContent={mainContent} {...props} />;
-    case "Home":
-      return <HomeContainer mainContent={mainContent} {...props} />;
-    default:
-      return <HomeContainer mainContent={mainContent} {...props} />;
-  }
+  const Component = mainContentMappings[name];
+  return <Component mainContent={mainContent} {...props} />;
+};
+
+const supplementalContentMappings = {
+  "Home.Introduction": IntroSupplementalContainer,
+  "Home.Methodology": MethodologySupplementalContainer,
+  "Home.Navigation": NavigationSupplementalContainer,
+  "Home.Contact": ContactSupplementalContainer,
 };
 
 const SupplementalComponent = (supplementalContent, props) => {
   const {
     name,
-    supplementalContentSection: { name: section },
+    supplementalContentSection: { name: supplementalSectionName },
   } = supplementalContent;
 
-  switch (name) {
-    case "Home":
-      switch (section) {
-        case "Introduction":
-          return (
-            <IntroSupplementalContainer
-              supplementalContent={supplementalContent}
-              {...props}
-            />
-          );
-        case "Methodology":
-          return (
-            <MethodologySupplementalContainer
-              supplementalContent={supplementalContent}
-              {...props}
-            />
-          );
-        case "Navigation":
-          return (
-            <NavigationSupplementalContainer
-              supplementalContent={supplementalContent}
-              {...props}
-            />
-          );
-        case "Contact":
-          return (
-            <ContactSupplementalContainer
-              supplementalContent={supplementalContent}
-              {...props}
-            />
-          );
-        default:
-          return (
-            <IntroSupplementalContainer
-              supplementalContent={supplementalContent}
-              {...props}
-            />
-          );
-      }
-
-    case "Overview":
-      return (
-        <OverviewSupplementalContainer
-          supplementalContent={supplementalContent}
-          {...props}
-        />
-      );
-    default:
-      return (
-        <OverviewSupplementalContainer
-          SupplementalContent={supplementalContent}
-          {...props}
-        />
-      );
+  let Component;
+  if (name === "Overview") {
+    Component = OverviewSupplementalContainer;
+  } else {
+    Component =
+      supplementalContentMappings[`${name}.${supplementalSectionName}`];
   }
+  return <Component supplementalContent={supplementalContent} {...props} />;
 };
 
 function App() {
