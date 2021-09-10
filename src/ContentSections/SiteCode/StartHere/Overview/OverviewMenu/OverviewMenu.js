@@ -1,73 +1,46 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
+import { generateMenuItem } from "../../../../../utils/components";
 
-const IntroMenuItem = (activeItem, setSupplementalContent) => (
-  <Menu.Item
-    name="Introduction"
-    active={activeItem === "Introduction"}
-    onClick={(e, state) => {
-      setSupplementalContent({
-        show: false,
-        expand: false,
-        name: "Overview",
-        mainContentSection: {
-          name: "Introduction",
-        },
-      });
-    }}
-  />
-);
+const IntroMenuItem = (activeItem, mainContent, setMainContent) => {
+  return generateMenuItem({
+    activeItem,
+    itemName: "Introduction",
+    newStateName: "Introduction",
+    mainContent,
+    setMainContent,
+  });
+};
 
-const HtmlPrimerMenuItem = (activeItem, setSupplementalContent) => (
-  <Menu.Item
-    name="HTML Primer"
-    active={activeItem === "HTML Primer"}
-    onClick={(e, state) => {
-      setSupplementalContent({
-        show: false,
-        expand: false,
-        name: "Overview",
-        mainContentSection: {
-          name: "HtmlPrimer",
-        },
-      });
-    }}
-  />
-);
+const HtmlPrimerMenuItem = (activeItem, mainContent, setMainContent) => {
+  return generateMenuItem({
+    activeItem,
+    itemName: "HTML Primer",
+    newStateName: "HtmlPrimer",
+    mainContent,
+    setMainContent,
+  });
+};
 
-const ReactPrimerMenuItem = (activeItem, setSupplementalContent) => (
-  <Menu.Item
-    name="React Primer"
-    active={activeItem === "React Primer"}
-    onClick={(e, state) => {
-      setSupplementalContent({
-        show: false,
-        expand: false,
-        name: "Overview",
-        mainContentSection: {
-          name: "ReactPrimer",
-        },
-      });
-    }}
-  />
-);
+const ReactPrimerMenuItem = (activeItem, mainContent, setMainContent) => {
+  return generateMenuItem({
+    activeItem,
+    itemName: "React Primer",
+    newStateName: "ReactPrimer",
+    mainContent,
+    setMainContent,
+  });
+};
 
-const ResourcesMenuItem = (activeItem, setSupplementalContent) => (
-  <Menu.Item
-    name="Resources"
-    active={activeItem === "Resources"}
-    onClick={(e, state) => {
-      setSupplementalContent({
-        show: false,
-        expand: false,
-        name: "Overview",
-        mainContentSection: {
-          name: "Resources",
-        },
-      });
-    }}
-  />
-);
+const ResourcesMenuItem = (activeItem, mainContent, setMainContent) => {
+  return generateMenuItem({
+    activeItem,
+    itemName: "Resources",
+    newStateName: "Resources",
+    mainContent,
+    setMainContent,
+  });
+};
 
 const mapSectionToMenuName = (subsection) => {
   const mappings = {
@@ -80,6 +53,7 @@ const mapSectionToMenuName = (subsection) => {
 export default class OverviewMenu extends Component {
   render() {
     const {
+      mainContent,
       mainContent: {
         mainContentSection: { name },
       },
@@ -90,10 +64,10 @@ export default class OverviewMenu extends Component {
 
     return (
       <Menu fluid tabular widths={4}>
-        {IntroMenuItem(activeItem, setMainContent)}
-        {HtmlPrimerMenuItem(activeItem, setMainContent)}
-        {ReactPrimerMenuItem(activeItem, setMainContent)}
-        {ResourcesMenuItem(activeItem, setMainContent)}
+        {IntroMenuItem(activeItem, mainContent, setMainContent)}
+        {HtmlPrimerMenuItem(activeItem, mainContent, setMainContent)}
+        {ReactPrimerMenuItem(activeItem, mainContent, setMainContent)}
+        {ResourcesMenuItem(activeItem, mainContent, setMainContent)}
       </Menu>
     );
   }
