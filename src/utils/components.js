@@ -1,4 +1,4 @@
-import { Menu } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 
 const calculateMainContentHeight = (showSupplementalContent) => {
   if (window.screen.width <= 650 && showSupplementalContent) return "50vh";
@@ -14,12 +14,18 @@ const generateMenuItem = ({
   newStateName,
   content,
   setContent,
+  style = {},
+  additionalProps = {},
+  componentType = "Menu",
   type = "main",
 } = {}) => {
   const subsection =
     type === "main" ? "mainContentSection" : "supplementalContentSection";
+  const Component = componentType === "Menu" ? Menu : Dropdown;
+
   return (
-    <Menu.Item
+    <Component.Item
+      style={style}
       name={itemName}
       active={activeItem === itemName}
       onClick={() =>
@@ -31,6 +37,7 @@ const generateMenuItem = ({
           },
         })
       }
+      {...additionalProps}
     />
   );
 };
