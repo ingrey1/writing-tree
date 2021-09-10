@@ -24,8 +24,7 @@ export default class MobileMainMenu extends Component {
             onClick={(e, state) => {
               this.props.setMainContent({
                 name: "Home",
-                mainContentSection: { name: "Home.Introduction" },
-                showTopMenu: true,
+                mainContentSection: { name: "Introduction" },
               });
               this.handleItemClick(e, state);
             }}
@@ -71,7 +70,6 @@ export default class MobileMainMenu extends Component {
                   this.props.setMainContent({
                     name: "Resources",
                     mainContentSection: { name: "References" },
-                    showTopMenu: false,
                   });
                   this.props.setSupplementalContent({
                     name: "Resources",
