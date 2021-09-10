@@ -1,5 +1,5 @@
 import { Grid } from "semantic-ui-react";
-import OverviewMenu from "./OverviewMenu";
+import OverviewMenu from "./OverviewMenu/OverviewMenu";
 import OverviewContentRow from "./OverviewContentRow";
 
 export default function OverviewContainer({
@@ -8,6 +8,7 @@ export default function OverviewContainer({
   mainContent,
   setMainContent,
 }) {
+  
   return (
     <Grid.Row>
       <OverviewMenu

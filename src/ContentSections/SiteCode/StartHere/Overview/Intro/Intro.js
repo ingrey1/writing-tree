@@ -18,8 +18,7 @@ export default function Intro() {
       <p>
         Before tackling the "React Primer" tab, please make sure you have a
         basic understanding of HTML, CSS, and Javascript. If you're not ready
-        yet, check out the "Resources" tab for some resources to help you
-        prepare.
+        yet, check out the "HTML Primer" or "Resources" tabs.
       </p>
     </Container>
   );

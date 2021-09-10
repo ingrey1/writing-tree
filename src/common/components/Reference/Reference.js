@@ -9,7 +9,7 @@ export default function Reference({ data, showContext, showBorder }) {
     const { author, year, title, edition, publisher } = data;
     citation = (
       <>
-        {author}. ({year}). <i>{title}</i> ({edition} ed.). {publisher}
+        {author}. ({year}). <i>{title}</i> ({edition} ed.). {publisher}.
       </>
     );
   }
