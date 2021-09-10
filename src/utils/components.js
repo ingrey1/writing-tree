@@ -7,25 +7,26 @@ const calculateMainContentHeight = (showSupplementalContent) => {
   else return "100vh";
 };
 
-// use to generate menu item for main content
+// use to generate menu item for main/supplemental content
 const generateMenuItem = ({
   activeItem,
   itemName,
   newStateName,
-  mainContent,
-  setMainContent,
-}) => {
+  content,
+  setContent,
+  type = "main",
+} = {}) => {
+  const subsection =
+    type === "main" ? "mainContentSection" : "supplementalContentSection";
   return (
     <Menu.Item
       name={itemName}
       active={activeItem === itemName}
       onClick={() =>
-        setMainContent({
-          ...mainContent,
-          show: false,
-          expand: false,
-          mainContentSection: {
-            ...mainContent.mainContentSection,
+        setContent({
+          ...content,
+          [subsection]: {
+            ...content[subsection],
             name: newStateName,
           },
         })

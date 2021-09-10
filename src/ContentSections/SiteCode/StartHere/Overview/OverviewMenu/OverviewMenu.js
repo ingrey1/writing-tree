@@ -7,8 +7,8 @@ const IntroMenuItem = (activeItem, mainContent, setMainContent) => {
     activeItem,
     itemName: "Introduction",
     newStateName: "Introduction",
-    mainContent,
-    setMainContent,
+    content: mainContent,
+    setContent: setMainContent,
   });
 };
 
@@ -17,8 +17,8 @@ const HtmlPrimerMenuItem = (activeItem, mainContent, setMainContent) => {
     activeItem,
     itemName: "HTML Primer",
     newStateName: "HtmlPrimer",
-    mainContent,
-    setMainContent,
+    content: mainContent,
+    setContent: setMainContent,
   });
 };
 
@@ -27,8 +27,8 @@ const ReactPrimerMenuItem = (activeItem, mainContent, setMainContent) => {
     activeItem,
     itemName: "React Primer",
     newStateName: "ReactPrimer",
-    mainContent,
-    setMainContent,
+    content: mainContent,
+    setContent: setMainContent,
   });
 };
 
@@ -37,8 +37,8 @@ const ResourcesMenuItem = (activeItem, mainContent, setMainContent) => {
     activeItem,
     itemName: "Resources",
     newStateName: "Resources",
-    mainContent,
-    setMainContent,
+    content: mainContent,
+    setContent: setMainContent,
   });
 };
 
