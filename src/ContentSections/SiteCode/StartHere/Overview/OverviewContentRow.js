@@ -4,25 +4,19 @@ import HtmlPrimer from "./HtmlPrimer/HtmlPrimer";
 import Resources from "./Resources/Resources";
 import Intro from "./Intro/Intro";
 
+const mappings = {
+  Introduction: Intro,
+  ReactPrimer: ReactPrimer,
+  HtmlPrimer: HtmlPrimer,
+  Resources: Resources,
+};
+
 const Component = (mainContent, setMainContent) => {
   const {
     mainContentSection: { name },
   } = mainContent;
-  if (name === "Introduction") {
-    return <Intro mainContent={mainContent} setMainContent={setMainContent} />;
-  } else if (name === "ReactPrimer") {
-    return (
-      <ReactPrimer mainContent={mainContent} setMainContent={setMainContent} />
-    );
-  } else if (name === "Resources") {
-    return (
-      <Resources mainContent={mainContent} setMainContent={setMainContent} />
-    );
-  } else {
-    return (
-      <HtmlPrimer mainContent={mainContent} setMainContent={setMainContent} />
-    );
-  }
+  const Comp = mappings[name];
+  return <Comp mainContent={mainContent} setMainContent={setMainContent} />;
 };
 
 export default function OverviewContentRow({ mainContent, setMainContent }) {
