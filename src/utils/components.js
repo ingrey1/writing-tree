@@ -42,4 +42,24 @@ const generateMenuItem = ({
   );
 };
 
-export { calculateMainContentHeight, generateMenuItem };
+const generateMenuItems = (
+  {activeItem,
+  itemNames,
+  newStateNames,
+  mainContent,
+  setMainContent}
+) => {
+  return itemNames.map((item, index) => {
+    return generateMenuItem({
+      activeItem: activeItem,
+      itemName: item,
+      newStateName: newStateNames[index],
+      content: mainContent,
+      setContent: setMainContent,
+    });
+  });
+};
+
+
+
+export { calculateMainContentHeight, generateMenuItem, generateMenuItems };
