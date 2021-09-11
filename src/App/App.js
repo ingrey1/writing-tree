@@ -3,6 +3,7 @@ import { Grid } from "semantic-ui-react";
 import "./App.css";
 import OverviewContainer from "../ContentSections/SiteCode/StartHere/Overview/OverviewContainer";
 import HomeContainer from "../ContentSections/Home/HomeContainer";
+import ResourcesContainer from "../ContentSections/Resources/ResourcesContainer";
 import IntroSupplementalContainer from "../ContentSections/Home/Intro/SupplementalContent/IntroSupplementalContainer";
 import MethodologySupplementalContainer from "../ContentSections/Home/Methodology/SupplementalContent/MethodologySupplementalContainer";
 import NavigationSupplementalContainer from "../ContentSections/Home/Navigation/SupplementalContent/NavigationSupplementalContainer";
@@ -23,6 +24,7 @@ import {
 const mainContentMappings = {
   Overview: OverviewContainer,
   Home: HomeContainer,
+  Resources: ResourcesContainer
 };
 
 const MainComponent = (mainContent, props) => {

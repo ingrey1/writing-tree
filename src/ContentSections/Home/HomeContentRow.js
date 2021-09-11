@@ -4,7 +4,7 @@ import Navigation from "./Navigation/Navigation";
 import Contact from "./Contact/Contact";
 import Methodology from "./Methodology/Methodology";
 
-export default function OverviewContentRow({
+export default function HomeContentRow({
   mainContent,
   setMainContent,
   supplementalContent,

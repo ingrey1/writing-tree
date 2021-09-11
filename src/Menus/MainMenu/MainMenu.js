@@ -113,23 +113,17 @@ export default class MainMenu extends Component {
               Glossary
             </Menu.Item>
 
-            <Menu.Item
-              name="references"
-              active={activeItem === "references"}
-              onClick={() => {
-                setMainContent({
-                  name: "Resources",
-                  mainContentSection: { name: "References" },
-                  showTopMenu: false,
-                });
-                setSupplementalContent({
-                  show: false,
-                  expand: false,
-                });
-              }}
-            >
-              References
-            </Menu.Item>
+            {generateMenuItem({
+              activeItem,
+              itemName: "Resources",
+              newInnerContents: { name: "References" },
+              newOuterContents: { name: "Resources" },
+              setContent: setMainContent,
+              content: mainContent,
+              supplementalContent,
+              setSupplementalContent,
+              newSupplementalContentState: { show: false },
+            })}
           </Menu.Menu>
         </Menu.Item>
       </Menu>

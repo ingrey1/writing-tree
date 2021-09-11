@@ -1,6 +1,6 @@
 import { Container, Header } from "semantic-ui-react";
-import Reference from "../common/components/Reference/Reference";
-import { home } from "../common/data/references";
+import Reference from "../../../common/components/Reference/Reference";
+import { home } from "../../../common/data/references";
 
 export default function References() {
   return (
