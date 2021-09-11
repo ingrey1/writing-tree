@@ -5,7 +5,6 @@ export default function IconButtonExpand({
   iconName,
   iconSize,
   iconColor,
-  buttonColor,
   buttonSize,
   className,
   inverted,
@@ -14,7 +13,6 @@ export default function IconButtonExpand({
     <Button
       inverted={inverted}
       className={className}
-      color={buttonColor || "white"}
       size={buttonSize || "large"}
     >
       <Icon
@@ -25,7 +23,7 @@ export default function IconButtonExpand({
           })
         }
         color={iconColor || "teal"}
-        name={iconName}
+        name={iconName || "expand"}
         size={iconSize || "large"}
       ></Icon>
     </Button>

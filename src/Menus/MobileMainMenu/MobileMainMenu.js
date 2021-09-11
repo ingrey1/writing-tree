@@ -18,7 +18,6 @@ export default class MobileMainMenu extends Component {
       <Dropdown icon="bars" style={dropDownstyle}>
         <Dropdown.Menu vertical>
           <Dropdown.Item
-            name="Home"
             text="Home"
             active={activeItem === "Home"}
             onClick={(e, state) => {
@@ -30,11 +29,25 @@ export default class MobileMainMenu extends Component {
             }}
           ></Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Menu item text="Site Code">
-            <Dropdown.Item>Start Here</Dropdown.Item>
-            <Dropdown.Item>Frontend</Dropdown.Item>
-            <Dropdown.Item>Backend</Dropdown.Item>
-          </Dropdown.Menu>
+          <Dropdown item text="Site Code">
+            <Dropdown.Menu>
+              <Dropdown.Item
+                text="Overview"
+                active={activeItem === "Overview"}
+                onClick={(e, state) => {
+                  this.props.setMainContent({
+                    name: "Overview",
+                    mainContentSection: { name: "Introduction" },
+                  });
+                  this.handleItemClick(e, state);
+                }}
+              >
+                Overview
+              </Dropdown.Item>
+              <Dropdown.Item>Frontend</Dropdown.Item>
+              <Dropdown.Item>Backend</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           <Dropdown item text="Web APIs">
             <Dropdown.Menu>

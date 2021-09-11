@@ -8,12 +8,13 @@ import IntroSupplementalContainer from "../ContentSections/Home/Intro/Supplement
 import MethodologySupplementalContainer from "../ContentSections/Home/Methodology/SupplementalContent/MethodologySupplementalContainer";
 import NavigationSupplementalContainer from "../ContentSections/Home/Navigation/SupplementalContent/NavigationSupplementalContainer";
 import ContactSupplementalContainer from "../ContentSections/Home/Contact/SupplementalContent/ContactSupplementalContainer";
-import OverviewSupplementalContainer from "../ContentSections/SiteCode/StartHere/Overview/Intro/SupplementalContent/IntroSupplementalContainer";
 import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 import MainMenuColumn from "../layout/MainMenuColumn";
 import ActionsColumn from "../layout/ActionsColumn";
 import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
+import IconButtonExpand from "../common/components/IconButtonExpand";
+
 import { calculateMainContentHeight } from "../utils/components";
 import {
   isLargeScreen,
@@ -92,7 +93,7 @@ function App() {
             style={{
               height: supplementalContent.show
                 ? supplementalContent.expand
-                  ? "5vh"
+                  ? "0vh"
                   : "60vh"
                 : "100vh",
               overflowX: "hidden",
@@ -107,7 +108,7 @@ function App() {
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
             >
-              {window.screen.width <= 650 && (
+              {window.screen.width >= 650 && (
                 <Grid.Column
                   width={3}
                   style={{ overflow: "auto", height: "10vh" }}
@@ -133,12 +134,21 @@ function App() {
               })}
             </Grid.Column>
           </Grid.Row>
-          {supplementalContent.show &&
-            SupplementalComponent(supplementalContent, {
-              setSupplementalContent,
-              mainContent,
-              setMainContent,
-            })}
+          {supplementalContent.show && (
+            <div>
+              <IconButtonExpand
+                inverted
+                iconName="expand"
+                setSupplementalContent={setSupplementalContent}
+                supplementalContent={supplementalContent}
+              />
+              {SupplementalComponent(supplementalContent, {
+                setSupplementalContent,
+                mainContent,
+                setMainContent,
+              })}
+            </div>
+          )}
         </Grid.Column>
         {isLargeScreen && (
           <ActionsColumn
