@@ -16,7 +16,7 @@ const githubHomeNavigationUrl =
   "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Navigation";
 // Overview
 const githubOverviewIntroUrl =
-  "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/SiteCode/StartHere/Overview";
+  "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/SiteCode/Overview";
 
 // content links
 const goodCaloriesBadCaloriesOnAmazon =

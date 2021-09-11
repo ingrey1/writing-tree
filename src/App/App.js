@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Grid } from "semantic-ui-react";
 import "./App.css";
-import OverviewContainer from "../ContentSections/SiteCode/StartHere/Overview/OverviewContainer";
+import OverviewContainer from "../ContentSections/SiteCode/Overview/OverviewContainer";
 import HomeContainer from "../ContentSections/Home/HomeContainer";
 import ResourcesContainer from "../ContentSections/Resources/ResourcesContainer";
 import IntroSupplementalContainer from "../ContentSections/Home/Intro/SupplementalContent/IntroSupplementalContainer";

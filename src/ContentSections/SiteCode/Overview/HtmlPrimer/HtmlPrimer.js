@@ -1,11 +1,11 @@
 import { Container, Header } from "semantic-ui-react";
-import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
+import Paragraph from "../../../../common/components/Paragraph/Paragraph";
 import { paragraphs } from "./text";
 
-export default function Resources() {
+export default function HtmlPrimer() {
   return (
     <Container text>
-      <p>resources</p>
+      <p>HTML Primer</p>
     </Container>
   );
 }

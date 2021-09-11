@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
-import { generateMenuItems } from "../../../../../utils/components";
+import { generateMenuItems } from "../../../../utils/components";
 
 const itemNames = ["Introduction", "HTML Primer", "React Primer", "Resources"];
 const newInnerContents = [
