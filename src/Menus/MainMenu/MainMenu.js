@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
+import { generateMenuItem } from "../../utils/components";
 
 export default class MainMenu extends Component {
-  state = {};
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { activeItem } = this.state;
+    const {
+      mainContent,
+      mainContent: { name },
+      supplementalContent,
+      setMainContent,
+      setSupplementalContent,
+    } = this.props;
+    const activeItem = name;
 
     return (
       <Menu
@@ -18,64 +23,35 @@ export default class MainMenu extends Component {
         }}
       >
         <Menu.Menu>
-          <Menu.Item
-            text="Home"
-            name="Home"
-            active={activeItem === "Home"}
-            onClick={(e, state) => {
-              this.props.setMainContent({
-                name: "Home",
-                mainContentSection: { name: "Introduction" },
-                showTopMenu: true,
-              });
-              this.props.setSupplementalContent({
-                name: "Home",
-                supplementalContentSection: {
-                  name: "Introduction",
-                  subsection: "Code",
-                },
-                show: false,
-                expand: false,
-              });
-              this.handleItemClick(e, state);
-            }}
-          />
+          {generateMenuItem({
+            activeItem,
+            itemName: "Home",
+            newInnerContents: { name: "Introduction" },
+            newOuterContents: { name: "Home" },
+            setContent: setMainContent,
+            content: mainContent,
+            supplementalContent,
+            setSupplementalContent,
+            newSupplementalContentState: { show: false },
+          })}
         </Menu.Menu>
 
         <Menu.Item>
           <Menu.Header>Site Code</Menu.Header>
           <Menu.Menu>
-            <Menu.Item
-              name="start here"
-              active={activeItem === "start here"}
-              onClick={(e, state) => {
-                this.props.setMainContent({
-                  name: "Overview",
-                  mainContentSection: { name: "Introduction" },
-                  showTopMenu: false,
-                });
-                this.props.setSupplementalContent({
-                  name: "Overview",
-                  supplementalContentSection: {
-                    name: "Introduction",
-                    subsection: "Code",
-                  },
-                  show: false,
-                  expand: false,
-                });
-                this.handleItemClick(e, state);
-              }}
-            />
-            <Menu.Item
-              name="frontend"
-              active={activeItem === "frontend"}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name="backend"
-              active={activeItem === "backend"}
-              onClick={this.handleItemClick}
-            />
+            {generateMenuItem({
+              activeItem,
+              itemName: "Overview",
+              newInnerContents: { name: "Introduction" },
+              newOuterContents: { name: "Overview" },
+              setContent: setMainContent,
+              content: mainContent,
+              supplementalContent,
+              setSupplementalContent,
+              newSupplementalContentState: { show: false },
+            })}
+            <Menu.Item name="frontend" active={activeItem === "frontend"} />
+            <Menu.Item name="backend" active={activeItem === "backend"} />
           </Menu.Menu>
         </Menu.Item>
 
@@ -86,23 +62,10 @@ export default class MainMenu extends Component {
             <Menu.Item
               name="introduction"
               active={activeItem === "introduction"}
-              onClick={this.handleItemClick}
             />
-            <Menu.Item
-              name="open api"
-              active={activeItem === "open api"}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name="tutorials"
-              active={activeItem === "tutorials"}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name="examples"
-              active={activeItem === "examples"}
-              onClick={this.handleItemClick}
-            />
+            <Menu.Item name="open api" active={activeItem === "open api"} />
+            <Menu.Item name="tutorials" active={activeItem === "tutorials"} />
+            <Menu.Item name="examples" active={activeItem === "examples"} />
           </Menu.Menu>
         </Menu.Item>
 
@@ -113,18 +76,9 @@ export default class MainMenu extends Component {
             <Menu.Item
               name="introduction"
               active={activeItem === "introduction"}
-              onClick={this.handleItemClick}
             />
-            <Menu.Item
-              name="tutorials"
-              active={activeItem === "tutorials"}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name="examples"
-              active={activeItem === "examples"}
-              onClick={this.handleItemClick}
-            />
+            <Menu.Item name="tutorials" active={activeItem === "tutorials"} />
+            <Menu.Item name="examples" active={activeItem === "examples"} />
           </Menu.Menu>
         </Menu.Item>
 
@@ -134,16 +88,11 @@ export default class MainMenu extends Component {
             <Menu.Item
               name="microservices"
               active={activeItem === "microservices"}
-              onClick={this.handleItemClick}
             >
               Microservices
             </Menu.Item>
 
-            <Menu.Item
-              name="data flows"
-              active={activeItem === "data flows"}
-              onClick={this.handleItemClick}
-            >
+            <Menu.Item name="data flows" active={activeItem === "data flows"}>
               Data Flows
             </Menu.Item>
           </Menu.Menu>
@@ -152,49 +101,31 @@ export default class MainMenu extends Component {
         <Menu.Item>
           <Menu.Header>Resources</Menu.Header>
           <Menu.Menu>
-            <Menu.Item
-              name="blog"
-              active={activeItem === "blog"}
-              onClick={this.handleItemClick}
-            >
+            <Menu.Item name="blog" active={activeItem === "blog"}>
               Blog
             </Menu.Item>
 
-            <Menu.Item
-              name="articles"
-              active={activeItem === "articles"}
-              onClick={this.handleItemClick}
-            >
+            <Menu.Item name="articles" active={activeItem === "articles"}>
               Articles And Books
             </Menu.Item>
 
-            <Menu.Item
-              name="glossary"
-              active={activeItem === "glossary"}
-              onClick={this.handleItemClick}
-            >
+            <Menu.Item name="glossary" active={activeItem === "glossary"}>
               Glossary
             </Menu.Item>
 
             <Menu.Item
               name="references"
               active={activeItem === "references"}
-              onClick={(e, state) => {
-                this.props.setMainContent({
+              onClick={() => {
+                setMainContent({
                   name: "Resources",
                   mainContentSection: { name: "References" },
                   showTopMenu: false,
                 });
-                this.props.setSupplementalContent({
-                  name: "Resources",
-                  supplementalContentSection: {
-                    name: "References",
-                    subsection: "Code",
-                  },
+                setSupplementalContent({
                   show: false,
                   expand: false,
                 });
-                this.handleItemClick(e, state);
               }}
             >
               References

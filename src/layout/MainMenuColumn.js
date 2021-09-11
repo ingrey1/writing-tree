@@ -3,6 +3,8 @@ import MainMenu from "../Menus/MainMenu/MainMenu";
 import WritingTreeHeader from "../common/components/WritingTreeHeader/WritingTreeHeader";
 
 export default function MainMenuColumn({
+  mainContent,
+  supplementalContent,
   setMainContent,
   setSupplementalContent,
 }) {
@@ -13,6 +15,8 @@ export default function MainMenuColumn({
       </Grid.Row>
       <Grid.Row style={{ height: "80%" }}>
         <MainMenu
+          mainContent={mainContent}
+          supplementalContent={supplementalContent}
           setMainContent={setMainContent}
           setSupplementalContent={setSupplementalContent}
         />

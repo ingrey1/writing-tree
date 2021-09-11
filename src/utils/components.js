@@ -11,9 +11,13 @@ const calculateMainContentHeight = (showSupplementalContent) => {
 const generateMenuItem = ({
   activeItem,
   itemName,
-  newStateName,
   content,
+  newOuterContents = {},
+  newInnerContents = {},
   setContent,
+  supplementalContent,
+  setSupplementalContent,
+  newSupplementalContentState,
   style = {},
   additionalProps = {},
   componentType = "Menu",
@@ -22,44 +26,58 @@ const generateMenuItem = ({
   const subsection =
     type === "main" ? "mainContentSection" : "supplementalContentSection";
   const Component = componentType === "Menu" ? Menu : Dropdown;
-
+  console.info("newOuterContent", newOuterContents);
+  console.info("newInnerContent", newInnerContents);
+  console.info(".....");
   return (
     <Component.Item
+      key={Math.random()}
       style={style}
       name={itemName}
       active={activeItem === itemName}
-      onClick={() =>
+      onClick={() => {
+        if (supplementalContent) {
+          setSupplementalContent({
+            ...supplementalContent,
+            ...newSupplementalContentState,
+          });
+        }
         setContent({
           ...content,
+          ...newOuterContents,
           [subsection]: {
             ...content[subsection],
-            name: newStateName,
+            ...newInnerContents,
           },
-        })
-      }
+        });
+      }}
       {...additionalProps}
     />
   );
 };
 
-const generateMenuItems = (
-  {activeItem,
+const generateMenuItems = ({
+  activeItem,
   itemNames,
-  newStateNames,
+  newInnerContents,
+  newOuterContents,
   mainContent,
-  setMainContent}
-) => {
+  setMainContent,
+}) => {
   return itemNames.map((item, index) => {
     return generateMenuItem({
       activeItem: activeItem,
       itemName: item,
-      newStateName: newStateNames[index],
+      newInnerContents: Array.isArray(newInnerContents)
+        ? newInnerContents[index]
+        : newInnerContents,
+      newOuterContents: Array.isArray(newOuterContents)
+        ? newOuterContents[index]
+        : newOuterContents,
       content: mainContent,
       setContent: setMainContent,
     });
   });
 };
-
-
 
 export { calculateMainContentHeight, generateMenuItem, generateMenuItems };

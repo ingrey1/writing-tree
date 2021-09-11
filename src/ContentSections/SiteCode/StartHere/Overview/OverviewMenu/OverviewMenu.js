@@ -3,12 +3,14 @@ import { Menu } from "semantic-ui-react";
 import { generateMenuItems } from "../../../../../utils/components";
 
 const itemNames = ["Introduction", "HTML Primer", "React Primer", "Resources"];
-const newStateNames = [
+const newInnerContents = [
   "Introduction",
   "HtmlPrimer",
   "ReactPrimer",
   "Resources",
-];
+].map((name) => {
+  return { name };
+});
 
 const mapSectionToMenuName = (subsection) => {
   const mappings = {
@@ -35,7 +37,8 @@ export default class OverviewMenu extends Component {
         {generateMenuItems({
           activeItem,
           itemNames,
-          newStateNames,
+          newInnerContents,
+          newOuterContents: { name: "Overview" },
           mainContent,
           setMainContent,
         })}
