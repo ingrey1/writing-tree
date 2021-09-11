@@ -11,20 +11,18 @@ const calculateMainContentHeight = (showSupplementalContent) => {
 const generateMenuItem = ({
   activeItem,
   itemName,
-  content,
   newOuterContents = {},
   newInnerContents = {},
+  content,
   setContent,
   supplementalContent,
   setSupplementalContent,
-  newSupplementalContentState,
+  newSupplementalOuterContents = {},
+  newSupplementalInnerContents = {},
   style = {},
   additionalProps = {},
   componentType = "Menu",
-  type = "main",
 } = {}) => {
-  const subsection =
-    type === "main" ? "mainContentSection" : "supplementalContentSection";
   const Component = componentType === "Menu" ? Menu : Dropdown;
   console.info("newOuterContent", newOuterContents);
   console.info("newInnerContent", newInnerContents);
@@ -39,14 +37,18 @@ const generateMenuItem = ({
         if (supplementalContent) {
           setSupplementalContent({
             ...supplementalContent,
-            ...newSupplementalContentState,
+            ...newSupplementalOuterContents,
+            supplementalContentSection: {
+              ...supplementalContent.supplementalContentSection,
+              ...newSupplementalInnerContents,
+            },
           });
         }
         setContent({
           ...content,
           ...newOuterContents,
-          [subsection]: {
-            ...content[subsection],
+          mainContentSection: {
+            ...content.mainContentSection,
             ...newInnerContents,
           },
         });
@@ -63,6 +65,10 @@ const generateMenuItems = ({
   newOuterContents,
   mainContent,
   setMainContent,
+  supplementalContent,
+  setSupplementalContent,
+  newSupplementalOuterContents = {},
+  newSupplementalInnerContents = {},
 }) => {
   return itemNames.map((item, index) => {
     return generateMenuItem({
@@ -76,6 +82,14 @@ const generateMenuItems = ({
         : newOuterContents,
       content: mainContent,
       setContent: setMainContent,
+      supplementalContent,
+      setSupplementalContent,
+      newSupplementalInnerContents: Array.isArray(newSupplementalInnerContents)
+        ? newSupplementalInnerContents[index]
+        : newSupplementalInnerContents,
+      newSupplementalOuterContents: Array.isArray(newSupplementalOuterContents)
+        ? newSupplementalOuterContents[index]
+        : newSupplementalOuterContents,
     });
   });
 };

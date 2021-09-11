@@ -32,7 +32,7 @@ export default class MainMenu extends Component {
             content: mainContent,
             supplementalContent,
             setSupplementalContent,
-            newSupplementalContentState: { show: false },
+            newSupplementalOuterContents: { show: false },
           })}
         </Menu.Menu>
 
@@ -48,7 +48,7 @@ export default class MainMenu extends Component {
               content: mainContent,
               supplementalContent,
               setSupplementalContent,
-              newSupplementalContentState: { show: false },
+              newSupplementalOuterContents: { show: false },
             })}
             <Menu.Item name="frontend" active={activeItem === "frontend"} />
             <Menu.Item name="backend" active={activeItem === "backend"} />
@@ -122,7 +122,7 @@ export default class MainMenu extends Component {
               content: mainContent,
               supplementalContent,
               setSupplementalContent,
-              newSupplementalContentState: { show: false },
+              newSupplementalOuterContents: { show: false },
             })}
           </Menu.Menu>
         </Menu.Item>
