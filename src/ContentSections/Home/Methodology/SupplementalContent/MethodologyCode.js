@@ -59,10 +59,21 @@ function Methodology({ supplementalContent, setSupplementalContent }) {
 export default Methodology;
 `;
 
-const methodologySupplementalContainerCode = `import { Grid } from "semantic-ui-react";
-import MethodologyMenu from "./MethodologyMenu";
+const methodologySupplementalContentRowCode = `import { Grid } from "semantic-ui-react";
 import MethodologyCode from "./MethodologyCode";
 import MethodologyFunFacts from "./MethodologyFunFacts";
+export default function MethodologyContentRow({ componentKey }) {
+  return (
+    <Grid.Row>
+      {componentKey === "Code" ? <MethodologyCode /> : <MethodologyFunFacts />}
+    </Grid.Row>
+  );
+}
+`;
+
+const methodologySupplementalContainerCode = `import { Grid } from "semantic-ui-react";
+import MethodologyMenu from "./MethodologyMenu";
+import MethodologySupplementalContentRow from "./MethodologySupplementalContentRow";
 
 export default function MethodologySupplementalContainer({
   supplementalContent,
@@ -76,15 +87,10 @@ export default function MethodologySupplementalContainer({
         <MethodologyMenu
           methodologyMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
+          supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <Grid.Row>
-        {componentKey === "Code" ? (
-          <MethodologyCode />
-        ) : (
-          <MethodologyFunFacts />
-        )}
-      </Grid.Row>
+      <MethodologySupplementalContentRow componentKey={componentKey} />
     </Grid.Row>
   );
 }
@@ -92,41 +98,38 @@ export default function MethodologySupplementalContainer({
 
 const methodologyMenuCode = `import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
+import { generateMenuItems } from "../../../../utils/components";
+
+const itemNames = ["Code", "FunFacts"];
+const newSupplementalInnerContents = itemNames.map((name) => {
+  return { name: "Methodology", subsection: name };
+});
 
 export default class MethodologyMenu extends Component {
   render() {
-    const activeItem = this.props.methodologyMenuSelection;
+    const {
+      supplementalContent,
+      supplementalContent: {
+        supplementalContentSection: { subsection },
+      },
+      setSupplementalContent,
+    } = this.props;
+
+    const activeItem = subsection;
 
     return (
       <Menu fluid tabular widths={2}>
-        <Menu.Item
-          name="FunFacts"
-          active={activeItem === "FunFacts"}
-          onClick={(e, state) => {
-            this.props.setSupplementalContent({
-              show: true,
-              name: "Home.Methodology",
-              supplementalContentSection: {
-                name: "Home.Methodology",
-                subsection: "FunFacts",
-              },
-            });
-          }}
-        />
-        <Menu.Item
-          name="Code"
-          active={activeItem === "Code"}
-          onClick={(e, state) => {
-            this.props.setSupplementalContent({
-              show: true,
-              name: "Home.Methodology",
-              supplementalContentSection: {
-                name: "Home.Methodology",
-                subsection: "Code",
-              },
-            });
-          }}
-        />
+        {generateMenuItems({
+          activeItem,
+          itemNames,
+          supplementalContent,
+          setSupplementalContent,
+          newSupplementalInnerContents: newSupplementalInnerContents,
+          newSupplementalOuterContents: {
+            show: true,
+            name: "Home",
+          },
+        })}
       </Menu>
     );
   }
@@ -135,7 +138,7 @@ export default class MethodologyMenu extends Component {
 
 const methodologyFunFactsCode = `import { Container, Header, Message } from "semantic-ui-react";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
-import Reference from "../../../../common/components/Reference";
+import Reference from "../../../../common/components/Reference/Reference";
 import Paragraph from "../../../../common/components/Paragraph/Paragraph";
 import { paragraphs } from "./funFactsText";
 import { home } from "../../../../common/data/references";
@@ -148,9 +151,7 @@ import { generateArrayFromRange } from "../../../../utils/general";
 
 const {
   methodology: {
-    funFacts: {
-      calories,
-    },
+    funFacts: { calories },
   },
 } = home;
 
@@ -234,141 +235,31 @@ export default function FunFacts() {
 }
 `;
 
-const methodologyCodeCode = `export default function MethodologyCode() {
-  return (
-    <Segment style={{ overflow: "auto", maxHeight: 200 }}>
-      <Grid.Row>
-        <Header as="h2">
-          File Structure{" "}
-          <IconButtonLink
-            size="large"
-            iconName="github"
-            url={githubHomeMethodologyUrl}
-          />
-        </Header>
-        <MethodologyFolderTree />
-        <Header as="h2">Simplified Component Hierarchy</Header>
-        <MethodologyComponentTree />
-        <Header as="h2">Main Content Code</Header>
+const methodologyFolderTreeCode = `import FolderTree from "react-folder-tree";
+import "react-folder-tree/dist/style.css";
 
-        <Header as="h3">Methodology.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyCode}
-        />
-      </Grid.Row>
-      <Grid.Row>
-        <Header as="h2">Supplemental Content Code</Header>
-        <Header as="h3">MethodologySupplementalContainer.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologySupplementalContainerCode}
-        />
-        <Header as="h3">MethodologyMenu.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyMenuCode}
-        />
-        <Header as="h3">MethodologyFunFacts.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyFunFactsCode}
-        />
-        <Header as="h3">MethodologyCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyCodeCode}
-        />
-        <Header as="h3">MethodologyFolderTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyFolderTreeCode}
-        />
-        <Header as="h3">MethodologyComponentTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyComponentTreeCode}
-        />
-      </Grid.Row>
-    </Segment>
-  );
-}
-`;
-
-const methodologyFolderTreeCode = `export default function MethodologyCode() {
-  return (
-    <Segment style={{ overflow: "auto", maxHeight: 200 }}>
-      <Grid.Row>
-        <Header as="h2">
-          File Structure{" "}
-          <IconButtonLink
-            size="large"
-            iconName="github"
-            url={githubHomeMethodologyUrl}
-          />
-        </Header>
-        <MethodologyFolderTree />
-        <Header as="h2">Simplified Component Hierarchy</Header>
-        <MethodologyComponentTree />
-        <Header as="h2">Main Content Code</Header>
-
-        <Header as="h3">Methodology.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyCode}
-        />
-      </Grid.Row>
-      <Grid.Row>
-        <Header as="h2">Supplemental Content Code</Header>
-        <Header as="h3">MethodologySupplementalContainer.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologySupplementalContainerCode}
-        />
-        <Header as="h3">MethodologyMenu.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyMenuCode}
-        />
-        <Header as="h3">MethodologyFunFacts.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyFunFactsCode}
-        />
-        <Header as="h3">MethodologyCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyCodeCode}
-        />
-        <Header as="h3">MethodologyFolderTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyFolderTreeCode}
-        />
-        <Header as="h3">MethodologyComponentTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={methodologyComponentTreeCode}
-        />
-      </Grid.Row>
-    </Segment>
-  );
-}
-
+const relativeFolderStructure = {
+  name: "Methodology",
+  isOpen: false,
+  children: [
+    {
+      name: "SupplementalContent",
+      isOpen: false,
+      children: [
+        { name: "MethodologyCode.js" },
+        { name: "MethodologyFolderTree.js" },
+        { name: "MethodologyComponentTree.js" },
+        { name: "funFactsText.js" },
+        { name: "MethodologyFunFacts.js" },
+        { name: "MethodologyMenu.js" },
+        { name: "MethodologySupplementalContainer.js" },
+      ],
+    },
+    { name: "Methodology.css" },
+    { name: "Methodology.js" },
+    { name: "text.js" },
+  ],
+};
 
 const MethodologyFolderTree = () => {
   return (
@@ -424,9 +315,9 @@ const MethodologyComponentTree = () => {
 export default MethodologyComponentTree;
 `;
 
-export default function MethodologyCode() {
+const methodologyCodeCode = `export default function MethodologyCode() {
   return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
       <Grid.Row>
         <Header as="h2">
           File Structure{" "}
@@ -450,6 +341,86 @@ export default function MethodologyCode() {
       </Grid.Row>
       <Grid.Row>
         <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">MethodologySupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologySupplementalContentRowCode}
+        />
+        <Header as="h3">MethodologySupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologySupplementalContainerCode}
+        />
+        <Header as="h3">MethodologyMenu.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyMenuCode}
+        />
+        <Header as="h3">MethodologyFunFacts.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFunFactsCode}
+        />
+        <Header as="h3">MethodologyCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCodeCode}
+        />
+        <Header as="h3">MethodologyFolderTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyFolderTreeCode}
+        />
+        <Header as="h3">MethodologyComponentTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyComponentTreeCode}
+        />
+      </Grid.Row>
+    </Segment>
+  );
+}
+`;
+
+export default function MethodologyCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
+      <Grid.Row>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeMethodologyUrl}
+          />
+        </Header>
+        <MethodologyFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <MethodologyComponentTree />
+        <Header as="h2">Main Content Code</Header>
+
+        <Header as="h3">Methodology.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologyCode}
+        />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">MethodologySupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={methodologySupplementalContentRowCode}
+        />
         <Header as="h3">MethodologySupplementalContainer.js</Header>
         <CodeBlock
           language="jsx"

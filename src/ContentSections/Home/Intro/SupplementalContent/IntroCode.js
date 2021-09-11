@@ -23,62 +23,13 @@ function Intro() {
 
 export default Intro;
 `;
-const introCodeCode = `export default function IntroCode() {
-  return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
-      <Grid.Row>
-        <Header as="h2">
-          File Structure{" "}
-          <IconButtonLink
-            size="large"
-            iconName="github"
-            url={githubHomeIntroUrl}
-          />
-        </Header>
-        <IntroFolderTree />
-        <Header as="h2">Simplified Component Hierarchy</Header>
-        <IntroComponentTree />
-        <Header as="h2">Main Content Code</Header>
-
-        <Header as="h3">Intro.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introCode} />
-      </Grid.Row>
-      <Grid.Row>
-        <Header as="h2">Supplemental Content Code</Header>
-        <Header as="h3">IntroSupplementalContainer.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introSupplementalContainerCode}
-        />
-        <Header as="h3">IntroMenu.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introMenuCode} />
-        <Header as="h3">IntroCode.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introCodeCode} />
-        <Header as="h3">IntroFolderTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introFolderTreeCode}
-        />
-        <Header as="h3">IntroComponentTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introComponentTreeCode}
-        />
-      </Grid.Row>
-    </Segment>
-  );
-}
-`;
 
 const introMenuCode = `import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
 export default class IntroMenu extends Component {
   render() {
-    const activeItem = this.props.introMenuSelection;
+    const activeItem = "Code";
 
     return (
       <Menu fluid tabular widths={2}>
@@ -89,9 +40,9 @@ export default class IntroMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Intro.Code",
+              name: "Home",
               supplementalContentSection: {
-                name: "Intro.Code",
+                name: "Introduction",
                 subsection: "Code",
               },
             });
@@ -102,6 +53,7 @@ export default class IntroMenu extends Component {
   }
 }
 `;
+
 const introComponentTreeCode = `import FolderTree from "react-folder-tree";
 import "react-folder-tree/dist/style.css";
 
@@ -122,8 +74,8 @@ const componentStructure = {
             {
               name: "IntroSupplementalContainer",
               children: [
-                { name: "IntroMenu", children: [{name: "IntroCode"}] },
-                { name: "IntorSupplementalContentRow" },
+                { name: "IntroMenu" },
+                { name: "IntroSupplementalContentRow" },
               ],
             },
           ],
@@ -146,6 +98,7 @@ const IntroComponentTree = () => {
 
 export default IntroComponentTree;
 `;
+
 const introFolderTreeCode = `import FolderTree from "react-folder-tree";
 import "react-folder-tree/dist/style.css";
 
@@ -178,6 +131,7 @@ const IntroFolderTree = () => {
 
 export default IntroFolderTree;
 `;
+
 const introSupplementalContainerCode = `import { Grid } from "semantic-ui-react";
 import IntroMenu from "./IntroMenu";
 import IntroSupplementalContentRow from "./IntroSupplementalContentRow";
@@ -192,7 +146,7 @@ export default function IntroSupplementalContainer({
     <Grid.Row>
       <Grid.Row>
         <IntroMenu
-          methodologyMenuSelection={componentKey}
+          introMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
           supplementalContent={supplementalContent}
         />
@@ -203,9 +157,21 @@ export default function IntroSupplementalContainer({
 }
 `;
 
-export default function IntroCode() {
+const introSupplementalContentRowCode = `import { Grid } from "semantic-ui-react";
+import IntroCode from "./IntroCode";
+
+export default function IntroSupplementalContentRow() {
   return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
+    <Grid.Row>
+      <IntroCode />
+    </Grid.Row>
+  );
+}
+`;
+
+const introCodeCode = `export default function IntroCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
       <Grid.Row>
         <Header as="h2">
           File Structure{" "}
@@ -225,6 +191,68 @@ export default function IntroCode() {
       </Grid.Row>
       <Grid.Row>
         <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">IntroSupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={introSupplementalContentRowCode}
+        />
+        <Header as="h3">IntroSupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={introSupplementalContainerCode}
+        />
+        <Header as="h3">IntroMenu.js</Header>
+        <CodeBlock language="jsx" showLineNumbers={true} text={introMenuCode} />
+        <Header as="h3">IntroCode.js</Header>
+        <CodeBlock language="jsx" showLineNumbers={true} text={introCodeCode} />
+        <Header as="h3">IntroFolderTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={introFolderTreeCode}
+        />
+        <Header as="h3">IntroComponentTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={introComponentTreeCode}
+        />
+      </Grid.Row>
+    </Segment>
+  );
+}
+`;
+
+export default function IntroCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
+      <Grid.Row>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeIntroUrl}
+          />
+        </Header>
+        <IntroFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <IntroComponentTree />
+        <Header as="h2">Main Content Code</Header>
+
+        <Header as="h3">Intro.js</Header>
+        <CodeBlock language="jsx" showLineNumbers={true} text={introCode} />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">IntroSupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={introSupplementalContentRowCode}
+        />
         <Header as="h3">IntroSupplementalContainer.js</Header>
         <CodeBlock
           language="jsx"

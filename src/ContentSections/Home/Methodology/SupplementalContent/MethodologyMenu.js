@@ -1,42 +1,37 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
+import { generateMenuItems } from "../../../../utils/components";
+
+const itemNames = ["Code", "FunFacts"];
+const newSupplementalInnerContents = itemNames.map((name) => {
+  return { name: "Methodology", subsection: name };
+});
 
 export default class MethodologyMenu extends Component {
   render() {
-    const activeItem = this.props.methodologyMenuSelection;
+    const {
+      supplementalContent,
+      supplementalContent: {
+        supplementalContentSection: { subsection },
+      },
+      setSupplementalContent,
+    } = this.props;
+
+    const activeItem = subsection;
 
     return (
       <Menu fluid tabular widths={2}>
-        <Menu.Item
-          name="FunFacts"
-          active={activeItem === "FunFacts"}
-          onClick={(e, state) => {
-            this.props.setSupplementalContent({
-              ...this.props.supplementalContent,
-              show: true,
-              name: "Home",
-              supplementalContentSection: {
-                name: "Methodology",
-                subsection: "FunFacts",
-              },
-            });
-          }}
-        />
-        <Menu.Item
-          name="Code"
-          active={activeItem === "Code"}
-          onClick={(e, state) => {
-            this.props.setSupplementalContent({
-              ...this.props.supplementalContent,
-              show: true,
-              name: "Home",
-              supplementalContentSection: {
-                name: "Methodology",
-                subsection: "Code",
-              },
-            });
-          }}
-        />
+        {generateMenuItems({
+          activeItem,
+          itemNames,
+          supplementalContent,
+          setSupplementalContent,
+          newSupplementalInnerContents: newSupplementalInnerContents,
+          newSupplementalOuterContents: {
+            show: true,
+            name: "Home",
+          },
+        })}
       </Menu>
     );
   }

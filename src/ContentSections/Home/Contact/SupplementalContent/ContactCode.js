@@ -41,55 +41,6 @@ function Contact() {
 export default Contact;
 `;
 
-const contactCodeCode = `export default function ContactCode() {
-  return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
-      <Grid.Row>
-        <Header as="h2">
-          File Structure{" "}
-          <IconButtonLink
-            size="large"
-            iconName="github"
-            url={githubHomeContactUrl}
-          />
-        </Header>
-        <ContactFolderTree />
-        <Header as="h2">Simplified Component Hierarchy</Header>
-        <ContactComponentTree />
-        <Header as="h2">Main Content Code</Header>
-
-        <Header as="h3">Contact.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={contactCode} />
-      </Grid.Row>
-      <Grid.Row>
-        <Header as="h2">Supplemental Content Code</Header>
-        <Header as="h3">contactSupplementalContainer.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={contactSupplementalContainerCode}
-        />
-        <Header as="h3">ContactMenu.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={contactMenuCode} />
-        <Header as="h3">ContactCode.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={contactCodeCode} />
-        <Header as="h3">ContactFolderTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={contactFolderTreeCode}
-        />
-        <Header as="h3">ContactComponentTree.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={contactComponentTreeCode}
-        />
-      </Grid.Row>
-    </Segment>
-  );
-}`;
-
 const contactMenuCode = `import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
@@ -106,10 +57,10 @@ export default class ContactMenu extends Component {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Contact",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Contact",
-                subsection: "Contact",
+                name: "Contact",
+                subsection: "Code",
               },
             });
           }}
@@ -205,26 +156,35 @@ export default function ContactSupplementalContainer({
   supplementalContent,
   setSupplementalContent,
 }) {
-  const { subsection: componentKey } =
-    supplementalContent.supplementalContentSection;
   return (
     <Grid.Row>
       <Grid.Row>
         <ContactMenu
-          contactMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <ContactSupplementalContentRow componentKey={componentKey} />
+      <ContactSupplementalContentRow />
     </Grid.Row>
   );
 }
 `;
 
-export default function ContactCode() {
+const contactSupplementalContentRowCode = `import { Grid } from "semantic-ui-react";
+import ContactCode from "./ContactCode";
+
+export default function ContactSupplementalContentRow() {
   return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
+    <Grid.Row>
+      <ContactCode />
+    </Grid.Row>
+  );
+}
+`;
+
+const contactCodeCode = `export default function ContactCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
       <Grid.Row>
         <Header as="h2">
           File Structure{" "}
@@ -249,6 +209,75 @@ export default function ContactCode() {
           language="jsx"
           showLineNumbers={true}
           text={contactSupplementalContainerCode}
+        />
+        <Header as="h3">ContactSupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactSupplementalContentRowCode}
+        />
+        <Header as="h3">ContactMenu.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactMenuCode}
+        />
+        <Header as="h3">ContactCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactCodeCode}
+        />
+        <Header as="h3">ContactFolderTreeCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactFolderTreeCode}
+        />
+        <Header as="h3">ContactComponentTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactComponentTreeCode}
+        />
+      </Grid.Row>
+    </Segment>
+  );
+}
+`
+export default function ContactCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
+      <Grid.Row>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeContactUrl}
+          />
+        </Header>
+        <ContactFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <ContactComponentTree />
+        <Header as="h2">Main Content Code</Header>
+
+        <Header as="h3">Contact.js</Header>
+        <CodeBlock language="jsx" showLineNumbers={true} text={contactCode} />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">ContactSupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactSupplementalContainerCode}
+        />
+        <Header as="h3">ContactSupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={contactSupplementalContentRowCode}
         />
         <Header as="h3">ContactMenu.js</Header>
         <CodeBlock

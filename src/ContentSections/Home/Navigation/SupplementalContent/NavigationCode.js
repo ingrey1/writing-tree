@@ -38,55 +38,6 @@ function Navigation() {
 export default Navigation;
 `;
 
-const navigationCodeCode = `export default function NavigationCode() {
-  return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
-      <Grid.Row>
-        <Header as="h2">
-          File Structure{" "}
-          <IconButtonLink
-            size="large"
-            iconName="github"
-            url={githubHomeNavigationUrl}
-          />
-        </Header>
-        <NavigationFolderTree />
-        <Header as="h2">Simplified Component Hierarchy</Header>
-        <NavigationComponentTree />
-        <Header as="h2">Main Content Code</Header>
-
-        <Header as="h3">Navigation.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={navigationCode} />
-      </Grid.Row>
-      <Grid.Row>
-        <Header as="h2">Supplemental Content Code</Header>
-        <Header as="h3">navigationSupplementalContainer.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={navigationSupplementalContainerCode}
-        />
-        <Header as="h3">NavigationMenu.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={navigationMenuCode} />
-        <Header as="h3">NavigationCode.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={navigationCodeCode} />
-        <Header as="h3">NavigationFolderTreeCode.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={navigationFolderTreeCode}
-        />
-        <Header as="h3">NavigationComponentTree.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={navigationComponentTreeCode}
-        />
-      </Grid.Row>
-    </Segment>
-  );
-}`;
-
 const navigationMenuCode = `import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
@@ -99,14 +50,14 @@ export default class NavigationMenu extends Component {
         <Menu.Item
           name="Code"
           active={activeItem === "Code"}
-          onClick={(e, state) => {
+          onClick={() => {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,
-              name: "Home.Navigation",
+              name: "Home",
               supplementalContentSection: {
-                name: "Home.Navigation",
-                subsection: "Navigation",
+                name: "Navigation",
+                subsection: "Code",
               },
             });
           }}
@@ -182,6 +133,7 @@ const relativeFolderStructure = {
     },
     { name: "Navigation.css" },
     { name: "Navigation.js" },
+    { name: "text.js" },
   ],
 };
 
@@ -194,6 +146,18 @@ const NavigationFolderTree = () => {
 export default NavigationFolderTree;
 `;
 
+const navigationSupplementalContentRowCode = `import { Grid } from "semantic-ui-react";
+import NavigationCode from "./NavigationCode";
+
+export default function NavigationSupplementalContentRow() {
+  return (
+    <Grid.Row>
+      <NavigationCode />
+    </Grid.Row>
+  );
+}
+`;
+
 const navigationSupplementalContainerCode = `import { Grid } from "semantic-ui-react";
 import NavigationMenu from "./NavigationMenu";
 import NavigationSupplementalContentRow from "./NavigationSupplementalContentRow";
@@ -202,26 +166,24 @@ export default function NavigationSupplementalContainer({
   supplementalContent,
   setSupplementalContent,
 }) {
-  const { subsection: componentKey } =
-    supplementalContent.supplementalContentSection;
+
   return (
     <Grid.Row>
       <Grid.Row>
         <NavigationMenu
-          navigationMenuSelection={componentKey}
           setSupplementalContent={setSupplementalContent}
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <NavigationSupplementalContentRow componentKey={componentKey} />
+      <NavigationSupplementalContentRow />
     </Grid.Row>
   );
 }
 `;
 
-export default function NavigationCode() {
+const navigationCodeCode = `export default function NavigationCode() {
   return (
-    <Segment style={{ overflow: "auto", maxHeight: "60vh" }}>
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
       <Grid.Row>
         <Header as="h2">
           File Structure{" "}
@@ -245,6 +207,80 @@ export default function NavigationCode() {
       </Grid.Row>
       <Grid.Row>
         <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">NavigationSupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationSupplementalContentRowCode}
+        />
+        <Header as="h3">NavigationSupplementalContainer.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationSupplementalContainerCode}
+        />
+        <Header as="h3">NavigationMenu.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationMenuCode}
+        />
+        <Header as="h3">NavigationCode.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationCodeCode}
+        />
+        <Header as="h3">NavigationFolderTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationFolderTreeCode}
+        />
+        <Header as="h3">NavigationComponentTree.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationComponentTreeCode}
+        />
+      </Grid.Row>
+    </Segment>
+  );
+}
+`;
+
+export default function NavigationCode() {
+  return (
+    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
+      <Grid.Row>
+        <Header as="h2">
+          File Structure{" "}
+          <IconButtonLink
+            size="large"
+            iconName="github"
+            url={githubHomeNavigationUrl}
+          />
+        </Header>
+        <NavigationFolderTree />
+        <Header as="h2">Simplified Component Hierarchy</Header>
+        <NavigationComponentTree />
+        <Header as="h2">Main Content Code</Header>
+
+        <Header as="h3">Navigation.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationCode}
+        />
+      </Grid.Row>
+      <Grid.Row>
+        <Header as="h2">Supplemental Content Code</Header>
+        <Header as="h3">NavigationSupplementalContentRow.js</Header>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={navigationSupplementalContentRowCode}
+        />
         <Header as="h3">NavigationSupplementalContainer.js</Header>
         <CodeBlock
           language="jsx"

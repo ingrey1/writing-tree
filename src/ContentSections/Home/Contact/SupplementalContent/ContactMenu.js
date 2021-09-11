@@ -10,7 +10,7 @@ export default class ContactMenu extends Component {
         <Menu.Item
           name="Code"
           active={activeItem === "Code"}
-          onClick={(e, state) => {
+          onClick={() => {
             this.props.setSupplementalContent({
               ...this.props.supplementalContent,
               show: true,

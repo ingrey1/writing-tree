@@ -43,14 +43,16 @@ const generateMenuItem = ({
             },
           });
         }
-        setContent({
-          ...content,
-          ...newOuterContents,
-          mainContentSection: {
-            ...content.mainContentSection,
-            ...newInnerContents,
-          },
-        });
+        if (content) {
+          setContent({
+            ...content,
+            ...newOuterContents,
+            mainContentSection: {
+              ...content.mainContentSection,
+              ...newInnerContents,
+            },
+          });
+        }
       }}
       {...additionalProps}
     />
