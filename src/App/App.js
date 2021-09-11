@@ -9,7 +9,7 @@ import MethodologySupplementalContainer from "../ContentSections/Home/Methodolog
 import NavigationSupplementalContainer from "../ContentSections/Home/Navigation/SupplementalContent/NavigationSupplementalContainer";
 import ContactSupplementalContainer from "../ContentSections/Home/Contact/SupplementalContent/ContactSupplementalContainer";
 import OverviewSupplementalContainer from "../ContentSections/SiteCode/StartHere/Overview/Intro/SupplementalContent/IntroSupplementalContainer";
-
+import NoSupplementalContent from "../common/components/NoSupplementalContent/NoSupplementalContent";
 import MainMenuColumn from "../layout/MainMenuColumn";
 import ActionsColumn from "../layout/ActionsColumn";
 import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
@@ -24,7 +24,7 @@ import {
 const mainContentMappings = {
   Overview: OverviewContainer,
   Home: HomeContainer,
-  Resources: ResourcesContainer
+  Resources: ResourcesContainer,
 };
 
 const MainComponent = (mainContent, props) => {
@@ -38,6 +38,11 @@ const supplementalContentMappings = {
   "Home.Methodology": MethodologySupplementalContainer,
   "Home.Navigation": NavigationSupplementalContainer,
   "Home.Contact": ContactSupplementalContainer,
+  "Overview.Introduction": NoSupplementalContent,
+  "Overview.ReactPrimer": NoSupplementalContent,
+  "Overview.HtmlPrimer": NoSupplementalContent,
+  "Overview.Resources": NoSupplementalContent,
+  "Resources.References": NoSupplementalContent,
 };
 
 const SupplementalComponent = (supplementalContent, props) => {
@@ -46,13 +51,9 @@ const SupplementalComponent = (supplementalContent, props) => {
     supplementalContentSection: { name: supplementalSectionName },
   } = supplementalContent;
 
-  let Component;
-  if (name === "Overview") {
-    Component = OverviewSupplementalContainer;
-  } else {
-    Component =
-      supplementalContentMappings[`${name}.${supplementalSectionName}`];
-  }
+  const Component =
+    supplementalContentMappings[`${name}.${supplementalSectionName}`];
+
   return <Component supplementalContent={supplementalContent} {...props} />;
 };
 

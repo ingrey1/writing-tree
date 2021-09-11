@@ -32,7 +32,11 @@ export default class MainMenu extends Component {
             content: mainContent,
             supplementalContent,
             setSupplementalContent,
-            newSupplementalOuterContents: { show: false },
+            newSupplementalInnerContents: {
+              name: "Introduction",
+              subsection: "Code",
+            },
+            newSupplementalOuterContents: { show: false, name: "Home" },
           })}
         </Menu.Menu>
 
@@ -48,7 +52,11 @@ export default class MainMenu extends Component {
               content: mainContent,
               supplementalContent,
               setSupplementalContent,
-              newSupplementalOuterContents: { show: false },
+              newSupplementalInnerContents: {
+                name: "Introduction",
+                subsection: "Code",
+              },
+              newSupplementalOuterContents: { show: false, name: "Overview" },
             })}
             <Menu.Item name="frontend" active={activeItem === "frontend"} />
             <Menu.Item name="backend" active={activeItem === "backend"} />
@@ -122,7 +130,11 @@ export default class MainMenu extends Component {
               content: mainContent,
               supplementalContent,
               setSupplementalContent,
-              newSupplementalOuterContents: { show: false },
+              newSupplementalInnerContents: {
+                name: "References",
+                subsection: "Code",
+              },
+              newSupplementalOuterContents: { show: false, name: "Resources" },
             })}
           </Menu.Menu>
         </Menu.Item>

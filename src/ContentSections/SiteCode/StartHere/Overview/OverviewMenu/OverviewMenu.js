@@ -28,6 +28,8 @@ export default class OverviewMenu extends Component {
         mainContentSection: { name },
       },
       setMainContent,
+      supplementalContent,
+      setSupplementalContent,
     } = this.props;
 
     const activeItem = mapSectionToMenuName(name);
@@ -41,6 +43,10 @@ export default class OverviewMenu extends Component {
           newOuterContents: { name: "Overview" },
           mainContent,
           setMainContent,
+          supplementalContent,
+          setSupplementalContent,
+          newSupplementalInnerContents: newInnerContents,
+          newSupplementalOuterContents: { show: false, name: "Overview" },
         })}
       </Menu>
     );
