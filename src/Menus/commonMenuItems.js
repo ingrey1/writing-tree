@@ -49,4 +49,32 @@ const generateOverviewMenuItem = ({
   });
 };
 
-export { generateHomeMenuItem, generateOverviewMenuItem };
+const generateReferencesMenuItem = ({
+  activeItem,
+  setMainContent,
+  mainContent,
+  supplementalContent,
+  setSupplementalContent,
+} = {}) => {
+  return generateMenuItem({
+    activeItem,
+    itemName: "References",
+    newInnerContents: { name: "References" },
+    newOuterContents: { name: "Resources" },
+    setContent: setMainContent,
+    content: mainContent,
+    supplementalContent,
+    setSupplementalContent,
+    newSupplementalInnerContents: {
+      name: "References",
+      subsection: "NoSupplementalContent",
+    },
+    newSupplementalOuterContents: { show: false, name: "References" },
+  });
+};
+
+export {
+  generateHomeMenuItem,
+  generateOverviewMenuItem,
+  generateReferencesMenuItem,
+};

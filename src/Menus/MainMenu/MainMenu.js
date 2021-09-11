@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
-import { generateMenuItem } from "../../utils/components";
+import {
+  generateHomeMenuItem,
+  generateOverviewMenuItem,
+  generateReferencesMenuItem,
+} from "../commonMenuItems";
 
 export default class MainMenu extends Component {
   render() {
@@ -23,40 +27,24 @@ export default class MainMenu extends Component {
         }}
       >
         <Menu.Menu>
-          {generateMenuItem({
+          {generateHomeMenuItem({
             activeItem,
-            itemName: "Home",
-            newInnerContents: { name: "Introduction" },
-            newOuterContents: { name: "Home" },
-            setContent: setMainContent,
-            content: mainContent,
+            mainContent,
             supplementalContent,
+            setMainContent,
             setSupplementalContent,
-            newSupplementalInnerContents: {
-              name: "Introduction",
-              subsection: "Code",
-            },
-            newSupplementalOuterContents: { show: false, name: "Home" },
           })}
         </Menu.Menu>
 
         <Menu.Item>
           <Menu.Header>Site Code</Menu.Header>
           <Menu.Menu>
-            {generateMenuItem({
+            {generateOverviewMenuItem({
               activeItem,
-              itemName: "Overview",
-              newInnerContents: { name: "Introduction" },
-              newOuterContents: { name: "Overview" },
-              setContent: setMainContent,
-              content: mainContent,
+              mainContent,
               supplementalContent,
+              setMainContent,
               setSupplementalContent,
-              newSupplementalInnerContents: {
-                name: "Introduction",
-                subsection: "Code",
-              },
-              newSupplementalOuterContents: { show: false, name: "Overview" },
             })}
             <Menu.Item name="frontend" active={activeItem === "frontend"} />
             <Menu.Item name="backend" active={activeItem === "backend"} />
@@ -120,21 +108,12 @@ export default class MainMenu extends Component {
             <Menu.Item name="glossary" active={activeItem === "glossary"}>
               Glossary
             </Menu.Item>
-
-            {generateMenuItem({
+            {generateReferencesMenuItem({
               activeItem,
-              itemName: "Resources",
-              newInnerContents: { name: "References" },
-              newOuterContents: { name: "Resources" },
-              setContent: setMainContent,
-              content: mainContent,
+              mainContent,
               supplementalContent,
+              setMainContent,
               setSupplementalContent,
-              newSupplementalInnerContents: {
-                name: "References",
-                subsection: "Code",
-              },
-              newSupplementalOuterContents: { show: false, name: "Resources" },
             })}
           </Menu.Menu>
         </Menu.Item>
