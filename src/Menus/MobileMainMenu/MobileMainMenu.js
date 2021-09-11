@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Dropdown } from "semantic-ui-react";
+import {
+  generateHomeMenuItem,
+  generateOverviewMenuItem,
+} from "../commonMenuItems";
 
 const dropDownstyle = {
   "z-index": 1,
@@ -8,42 +12,37 @@ const dropDownstyle = {
 };
 
 export default class MobileMainMenu extends Component {
-  state = {};
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { activeItem } = this.state;
+    const {
+      mainContent,
+      mainContent: { name },
+      supplementalContent,
+      setMainContent,
+      setSupplementalContent,
+    } = this.props;
+    const activeItem = name;
 
     return (
       <Dropdown icon="bars" style={dropDownstyle}>
         <Dropdown.Menu vertical>
-          <Dropdown.Item
-            text="Home"
-            active={activeItem === "Home"}
-            onClick={(e, state) => {
-              this.props.setMainContent({
-                name: "Home",
-                mainContentSection: { name: "Introduction" },
-              });
-              this.handleItemClick(e, state);
-            }}
-          ></Dropdown.Item>
+          {generateHomeMenuItem({
+            activeItem,
+            componentType: "Dropdown",
+            mainContent,
+            supplementalContent,
+            setMainContent,
+            setSupplementalContent,
+          })}
           <Dropdown.Divider />
           <Dropdown item text="Site Code">
             <Dropdown.Menu>
-              <Dropdown.Item
-                text="Overview"
-                active={activeItem === "Overview"}
-                onClick={(e, state) => {
-                  this.props.setMainContent({
-                    name: "Overview",
-                    mainContentSection: { name: "Introduction" },
-                  });
-                  this.handleItemClick(e, state);
-                }}
-              >
-                Overview
-              </Dropdown.Item>
+              {generateOverviewMenuItem({
+                activeItem,
+                mainContent,
+                supplementalContent,
+                setMainContent,
+                setSupplementalContent,
+              })}
               <Dropdown.Item>Frontend</Dropdown.Item>
               <Dropdown.Item>Backend</Dropdown.Item>
             </Dropdown.Menu>
@@ -79,12 +78,12 @@ export default class MobileMainMenu extends Component {
               <Dropdown.Item>Articles</Dropdown.Item>
               <Dropdown.Item>Glossary</Dropdown.Item>
               <Dropdown.Item
-                onClick={(e, state) => {
-                  this.props.setMainContent({
+                onClick={() => {
+                  setMainContent({
                     name: "Resources",
                     mainContentSection: { name: "References" },
                   });
-                  this.props.setSupplementalContent({
+                  setSupplementalContent({
                     name: "Resources",
                     supplementalContentSection: {
                       name: "References",
@@ -93,7 +92,6 @@ export default class MobileMainMenu extends Component {
                     show: false,
                     expand: false,
                   });
-                  this.handleItemClick(e, state);
                 }}
               >
                 References
@@ -104,12 +102,11 @@ export default class MobileMainMenu extends Component {
           <Dropdown item text="Actions">
             <Dropdown.Menu>
               <Dropdown.Item
-                onClick={(e, state) => {
-                  this.props.setSupplementalContent({
+                onClick={() => {
+                  setSupplementalContent({
                     ...this.props.supplementalContent,
                     show: !this.props.supplementalContent.show,
                   });
-                  this.handleItemClick(e, state);
                 }}
               >
                 Toggle Extra Content

@@ -24,11 +24,10 @@ const generateMenuItem = ({
   componentType = "Menu",
 } = {}) => {
   const Component = componentType === "Menu" ? Menu : Dropdown;
-  console.info("newOuterContent", newOuterContents);
-  console.info("newInnerContent", newInnerContents);
-  console.info(".....");
+
   return (
     <Component.Item
+      text={itemName}
       key={Math.random()}
       style={style}
       name={itemName}
