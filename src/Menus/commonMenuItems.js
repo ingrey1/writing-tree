@@ -1,6 +1,7 @@
 import { generateMenuItem } from "../utils/components";
 
 const generateHomeMenuItem = ({
+  componentType,
   activeItem,
   setMainContent,
   mainContent,
@@ -8,7 +9,7 @@ const generateHomeMenuItem = ({
   setSupplementalContent,
 } = {}) => {
   return generateMenuItem({
-    componentType: "Dropdown",
+    componentType,
     activeItem,
     itemName: "Home",
     newInnerContents: { name: "Introduction" },
@@ -26,6 +27,7 @@ const generateHomeMenuItem = ({
 };
 
 const generateOverviewMenuItem = ({
+  componentType,
   activeItem,
   setMainContent,
   mainContent,
@@ -34,6 +36,7 @@ const generateOverviewMenuItem = ({
 } = {}) => {
   return generateMenuItem({
     activeItem,
+    componentType,
     itemName: "Overview",
     newInnerContents: { name: "Introduction" },
     newOuterContents: { name: "Overview" },
@@ -50,6 +53,7 @@ const generateOverviewMenuItem = ({
 };
 
 const generateReferencesMenuItem = ({
+  componentType,
   activeItem,
   setMainContent,
   mainContent,
@@ -57,6 +61,7 @@ const generateReferencesMenuItem = ({
   setSupplementalContent,
 } = {}) => {
   return generateMenuItem({
+    componentType,
     activeItem,
     itemName: "References",
     newInnerContents: { name: "References" },
@@ -69,7 +74,7 @@ const generateReferencesMenuItem = ({
       name: "References",
       subsection: "NoSupplementalContent",
     },
-    newSupplementalOuterContents: { show: false, name: "References" },
+    newSupplementalOuterContents: { show: false, name: "Resources" },
   });
 };
 

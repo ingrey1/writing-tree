@@ -17,7 +17,7 @@ export default function IconButtonLink({
       href={url}
       inverted={inverted}
       size={buttonSize}
-      color={buttonColor || "white"}
+      color={buttonColor || "violet"}
     >
       <Icon
         name={iconName}
