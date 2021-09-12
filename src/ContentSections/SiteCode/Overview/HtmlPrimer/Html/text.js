@@ -53,7 +53,7 @@ const paragraphs = {
   25: `You can add an 'id' attribute to any element.`,
   26: `However, sometimes the url you provide the image element with won't work. Additionally, screen-readers cannot make sense of images, as images. To combat these problems, we can supply an additional attribute, 'alt', with a textual description of the image.`,
   27: `<img src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg" alt="Two Lions resting together.">`,
-  28: `Before we add our first cat to the kingdom, we should introduce an element that will serve as the parent of all the cats in the kingdom.`,
+  28: `Before we add our first cat to the kingdom, we will introduce an element that will serve as the parent of all the cats in the kingdom.`,
   29: `It's time to add a lion to Mufasa's menagerie. Before we get to the html, let's list the pieces of information we want to include for each animal.`,
   30: `We can add the 'section' element first, and then think about which tags we should use for Simba's data.`,
   31: `<section id="mufasa-menagerie">
@@ -61,13 +61,13 @@ const paragraphs = {
     Simba is Mufasa's child element. Mufasa is Simba's parent element.
    </section>
 </section>`,
-  32: `Let's use this opportunity to introduce the 'table' element, adding Simba's the name and age.`,
+  32: `While there are many ways we could use markup to structure Simba's information, we'll use this opportunity to introduce the 'table' element, adding Simba's name and age.`,
   33: `<section id="mufasa-menagerie">
   <section id="simba">
     <table id="simba-table">
       <tr>
-        <th>Name:</th>
-        <th>Age:</th>
+        <th>Name</th>
+        <th>Age (years)</th>
       </tr>
       <tr>
         <td>Simba</td>
@@ -96,7 +96,7 @@ const paragraphs = {
             <table id="simba-table">
               <tr>
                 <th>Name</th>
-                <th>Age</th>
+                <th>Age (years)</th>
               </tr>
               <tr>
                 <td>Simba</td>
@@ -110,7 +110,7 @@ const paragraphs = {
   </html>
   `,
   36: `The menagerie is coming along. Go ahead and open it in the browser.`,
-  37: `Now let's consider the anatomy of the 'table'.`
+  37: `Now let's consider the anatomy of the 'table' element.`,
 };
 
 export { paragraphs };
