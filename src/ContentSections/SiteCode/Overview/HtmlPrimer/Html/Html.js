@@ -157,6 +157,24 @@ export default function Html({
       <Paragraph content={paragraphs[22]} />
       <Image src={codeblock2Image} width="50%"></Image>
       <Paragraph content={paragraphs[23]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[24]} />
+      </Segment>
+      <Paragraph content={paragraphs[25]} />
+
+      <List bulleted>
+        <List.Header as="h4">'id' attribute tips</List.Header>
+        <List.Item>The 'id' value should be unique.</List.Item>
+        <List.Item>The 'id' value should be lowercase.</List.Item>
+        <List.Item>
+          When made up of multiple words, the 'id' value should separate the
+          words with hyphens.
+        </List.Item>
+        <List.Item>
+          Ideally, the 'id' value should describe, in some minor way, the
+          content of the element it refers to.
+        </List.Item>
+      </List>
     </Container>
   );
 }

@@ -25,7 +25,7 @@ const paragraphs = {
   11: `<address>The Cat Pounced On The Rabbit.</address>`,
   12: `This is probably not the right sort of content for an 'address' element. When it doubt, you can always use the content-neutral 'div' tag.`,
   13: `<div>The Cat Pounced On The Rabbit.</div>`,
-  14: `That's better. It's not wrong, but can we find a tag that might be a little more accurate in terms of characterizing it's own content?`,
+  14: `That's better. It's not wrong, but can we find a tag that might be a little more accurate in terms of characterizing its own content?`,
   15: `<p>The Cat Pounced On The Rabbit.</p>`,
   16: `There we go. This isn't the only sort of tag that might make sense for our description, but it will certainly do.`,
   17: `You might be wondering why we should care what tags we use if the end result is the same in terms of content rendered. However, one major reason concerns accessibility. Many people depend on screen-readers to navigate websites. Carefully chosen tags can mean the difference between completely inaccessible content, and a pleasant screen-reading experience. Click this icon to learn more about HTML elements and accessibility.`,
@@ -48,7 +48,9 @@ const paragraphs = {
   20: `Check out that image tag. Yes, there is something wrong with it. But it's not the fact that it's missing a closing tag. Not all HTML elements require a closing tag. You might have gathered that it's supposed to display an image on the screen, but what image? Let's try adding the 'src' (source) attribute to the 'img' element.`,
   21: `<img src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg">`,
   22: `Let's save our code and view it in the browser.`,
-  23: `By supplying the 'src' attribute a url string as a value, we were able to display our image. You might be wondering whether or not we can resize it. And we definitely can, but let's wait until we get to the CSS tutorial.`,
+  23: `By supplying the 'src' attribute a url string as a value, we were able to display our image. You might be wondering whether or not we can resize it. And we definitely can, but let's wait until we get to the CSS tutorial. Before we add our first cat to the kingdom, we should introduce an element that will serve as the parent of all the cats in the kingdom.`,
+  24: `<section id="mufasa-menagerie">Mufasa's children will live here</section>`,
+  25: `You can add an 'id' attribute to any element.`
 };
 
 export { paragraphs };
