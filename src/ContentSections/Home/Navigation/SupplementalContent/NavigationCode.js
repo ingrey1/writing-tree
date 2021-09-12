@@ -31,6 +31,10 @@ function Navigation() {
         Show Extra Content
       </Button>
       <Paragraph content={paragraphs[7]} />
+      <Button color="violet">
+        <Icon color="teal" name="github"></Icon>
+      </Button>
+      <Paragraph content={paragraphs[8]} />
     </Container>
   );
 }
