@@ -9,15 +9,41 @@ const mappings = {
   Javascript: Javascript,
 };
 
-const Component = (mainContent, setMainContent) => {
+const Component = ({
+  mainContent,
+  setMainContent,
+  supplementalContent,
+  setSupplementalContent,
+}) => {
   const {
     mainContentSection: { subsection },
   } = mainContent;
   const Comp = mappings[subsection];
-  console.info("Comp")
-  return <Comp mainContent={mainContent} setMainContent={setMainContent} />;
+  console.info("Comp");
+  return (
+    <Comp
+      mainContent={mainContent}
+      setMainContent={setMainContent}
+      supplementalContent={supplementalContent}
+      setSupplementalContent={setSupplementalContent}
+    />
+  );
 };
 
-export default function OverviewContentRow({ mainContent, setMainContent }) {
-  return <Grid.Row>{Component(mainContent, setMainContent)}</Grid.Row>;
+export default function HtmlPrimerContentRow({
+  mainContent,
+  setMainContent,
+  supplementalContent,
+  setSupplementalContent,
+}) {
+  return (
+    <Grid.Row>
+      {Component({
+        mainContent,
+        setMainContent,
+        supplementalContent,
+        setSupplementalContent,
+      })}
+    </Grid.Row>
+  );
 }
