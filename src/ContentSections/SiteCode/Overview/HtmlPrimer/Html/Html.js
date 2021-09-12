@@ -8,6 +8,7 @@ import {
   Icon,
   Button,
   Segment,
+  Image,
 } from "semantic-ui-react";
 import { CodeBlock } from "@atlaskit/code";
 import {
@@ -17,10 +18,7 @@ import {
 import IconButtonLink from "../../../../../common/components/IconButtonLink";
 import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
 import IconButtonContentLink from "../../../../../common/components/IconButtonContentLink";
-
-{
-  /* <IconButtonContentLink inverted className="center" iconName="book" /> */
-}
+import codeblock1Image from "./images/codeblock1.png";
 
 const codeBlock1LinesToHighlight = "6,9,12,13";
 
@@ -114,7 +112,9 @@ export default function Html({
       </p>
       <p>
         Go ahead and open the 'cat-kingdom.html' file in your favorite browser.
+        It should look something like this.
       </p>
+      <Image src={codeblock1Image} width="50%"></Image>
     </Container>
   );
 }
