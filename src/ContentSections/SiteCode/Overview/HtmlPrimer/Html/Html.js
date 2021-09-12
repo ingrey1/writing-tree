@@ -5,7 +5,8 @@ import {
   List,
   Grid,
   Message,
-  GridColumn,
+  Icon,
+  Button,
 } from "semantic-ui-react";
 import { CodeBlock } from "@atlaskit/code";
 import {
@@ -57,7 +58,17 @@ export default function Html() {
       <Grid textAlign="center">
         <Grid.Column>
           <Message floating compact>
-            <p>animals.html</p>
+            <p>
+              animals.html{"   "}
+              <Button
+                inverted
+                onClick={() => {
+                  navigator.clipboard.writeText("animals.html");
+                }}
+              >
+                <Icon color="teal" name="copy"></Icon>
+              </Button>
+            </p>
           </Message>
         </Grid.Column>
       </Grid>
