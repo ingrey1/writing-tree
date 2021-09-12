@@ -14,6 +14,7 @@ import ActionsColumn from "../layout/ActionsColumn";
 import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import IconButtonExpand from "../common/components/IconButtonExpand";
+import OverviewIntroSupplementalCode from "../ContentSections/SiteCode/Overview/Intro/SupplementalContent/IntroSupplementalContainer";
 
 import { calculateMainContentHeight } from "../utils/components";
 import {
@@ -39,7 +40,7 @@ const supplementalContentMappings = {
   "Home.Methodology": MethodologySupplementalContainer,
   "Home.Navigation": NavigationSupplementalContainer,
   "Home.Contact": ContactSupplementalContainer,
-  "Overview.Introduction": NoSupplementalContent,
+  "Overview.Introduction": OverviewIntroSupplementalCode,
   "Overview.ReactPrimer": NoSupplementalContent,
   "Overview.HtmlPrimer": NoSupplementalContent,
   "Overview.Resources": NoSupplementalContent,
