@@ -1,19 +1,20 @@
 import { Grid } from "semantic-ui-react";
-import ReactPrimer from "./ReactPrimer/ReactPrimer";
-import HtmlPrimerContainer from "./HtmlPrimer/HtmlPrimerContainer";
-import Intro from "./Intro/Intro";
+import Html from "./Html/Html";
+import Css from "./Css/Css";
+import Javascript from "./Javascript/Javascript";
 
 const mappings = {
-  Introduction: Intro,
-  ReactPrimer: ReactPrimer,
-  HtmlPrimer: HtmlPrimerContainer,
+  Html: Html,
+  Css: Css,
+  Javascript: Javascript,
 };
 
 const Component = (mainContent, setMainContent) => {
   const {
-    mainContentSection: { name },
+    mainContentSection: { subsection },
   } = mainContent;
-  const Comp = mappings[name];
+  const Comp = mappings[subsection];
+  console.info("Comp")
   return <Comp mainContent={mainContent} setMainContent={setMainContent} />;
 };
 

@@ -62,7 +62,10 @@ const SupplementalComponent = (supplementalContent, props) => {
 function App() {
   const [mainContent, setMainContent] = useState({
     name: "Home",
-    mainContentSection: { name: "Introduction" },
+    mainContentSection: {
+      name: "Introduction",
+      subsection: "NoSupplementalContent",
+    },
   });
 
   const [supplementalContent, setSupplementalContent] = useState({
