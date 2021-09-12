@@ -24,6 +24,7 @@ const goodCaloriesBadCaloriesOnAmazon =
   "https://www.amazon.com/Good-Calories-Bad-Controversial-Science/dp/1400033462/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1631080913&sr=8-2";
 const philosophyScientificRepresentation =
   "https://plato.stanford.edu/entries/scientific-representation/";
+const htmlAccessibilityUrl = "https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML"
 
 // tool links
 const sublimeTextUrl = "https://www.sublimetext.com/download"
@@ -40,5 +41,6 @@ export {
   goodCaloriesBadCaloriesOnAmazon,
   philosophyScientificRepresentation,
   sublimeTextUrl,
-  visualCodeStudioUrl
+  visualCodeStudioUrl,
+  htmlAccessibilityUrl
 };

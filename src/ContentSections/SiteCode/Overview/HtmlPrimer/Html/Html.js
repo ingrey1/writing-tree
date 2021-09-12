@@ -14,6 +14,7 @@ import { CodeBlock } from "@atlaskit/code";
 import {
   visualCodeStudioUrl,
   sublimeTextUrl,
+  htmlAccessibilityUrl,
 } from "../../../../../common/constants";
 import IconButtonLink from "../../../../../common/components/IconButtonLink";
 import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
@@ -87,7 +88,7 @@ export default function Html({
       <p></p>
       <Paragraph content={paragraphs[3]} />
 
-      <Segment style={{ width: "50%", marginLeft: "20%" }}>
+      <Segment>
         <CodeBlock
           language="html"
           text={paragraphs[4]}
@@ -102,19 +103,35 @@ export default function Html({
           <Icon color="teal" name="copy"></Icon>
         </Button>
       </Segment>
-      <p>
-        The HTML code above consists of opening and closing tags, with some tags
-        living inside of other tags. For example, the 'section' tag lives in the
-        'body' tag. So, we say that the 'body' is the parent of 'section', and
-        'section' is the child of 'body'. Pay attention to the 'body' and
-        'header' tags. We'll discuss their meaning after we view the rendered
-        document.
-      </p>
-      <p>
-        Go ahead and open the 'cat-kingdom.html' file in your favorite browser.
-        It should look something like this.
-      </p>
+      <Paragraph content={paragraphs[5]} />
+      <Paragraph content={paragraphs[6]} />
       <Image src={codeblock1Image} width="50%"></Image>
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[8]} />
+      </Segment>
+      <Paragraph content={paragraphs[7]} />
+      <Paragraph content={paragraphs[9]} />
+      <Paragraph content={paragraphs[10]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[11]} />
+      </Segment>
+      <Paragraph content={paragraphs[12]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[13]} />
+      </Segment>
+      <Paragraph content={paragraphs[14]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[15]} />
+      </Segment>
+      <Paragraph content={paragraphs[16]} />
+      <Paragraph content={paragraphs[17]} />
+      <IconButtonLink
+        url={htmlAccessibilityUrl}
+        inverted
+        buttonColor="white"
+        iconName="eye"
+        iconColor="teal"
+      />
     </Container>
   );
 }

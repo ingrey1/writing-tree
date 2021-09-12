@@ -10,7 +10,8 @@ import {
   githubOverviewIntroUrl,
   githubRootUrl,
   visualCodeStudioUrl,
-  sublimeTextUrl
+  sublimeTextUrl,
+  htmlAccessibilityUrl
 } from "./urls";
 
 export {
@@ -27,5 +28,6 @@ export {
   githubOverviewIntroUrl,
   githubRootUrl,
   visualCodeStudioUrl,
-  sublimeTextUrl
+  sublimeTextUrl,
+  htmlAccessibilityUrl
 };
