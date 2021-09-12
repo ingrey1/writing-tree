@@ -6,6 +6,8 @@ const linkedinUrl = "https://www.linkedin.com/in/ingrey1/";
 const githubHomeMethodologyUrl =
   "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Methodology";
 
+const githubRootUrl = "https://github.com/ingrey1/writing-tree"
+
 const githubHomeIntroUrl =
   "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Intro";
 
@@ -25,6 +27,7 @@ const philosophyScientificRepresentation =
   "https://plato.stanford.edu/entries/scientific-representation/";
 
 export {
+  githubRootUrl,
   githubHomeMethodologyUrl,
   githubHomeIntroUrl,
   githubHomeContactUrl,

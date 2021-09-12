@@ -1,5 +1,7 @@
-import { Grid, Header } from "semantic-ui-react";
+import { Grid, Header, Divider } from "semantic-ui-react";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
+import IconButtonLink from "../common/components/IconButtonLink";
+import { githubRootUrl } from "../common/constants";
 export default function ActionsColumn({
   supplementalContent,
   setSupplementalContent,
@@ -13,6 +15,13 @@ export default function ActionsColumn({
         <ToggleSupplementalContentAction
           supplementalContent={supplementalContent}
           setSupplementalContent={setSupplementalContent}
+        />
+        <Divider />
+
+        <IconButtonLink
+          url={githubRootUrl}
+          iconName="github"
+          buttonSize="huge"
         />
       </Grid.Row>
     </Grid.Column>
