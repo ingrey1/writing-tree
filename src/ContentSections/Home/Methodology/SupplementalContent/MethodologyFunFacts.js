@@ -13,7 +13,7 @@ import { generateArrayFromRange } from "../../../../utils/general";
 
 const {
   methodology: {
-    funFacts: { calories },
+    funFacts: { calories, philosophyScience },
   },
 } = home;
 
@@ -92,6 +92,8 @@ export default function FunFacts() {
       {paragraphs29To31}
       <Header as="h3">References</Header>
       <Reference data={calories}></Reference>
+      <p></p>
+      <Reference data={philosophyScience}></Reference>
     </Container>
   );
 }

@@ -1,28 +1,28 @@
-import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
-export default class IntroMenu extends Component {
-  render() {
-    const activeItem = "Code";
+export default function IntroMenu({
+  setSupplementalContent,
+  supplementalContent,
+}) {
+  const activeItem = "Code";
 
-    return (
-      <Menu fluid tabular widths={2}>
-        <Menu.Item
-          name="Code"
-          active={activeItem === "Code"}
-          onClick={(e, state) => {
-            this.props.setSupplementalContent({
-              ...this.props.supplementalContent,
-              show: true,
-              name: "Overview",
-              supplementalContentSection: {
-                name: "Introduction",
-                subsection: "Code",
-              },
-            });
-          }}
-        />
-      </Menu>
-    );
-  }
+  return (
+    <Menu fluid tabular widths={2}>
+      <Menu.Item
+        name="Code"
+        active={activeItem === "Code"}
+        onClick={() => {
+          setSupplementalContent({
+            supplementalContent,
+            show: true,
+            name: "Overview",
+            supplementalContentSection: {
+              name: "Introduction",
+              subsection: "Code",
+            },
+          });
+        }}
+      />
+    </Menu>
+  );
 }

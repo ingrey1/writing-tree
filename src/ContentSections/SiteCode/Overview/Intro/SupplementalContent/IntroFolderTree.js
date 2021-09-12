@@ -16,7 +16,6 @@ const relativeFolderStructure = {
         { name: "IntroSupplementalContainer.js" },
       ],
     },
-    { name: "Intro.css" },
     { name: "Intro.js" },
     { name: "text.js" },
   ],

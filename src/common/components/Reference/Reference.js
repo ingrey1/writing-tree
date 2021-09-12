@@ -1,15 +1,41 @@
 import "./Reference.css";
 
+const createAuthorsString = (author) => {
+  if (!Array.isArray(author)) return author;
+
+  let authorStr = "";
+
+  author.forEach((authorName, index) => {
+    if (index === 0) {
+      authorStr += authorName;
+    } else {
+      authorStr += `, ${authorName}`;
+    }
+  });
+
+  return authorStr;
+};
+
 export default function Reference({ data, showContext, showBorder }) {
-  const { type, about } = data;
+  const { type, about, author, year, title } = data;
 
   let citation;
 
   if (type === "book") {
-    const { author, year, title, edition, publisher } = data;
+    const { edition, publisher } = data;
+
     citation = (
       <>
-        {author}. ({year}). <i>{title}</i> ({edition} ed.). {publisher}.
+        {createAuthorsString(author)} ({year}). <i>{title}</i> ({edition} ed.).{" "}
+        {publisher}.
+      </>
+    );
+  } else if (type === "website") {
+    const { website, fullUrl } = data;
+    citation = (
+      <>
+        {createAuthorsString(author)} ({year}). <i>{title}</i>. {website}.{" "}
+        {fullUrl}
       </>
     );
   }

@@ -13,6 +13,12 @@ export default function References() {
         showContext
         showBorder
       />
+      <p></p>
+      <Reference
+        data={home.methodology.funFacts.philosophyScience}
+        showContext
+        showBorder
+      />
     </Container>
   );
 }

@@ -32,7 +32,6 @@ function Methodology({ supplementalContent, setSupplementalContent }) {
         inverted
         className="center"
         iconName="book"
-        buttonColor="white"
         state={supplementalContent}
         setState={setSupplementalContent}
         newStateContent={{
