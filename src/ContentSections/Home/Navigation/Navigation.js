@@ -19,6 +19,8 @@ function Navigation() {
       <Paragraph content={paragraphs[5]} />
       <Icon name="tree" color="teal" size="large" />
       <Paragraph content={paragraphs[6]} />
+      <Icon name="cut" color="teal" size="large" />
+      <Paragraph content={paragraphs[9]} />
       <Header as="h4">Actions</Header>
       <Button basic color="teal">
         Show Extra Content

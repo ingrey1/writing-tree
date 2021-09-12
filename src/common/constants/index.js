@@ -9,6 +9,8 @@ import {
   githubHomeNavigationUrl,
   githubOverviewIntroUrl,
   githubRootUrl,
+  visualCodeStudioUrl,
+  sublimeTextUrl
 } from "./urls";
 
 export {
@@ -24,4 +26,6 @@ export {
   githubHomeContactUrl,
   githubOverviewIntroUrl,
   githubRootUrl,
+  visualCodeStudioUrl,
+  sublimeTextUrl
 };

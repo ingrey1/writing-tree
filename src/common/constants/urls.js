@@ -2,7 +2,6 @@
 const linkedinUrl = "https://www.linkedin.com/in/ingrey1/";
 
 // code links
-// home
 const githubHomeMethodologyUrl =
   "https://github.com/ingrey1/writing-tree/tree/main/src/ContentSections/Home/Methodology";
 
@@ -26,6 +25,10 @@ const goodCaloriesBadCaloriesOnAmazon =
 const philosophyScientificRepresentation =
   "https://plato.stanford.edu/entries/scientific-representation/";
 
+// tool links
+const sublimeTextUrl = "https://www.sublimetext.com/download"
+const visualCodeStudioUrl = "https://code.visualstudio.com/"
+
 export {
   githubRootUrl,
   githubHomeMethodologyUrl,
@@ -36,4 +39,6 @@ export {
   linkedinUrl,
   goodCaloriesBadCaloriesOnAmazon,
   philosophyScientificRepresentation,
+  sublimeTextUrl,
+  visualCodeStudioUrl
 };

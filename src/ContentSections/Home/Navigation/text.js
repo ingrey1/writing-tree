@@ -7,6 +7,7 @@ const paragraphs = {
   6: "This icon represents an external link to an article or book. You will find it occasionally in the supplemental content sections.",
   7: "This button can be found in the actions panel on the right, visible in large screen mode. Clicking it will toggle the supplemental content section. Alternatively, on mobile, you can click on the toggle extra content option in the main menu located at the top of the screen.",
   8: "This button will be found in various content sections. It will open an external link to a github repository.",
+  9: "You will find this icon in different contents area on the site. It opens an external url for a potentialyl useful software tool",
 };
 
 export { paragraphs };
