@@ -1,7 +1,7 @@
 const paragraphs = {
   1: "In this section, we will start putting together the HTML for a simple web application that will render in our browser. While I could start off with a discussion of the technologies underlying what we're about to build, I don't think that would be particularly helpful. As a fellow learner, I've found it's always best to have some practical context to anchor more complex abstractions.",
   2: "Before we get started, let's make sure you have the right tools for the job available. In addition to a web browser, the only other thing you will need right now is a text editor. Here are a couple popular options that have ample plugins to support you in your coding journey.",
-  3: "Let's go ahead and put some basic HTML markdown in our document.",
+  3: "Let's put some basic HTML markdown in our document.",
   4: `<!DOCTYPE html>
 <html>
   <head>
@@ -48,9 +48,12 @@ const paragraphs = {
   20: `Check out that image tag. Yes, there is something wrong with it. But it's not the fact that it's missing a closing tag. Not all HTML elements require a closing tag. You might have gathered that it's supposed to display an image on the screen, but what image? Let's try adding the 'src' (source) attribute to the 'img' element.`,
   21: `<img src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg">`,
   22: `Let's save our code and view it in the browser.`,
-  23: `By supplying the 'src' attribute a url string as a value, we were able to display our image. You might be wondering whether or not we can resize it. And we definitely can, but let's wait until we get to the CSS tutorial. Before we add our first cat to the kingdom, we should introduce an element that will serve as the parent of all the cats in the kingdom.`,
+  23: `By supplying the 'src' attribute a url string as a value, we were able to display our image. You might be wondering whether or not we can resize it. And we definitely can, but let's wait until we get to the CSS tutorial.`,
   24: `<section id="mufasa-menagerie">Mufasa's children will live here</section>`,
-  25: `You can add an 'id' attribute to any element.`
+  25: `You can add an 'id' attribute to any element.`,
+  26: `However, sometimes the url you provide the image element with won't work. Additionally, screen-readers cannot make sense of images, as images. To combat these problems, we can supply an additional attribute, 'alt', with a textual description of the image.`,
+  27: `<img src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg" alt="Two Lions resting together.">`,
+  28: `Before we add our first cat to the kingdom, we should introduce an element that will serve as the parent of all the cats in the kingdom.`,
 };
 
 export { paragraphs };

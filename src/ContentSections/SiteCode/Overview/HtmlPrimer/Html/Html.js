@@ -37,7 +37,6 @@ export default function Html({
         Introduction
       </Header>
       <Paragraph content={paragraphs[1]} />
-
       <Paragraph content={paragraphs[2]} />
       <Grid>
         <Grid.Column textAlign="center">
@@ -65,7 +64,6 @@ export default function Html({
           </List>
         </Grid.Column>
       </Grid>
-
       <p>
         Go ahead and open a new document in your text editor and save it as
         follows.
@@ -89,7 +87,6 @@ export default function Html({
       </Grid>
       <p></p>
       <Paragraph content={paragraphs[3]} />
-
       <Segment>
         <CodeBlock
           language="html"
@@ -157,11 +154,15 @@ export default function Html({
       <Paragraph content={paragraphs[22]} />
       <Image src={codeblock2Image} width="50%"></Image>
       <Paragraph content={paragraphs[23]} />
+      <Paragraph content={paragraphs[26]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[27]} />
+      </Segment>
+      <Paragraph content={paragraphs[28]} />
       <Segment>
         <CodeBlock language="html" text={paragraphs[24]} />
       </Segment>
       <Paragraph content={paragraphs[25]} />
-
       <List bulleted>
         <List.Header as="h4">'id' attribute tips</List.Header>
         <List.Item>The 'id' value should be unique.</List.Item>
