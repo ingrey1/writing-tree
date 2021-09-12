@@ -54,6 +54,63 @@ const paragraphs = {
   26: `However, sometimes the url you provide the image element with won't work. Additionally, screen-readers cannot make sense of images, as images. To combat these problems, we can supply an additional attribute, 'alt', with a textual description of the image.`,
   27: `<img src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg" alt="Two Lions resting together.">`,
   28: `Before we add our first cat to the kingdom, we should introduce an element that will serve as the parent of all the cats in the kingdom.`,
+  29: `It's time to add a lion to Mufasa's menagerie. Before we get to the html, let's list the pieces of information we want to include for each animal.`,
+  30: `We can add the 'section' element first, and then think about which tags we should use for Simba's data.`,
+  31: `<section id="mufasa-menagerie">
+   <section id="simba">
+    Simba is Mufasa's child element. Mufasa is Simba's parent element.
+   </section>
+</section>`,
+  32: `Let's use this opportunity to introduce the 'table' element, adding Simba's the name and age.`,
+  33: `<section id="mufasa-menagerie">
+  <section id="simba">
+    <table id="simba-table">
+      <tr>
+        <th>Name:</th>
+        <th>Age:</th>
+      </tr>
+      <tr>
+        <td>Simba</td>
+        <td>1</td>
+      </tr>
+    </table>
+  </section>
+</section>`,
+  34: `Our full document now looks like this.`,
+  35: `<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Cat Kingdom</title>
+    </head>
+    <body>
+      <h1>Animal Kingdom</h1>
+      <h2>The best kingdom</h2>
+      <section>
+        <p>We will add lots of cats to the kingdom</p>
+        <p>Be Prepared!</p>
+        <img
+          src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg"
+        />
+        <section id="mufasa-menagerie">
+          <section id="simba">
+            <table id="simba-table">
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+              </tr>
+              <tr>
+                <td>Simba</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </section>
+        </section>
+      </section>
+    </body>
+  </html>
+  `,
+  36: `The menagerie is coming along. Go ahead and open it in the browser.`,
+  37: `Now let's consider the anatomy of the 'table'.`
 };
 
 export { paragraphs };

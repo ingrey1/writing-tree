@@ -21,6 +21,7 @@ import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
 import IconButtonContentLink from "../../../../../common/components/IconButtonContentLink";
 import codeblock1Image from "./images/codeblock1.png";
 import codeblock2Image from "./images/codeblock2.png";
+import codeblock3Image from "./images/codeblock3.png";
 
 const codeBlock1LinesToHighlight = "6,9,12,13";
 const codeBlock2LinesToHighlight = "12";
@@ -175,6 +176,43 @@ export default function Html({
           Ideally, the 'id' value should describe, in some minor way, the
           content of the element it refers to.
         </List.Item>
+      </List>
+      <Paragraph content={paragraphs[29]} />
+      <List bulleted>
+        <List.Header as="h4">Animal Information</List.Header>
+        <List.Item>Name</List.Item>
+        <List.Item>Age</List.Item>
+        <List.Item>Favorite Foods</List.Item>
+        <List.Item>Friends</List.Item>
+      </List>
+      <Paragraph content={paragraphs[30]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[31]} />
+      </Segment>
+      <Paragraph content={paragraphs[32]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[33]} />
+      </Segment>
+      <Paragraph content={paragraphs[34]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[35]} />
+        <Button
+          inverted
+          onClick={() => {
+            navigator.clipboard.writeText(paragraphs[35]);
+          }}
+        >
+          <Icon color="teal" name="copy"></Icon>
+        </Button>
+      </Segment>
+      <Paragraph content={paragraphs[36]} />
+      <Image src={codeblock3Image} width="50%"></Image>
+      <Paragraph content={paragraphs[37]} />
+      <List bulleted>
+        <List.Header as="h4">Table Child Elements</List.Header>
+        <List.Item>'tr': a table row</List.Item>
+        <List.Item>'th': a table header and column value.</List.Item>
+        <List.Item>'td': a column value</List.Item>
       </List>
     </Container>
   );
