@@ -20,8 +20,10 @@ import IconButtonLink from "../../../../../common/components/IconButtonLink";
 import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
 import IconButtonContentLink from "../../../../../common/components/IconButtonContentLink";
 import codeblock1Image from "./images/codeblock1.png";
+import codeblock2Image from "./images/codeblock2.png";
 
 const codeBlock1LinesToHighlight = "6,9,12,13";
+const codeBlock2LinesToHighlight = "12";
 
 export default function Html({
   supplementalContent,
@@ -132,6 +134,29 @@ export default function Html({
         iconName="eye"
         iconColor="teal"
       />
+      <Paragraph content={paragraphs[18]} />
+      <Segment>
+        <CodeBlock
+          language="html"
+          text={paragraphs[19]}
+          highlight={codeBlock2LinesToHighlight}
+        />
+        <Button
+          inverted
+          onClick={() => {
+            navigator.clipboard.writeText(paragraphs[19]);
+          }}
+        >
+          <Icon color="teal" name="copy"></Icon>
+        </Button>
+      </Segment>
+      <Paragraph content={paragraphs[20]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[21]} />
+      </Segment>
+      <Paragraph content={paragraphs[22]} />
+      <Image src={codeblock2Image} width="50%"></Image>
+      <Paragraph content={paragraphs[23]} />
     </Container>
   );
 }
