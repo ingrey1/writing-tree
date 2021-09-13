@@ -37,7 +37,9 @@ export default function HtmlPrimerContentRow({
   setSupplementalContent,
 }) {
   return (
-    <Grid.Row>
+    <Grid.Row
+      style={{ overflowY: "auto", overflowX: "hidden", height: "85vh" }}
+    >
       {Component({
         mainContent,
         setMainContent,

@@ -13,5 +13,11 @@ const Component = (mainContent, setMainContent) => {
 };
 
 export default function ResourcesContentRow({ mainContent, setMainContent }) {
-  return <Grid.Row>{Component(mainContent, setMainContent)}</Grid.Row>;
+  return (
+    <Grid.Row
+      style={{ overflowY: "auto", overflowX: "hidden", height: "85vh" }}
+    >
+      {Component(mainContent, setMainContent)}
+    </Grid.Row>
+  );
 }

@@ -41,5 +41,11 @@ export default function HomeContentRow({
     }
   };
 
-  return <Grid.Row>{component(mainContent)}</Grid.Row>;
+  return (
+    <Grid.Row
+      style={{ overflowY: "auto", overflowX: "hidden", height: "85vh" }}
+    >
+      {component(mainContent)}
+    </Grid.Row>
+  );
 }
