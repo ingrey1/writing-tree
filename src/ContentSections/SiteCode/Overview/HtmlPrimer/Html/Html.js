@@ -9,6 +9,7 @@ import {
   Button,
   Segment,
   Image,
+  Divider,
 } from "semantic-ui-react";
 import { CodeBlock } from "@atlaskit/code";
 import {
@@ -25,6 +26,7 @@ import codeblock3Image from "./images/codeblock3.png";
 
 const codeBlock1LinesToHighlight = "6,9,12,13";
 const codeBlock2LinesToHighlight = "12";
+const codeBlock3LinesToHighlight = "2,5, 7-8";
 
 export default function Html({
   supplementalContent,
@@ -38,6 +40,7 @@ export default function Html({
         Introduction
       </Header>
       <Paragraph content={paragraphs[1]} />
+      <Divider />
       <Header as="h2" textAlign="center">
         Requirements
       </Header>
@@ -68,6 +71,7 @@ export default function Html({
           </List>
         </Grid.Column>
       </Grid>
+      <Divider />
       <Header as="h2" textAlign="center">
         Creating The Cat Kingdom
       </Header>
@@ -75,6 +79,7 @@ export default function Html({
         Go ahead and open a new document in your text editor and save it as
         follows.
       </p>
+
       <Grid textAlign="center">
         <Grid.Column>
           <Message floating compact>
@@ -92,6 +97,9 @@ export default function Html({
           </Message>
         </Grid.Column>
       </Grid>
+      <Header as="h3" textAlign="center">
+        The Starter Code
+      </Header>
       <p></p>
       <Paragraph content={paragraphs[3]} />
       <Segment>
@@ -138,6 +146,9 @@ export default function Html({
         iconName="eye"
         iconColor="teal"
       />
+      <Header as="h3" textAlign="center">
+        Add An Image
+      </Header>
       <Paragraph content={paragraphs[18]} />
       <Segment>
         <CodeBlock
@@ -165,6 +176,9 @@ export default function Html({
       <Segment>
         <CodeBlock language="html" text={paragraphs[27]} />
       </Segment>
+      <Header as="h3" textAlign="center">
+        Add Content Section
+      </Header>
       <Paragraph content={paragraphs[28]} />
       <Segment>
         <CodeBlock language="html" text={paragraphs[24]} />
@@ -195,6 +209,9 @@ export default function Html({
       <Segment>
         <CodeBlock language="html" text={paragraphs[31]} />
       </Segment>
+      <Header as="h3" textAlign="center">
+        Add Table
+      </Header>
       <Paragraph content={paragraphs[32]} />
       <Segment>
         <CodeBlock language="html" text={paragraphs[33]} />
@@ -220,6 +237,18 @@ export default function Html({
         <List.Item>'th': a table header and column value.</List.Item>
         <List.Item>'td': a column value</List.Item>
       </List>
+      <Segment>
+        <CodeBlock
+          language="html"
+          text={paragraphs[38]}
+          highlight={codeBlock3LinesToHighlight}
+        />
+      </Segment>
+      <Paragraph content={paragraphs[39]} />
+      <Header as="h3" textAlign="center">
+        Add List
+      </Header>
+      <Paragraph content={paragraphs[40]} />
     </Container>
   );
 }

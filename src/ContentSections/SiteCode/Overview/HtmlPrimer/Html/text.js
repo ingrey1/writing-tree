@@ -111,6 +111,18 @@ const paragraphs = {
   `,
   36: `The menagerie is coming along. Go ahead and open it in the browser.`,
   37: `Now let's consider the anatomy of the 'table' element.`,
+  38: ` <table id="simba-table">
+  <tr>
+    <th>Name</th>
+    <th>Age (years)</th>
+  </tr>
+  <tr>
+    <td>Simba</td>
+    <td>1</td>
+  </tr>
+</table>`,
+  39: `Can you tell the table rows and column values are displayed based on (1) the order of the html tags in the above code snippet, and (2) the output in your web browser?`,
+  40: `Let's consider how we can add the rest of Simba's information to our webpage. While "Name" and "Age" each have a single value, "Friends" and "Favorite Foods" may have multiple values. When you need to group multiple values together, the 'list' element is a good choice.`,
 };
 
 export { paragraphs };
