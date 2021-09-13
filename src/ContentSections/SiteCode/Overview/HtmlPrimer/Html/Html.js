@@ -11,7 +11,6 @@ import {
   Image,
   Divider,
   ListItem,
-  ListHeader,
   ListContent,
 } from "semantic-ui-react";
 import { CodeBlock } from "@atlaskit/code";
