@@ -1,7 +1,7 @@
 import { Menu } from "semantic-ui-react";
 import { generateMenuItems } from "../../../../utils/components";
 
-const itemNames = ["Html", "Css", "Javascript"];
+const itemNames = ["HTML", "CSS", "Javascript"];
 const newInnerContents = ["Html", "Css", "Javascript"].map((name) => {
   return { name: "HtmlPrimer", subsection: name };
 });
@@ -20,6 +20,15 @@ const newSupplementalInnerContents = itemNames.map((name) => {
 
 const newSupplementalOuterContents = { show: false, name: "Overview" };
 
+const mapSectionToMenuName = (subsection) => {
+  const mappings = {
+    Css: "CSS",
+    Html: "HTML",
+  };
+
+  return mappings[subsection] || subsection;
+};
+
 export default function HtmlPrimerMenu({
   mainContent,
   mainContent: {
@@ -29,7 +38,7 @@ export default function HtmlPrimerMenu({
   supplementalContent,
   setSupplementalContent,
 }) {
-  const activeItem = subsection;
+  const activeItem = mapSectionToMenuName(subsection);
 
   return (
     <Menu fluid widths={3}>

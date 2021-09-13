@@ -38,6 +38,9 @@ export default function Html({
         Introduction
       </Header>
       <Paragraph content={paragraphs[1]} />
+      <Header as="h2" textAlign="center">
+        Requirements
+      </Header>
       <Paragraph content={paragraphs[2]} />
       <Grid>
         <Grid.Column textAlign="center">
@@ -65,6 +68,9 @@ export default function Html({
           </List>
         </Grid.Column>
       </Grid>
+      <Header as="h2" textAlign="center">
+        Creating The Cat Kingdom
+      </Header>
       <p>
         Go ahead and open a new document in your text editor and save it as
         follows.
