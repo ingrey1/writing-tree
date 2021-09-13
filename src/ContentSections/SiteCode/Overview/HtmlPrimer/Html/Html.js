@@ -307,8 +307,7 @@ export default function Html({
         <ListItem>
           <ListContent>
             <b>Dynamic Content:</b>:&#160; We need to be able to generate HTML
-            on the fly when users interact with our web app. We will cover this
-            in the Javascript section.
+            on the fly when users interact with our web app.
           </ListContent>
         </ListItem>
       </List>
