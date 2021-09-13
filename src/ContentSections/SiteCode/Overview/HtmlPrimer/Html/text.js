@@ -218,6 +218,9 @@ const paragraphs = {
 </html>
 `,
   47: `Let's see what that looks like in the browser.`,
+  48: `Notice that unordered list items are bulleted by default, while ordered lists are numbered. You can change this later with CSS, if you want a different look.`,
+  49: `While we're able to create a simple webpage with content, it's still missing a few important elements.`,
+  50: `We'll tackle styling in the CSS section, and both user interaction and dynamic content in the Javascript section`,
 };
 
 export { paragraphs };

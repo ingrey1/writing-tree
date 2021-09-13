@@ -10,6 +10,9 @@ import {
   Segment,
   Image,
   Divider,
+  ListItem,
+  ListHeader,
+  ListContent,
 } from "semantic-ui-react";
 import { CodeBlock } from "@atlaskit/code";
 import {
@@ -282,6 +285,34 @@ export default function Html({
       </Segment>
       <Paragraph content={paragraphs[47]} />
       <Image src={codeblock4Image} />
+      <Paragraph content={paragraphs[48]} />
+      <Divider />
+      <Header as="h2" textAlign="center">
+        Areas For Improvement
+      </Header>
+      <Paragraph content={paragraphs[49]} />
+      <List bulleted>
+        <ListItem>
+          <ListContent>
+            <b>Styling</b>:&#160;We want to be able to change how our content
+            looks.
+          </ListContent>
+        </ListItem>
+        <ListItem>
+          <ListContent>
+            <b>User Interaction:</b>:&#160; we want our users to be able to
+            interact with our web app in various ways.
+          </ListContent>
+        </ListItem>
+        <ListItem>
+          <ListContent>
+            <b>Dynamic Content:</b>:&#160; We need to be able to generate HTML
+            on the fly when users interact with our web app. We will cover this
+            in the Javascript section.
+          </ListContent>
+        </ListItem>
+      </List>
+      <Paragraph content={paragraphs[50]} />
     </Container>
   );
 }
