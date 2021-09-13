@@ -23,10 +23,13 @@ import IconButtonContentLink from "../../../../../common/components/IconButtonCo
 import codeblock1Image from "./images/codeblock1.png";
 import codeblock2Image from "./images/codeblock2.png";
 import codeblock3Image from "./images/codeblock3.png";
+import codeblock4Image from "./images/codeblock4.png";
 
 const codeBlock1LinesToHighlight = "6,9,12,13";
 const codeBlock2LinesToHighlight = "12";
-const codeBlock3LinesToHighlight = "2,5, 7-8";
+const codeBlock3LinesToHighlight = "2,5,7-8";
+const codeBlock4LinesToHighlight = "5,10-15";
+const codeBlock5LinesToHighlight = "6,17-23";
 
 export default function Html({
   supplementalContent,
@@ -119,7 +122,7 @@ export default function Html({
       </Segment>
       <Paragraph content={paragraphs[5]} />
       <Paragraph content={paragraphs[6]} />
-      <Image src={codeblock1Image} width="50%"></Image>
+      <Image src={codeblock1Image}></Image>
       <Segment>
         <CodeBlock language="html" text={paragraphs[8]} />
       </Segment>
@@ -170,7 +173,7 @@ export default function Html({
         <CodeBlock language="html" text={paragraphs[21]} />
       </Segment>
       <Paragraph content={paragraphs[22]} />
-      <Image src={codeblock2Image} width="50%"></Image>
+      <Image src={codeblock2Image}></Image>
       <Paragraph content={paragraphs[23]} />
       <Paragraph content={paragraphs[26]} />
       <Segment>
@@ -249,6 +252,36 @@ export default function Html({
         Add List
       </Header>
       <Paragraph content={paragraphs[40]} />
+      <Paragraph content={paragraphs[41]} />
+      <Segment>
+        <CodeBlock
+          language="html"
+          text={paragraphs[42]}
+          highlight={codeBlock4LinesToHighlight}
+        />
+      </Segment>
+      <Paragraph content={paragraphs[43]} />
+      <Segment>
+        <CodeBlock
+          language="html"
+          text={paragraphs[44]}
+          highlight={codeBlock5LinesToHighlight}
+        />
+      </Segment>
+      <Paragraph content={paragraphs[45]} />
+      <Segment>
+        <CodeBlock language="html" text={paragraphs[46]} />
+        <Button
+          inverted
+          onClick={() => {
+            navigator.clipboard.writeText(paragraphs[46]);
+          }}
+        >
+          <Icon color="teal" name="copy"></Icon>
+        </Button>
+      </Segment>
+      <Paragraph content={paragraphs[47]} />
+      <Image src={codeblock4Image} />
     </Container>
   );
 }

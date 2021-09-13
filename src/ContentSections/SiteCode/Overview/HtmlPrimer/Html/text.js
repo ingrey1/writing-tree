@@ -1,5 +1,5 @@
 const paragraphs = {
-  1: "In this section, we will start putting together the HTML for a simple web application that will render in our browser. While I could start off with a discussion of the technologies underlying what we're about to build, I don't think that would be particularly helpful. As a fellow learner, I've found it's always best to have some practical context to anchor more complex abstractions.",
+  1: "In this section, we will start putting together the HTML for a simple web application that will render in our browser. We will create a cat kingdom, and populate the kingdom with cats.",
   2: "Before we get started, let's make sure you have the right tools for the job available. In addition to a web browser, the only other thing you will need right now is a text editor. Here are a couple popular options that have ample plugins to support you in your coding journey.",
   3: "Let's put some basic HTML markdown in our document.",
   4: `<!DOCTYPE html>
@@ -67,7 +67,7 @@ const paragraphs = {
     <table id="simba-table">
       <tr>
         <th>Name</th>
-        <th>Age (years)</th>
+        <th>Age</th>
       </tr>
       <tr>
         <td>Simba</td>
@@ -96,7 +96,7 @@ const paragraphs = {
             <table id="simba-table">
               <tr>
                 <th>Name</th>
-                <th>Age (years)</th>
+                <th>Age</th>
               </tr>
               <tr>
                 <td>Simba</td>
@@ -114,15 +114,110 @@ const paragraphs = {
   38: ` <table id="simba-table">
   <tr>
     <th>Name</th>
-    <th>Age (years)</th>
+    <th>Age</th>
+    <th>Friends</th>
   </tr>
   <tr>
     <td>Simba</td>
     <td>1</td>
   </tr>
 </table>`,
-  39: `Can you tell the table rows and column values are displayed based on (1) the order of the html tags in the above code snippet, and (2) the output in your web browser?`,
-  40: `Let's consider how we can add the rest of Simba's information to our webpage. While "Name" and "Age" each have a single value, "Friends" and "Favorite Foods" may have multiple values. When you need to group multiple values together, the 'list' element is a good choice.`,
+  39: `Can you tell how the table rows and column values are displayed based on (1) the order of the html tags in the above code snippet, and (2) the output in your web browser?`,
+  40: `Let's consider how we can add the rest of Simba's information to our webpage. While "Name" and "Age" each have a single value, "Friends" and "Favorite Foods" may have multiple values. When you need to group multiple values together, the 'list' element is a good choice. There are two sorts of lists, ordered and unordered. We will assume, for the sake of demonstration, that "Favorite Foods" are ordered and "Friends" are unordered.`,
+  41: `Add The 'ul' (unordered list) as a 'td' (column value) for the 'tr' header "Friends".`,
+  42: ` <table id="simba-table">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Friends/th>
+  </tr>
+  <tr>
+    <td>Simba</td>
+    <td>1</td>
+    <td>
+      <ul>
+        <li>Wildebeast</li>
+        <li>Giraffe</li>
+      </ul>
+    </td>
+  </tr>
+</table>`,
+  43: `Add The 'ol' (ordered list) as a 'td' (column value) for the 'tr' header "Favorite Foods".`,
+  44: `  <table id="simba-table">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Favorite Foods</th>
+    <th>Friends</th>
+  </tr>
+  <tr>
+    <td>Simba</td>
+    <td>1</td>
+    <td>
+      <ul>
+        <li>Wildebeast</li>
+        <li>Giraffe</li>
+      </ul>
+    </td>
+    <td>
+      <ol>
+        <li>Nala</li>
+        <li>Scar</li>
+        <li>Zazu</li>
+      </ol>
+    </td>
+  </tr>
+</table>
+</section>`,
+  45: `Here is the complete code so far.`,
+  46: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cat Kingdom</title>
+  </head>
+  <body>
+    <h1>Animal Kingdom</h1>
+    <h2>The best kingdom</h2>
+    <section>
+      <p>We will add lots of cats to the kingdom</p>
+      <p>Be Prepared!</p>
+      <img
+        src="https://cdn.pixabay.com/photo/2014/12/22/10/04/lions-577104__340.jpg"
+      />
+      <section id="mufasa-menagerie">
+        <section id="simba">
+          <table id="simba-table">
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Friends</th>
+              <th>Favorite Foods</th>
+            </tr>
+            <tr>
+              <td>Simba</td>
+              <td>1</td>
+              <td>
+                <ul>
+                  <li>Wildebeast</li>
+                  <li>Giraffe</li>
+                </ul>
+              </td>
+              <td>
+                <ol>
+                  <li>Nala</li>
+                  <li>Scar</li>
+                  <li>Zazu</li>
+                </ol>
+              </td>
+            </tr>
+          </table>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>
+`,
+  47: `Let's see what that looks like in the browser.`,
 };
 
 export { paragraphs };
