@@ -22,14 +22,15 @@ export default function CssContainer({ html }) {
     }
 
     if (!transformation.length) return null;
-
+    const className = Object.keys(transformation[0])[0].replace(".", "");
+    console.info("className", className);
     const cssObject = Object.values(transformation[0]);
     let result = {};
     cssObject.forEach((style) => {
       result = { ...result, ...style };
     });
     console.info("cssObject", result);
-    return result;
+    return { styles: result, className };
   };
 
   return (
@@ -46,7 +47,11 @@ export default function CssContainer({ html }) {
           onClick={() => {
             const generatedStyles = applyStyles(state.cssText);
             if (generatedStyles) {
-              setState({ ...state, styleObject: generatedStyles });
+              setState({
+                ...state,
+                styleObject: generatedStyles.styles,
+                className: generatedStyles.className,
+              });
             }
           }}
         >
