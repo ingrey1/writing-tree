@@ -14,6 +14,7 @@ import {
   ListItem,
   ListContent,
 } from "semantic-ui-react";
+import CssContainer from "../../../../../common/components/CssConsole/CssContainer";
 import CopyTextToClipboard from "../../../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
 import { CodeBlock } from "@atlaskit/code";
 import AnimalKingdomTree from "./AnimalKingdomTree";
@@ -49,6 +50,9 @@ export default function Css() {
       <Header as="h2" textAlign="center">
         Multiple Ways to Style Elements
       </Header>
+      <Paragraph content={paragraphs[7]} />
+      <CodeBlock language="html" text={paragraphs[8]} />
+      <CssContainer />
     </Container>
   );
 }
