@@ -7,11 +7,9 @@ function Intro() {
       <Header as="h3" textAlign="center">
         The Parable of the Forgotten Documentation
       </Header>
-      <p>Maybe have some images done by shawnlart</p>
       {Object.keys(paragraphs).map((paragraphKey, index) => (
         <Paragraph key={index} content={paragraphs[paragraphKey]} />
       ))}
-      <p>Maybe have some images done by shawnlart</p>
     </Container>
   );
 }
