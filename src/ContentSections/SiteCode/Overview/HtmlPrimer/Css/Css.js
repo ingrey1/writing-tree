@@ -14,6 +14,7 @@ import {
   ListItem,
   ListContent,
 } from "semantic-ui-react";
+import CopyTextToClipboard from "../../../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
 import { CodeBlock } from "@atlaskit/code";
 import AnimalKingdomTree from "./AnimalKingdomTree";
 import "./Css.css";
@@ -32,6 +33,12 @@ export default function Css() {
       </Header>
       <Paragraph content={paragraphs[2]} />
       <CodeBlock language="html" text={paragraphs[3]} />
+      <CopyTextToClipboard
+        inverted
+        text={paragraphs[3]}
+        iconSize="small"
+        buttonSize="small"
+      />
       <Paragraph content={paragraphs[4]} />
       <AnimalKingdomTree />
       <Paragraph content={paragraphs[5]} />
