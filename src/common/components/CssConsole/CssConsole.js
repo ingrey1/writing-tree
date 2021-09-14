@@ -8,7 +8,7 @@ export default function CssConsole({ userText, state, setState }) {
           placeholder="Define your CSS class here"
           style={{ minHeight: 100 }}
           value={userText}
-          onChange={(event) => setState({ ...state, text: event.target.value })}
+          onChange={(event) => setState({ ...state, cssText: event.target.value })}
         />
       </Form>
     </Grid.Row>

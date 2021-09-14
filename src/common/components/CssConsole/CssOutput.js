@@ -1,33 +1,27 @@
 import { Grid, Header } from "semantic-ui-react";
-import { CodeBlock } from "@atlaskit/code";
 
-const htmlBlocks = {
-  1: `<div className="?">
-         <p>
-           <i>text</i> 
-         </p>
-    </>`,
-};
+const setCustomClassAndText = (className, html) => {
+  let customClassHtml = html.replace("?", className);
 
-const setCustomClassAndText = (className, text, html) => {
-  const customClass = html.replace("?", className);
-  return customClass.replace("text", text);
+  //const result = customClassHtml.replace("`", "");
+  console.info("html String", customClassHtml);
+  return customClassHtml;
 };
 
 export default function CssOutput({
   html,
   defaultHtmlOutput,
-  text,
   className,
+  styleObject,
 }) {
   let formattedHtml;
   if (html) {
-    formattedHtml = setCustomClassAndText(className, text, htmlBlocks[1]);
+    formattedHtml = setCustomClassAndText(className, html);
   }
   return (
     <Grid.Row>
       <Header as="h4">Rendered HTML Element With Your Css Class Applied</Header>
-      {formattedHtml || defaultHtmlOutput}
+      <div style={styleObject}>{formattedHtml || defaultHtmlOutput}</div>
     </Grid.Row>
   );
 }

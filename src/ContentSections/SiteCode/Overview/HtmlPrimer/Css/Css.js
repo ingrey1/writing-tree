@@ -52,7 +52,7 @@ export default function Css() {
       </Header>
       <Paragraph content={paragraphs[7]} />
       <CodeBlock language="html" text={paragraphs[8]} />
-      <CssContainer />
+      <CssContainer html={paragraphs[8]} />
     </Container>
   );
 }

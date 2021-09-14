@@ -1,22 +1,63 @@
 import { useState } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Button } from "semantic-ui-react";
 import CssConsole from "./CssConsole";
 import CssOutput from "./CssOutput";
+const { cssToCamelizedJson } = require("convert-css");
 
-const transformTextToStyle = (cssText) => {};
+export default function CssContainer({ html }) {
+  const [state, setState] = useState({
+    className: "blue",
+    cssText: "",
+    text: "Simba",
+    styleObject: {},
+  });
 
-export default function CssContainer() {
-  const [state, setState] = useState({ className: "blue", text: "Simba" });
+  const applyStyles = (cssClassText) => {
+    console.info("cssClassText", cssClassText);
+    let transformation;
+    try {
+      transformation = cssToCamelizedJson(cssClassText);
+    } catch (err) {
+      return null;
+    }
+
+    if (!transformation.length) return null;
+
+    const cssObject = Object.values(transformation[0]);
+    let result = {};
+    cssObject.forEach((style) => {
+      result = { ...result, ...style };
+    });
+    console.info("cssObject", result);
+    return result;
+  };
 
   return (
     <Grid.Row>
       <Grid.Row>
-        <CssConsole state={state} setState={setState} userText={state.text} />
+        <CssConsole
+          state={state}
+          setState={setState}
+          userText={state.cssText}
+        />
+        <Button
+          basic
+          color="teal"
+          onClick={() => {
+            const generatedStyles = applyStyles(state.cssText);
+            if (generatedStyles) {
+              setState({ ...state, styleObject: generatedStyles });
+            }
+          }}
+        >
+          Apply CSS Class
+        </Button>
       </Grid.Row>
       <Grid.Row>
         <CssOutput
+          html={html}
           defaultHtmlOutput="Simba"
-          text={state.text}
+          styleObject={state.styleObject}
           className={state.className}
         />
       </Grid.Row>
