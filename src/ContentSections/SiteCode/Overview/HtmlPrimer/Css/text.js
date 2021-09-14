@@ -69,18 +69,19 @@ const paragraphs = {
   4: `It can be a bit difficult to see the parent-child relationships within the html. So, I've provided the following tree for you to refer back to as we do the styling.`,
   5: `Alternatively, you can always view the DOM (document object model) tree using your browser dev tools. This has the added advantage of showing you all the properties of each DOM node (element). If you're using Chrome, you can simply right click on a visual element and select 'inspect'. It will look something like this.`,
   6: `In CSS, styles cascade from parents to children. So, we can apply styles to all the descendants of an ancestor by styling the ancestor. This is convenient, as we'll see, but it can be confusing at times. Easy access to the parent-child relationships your HTML elements exhibit via the DOM tree will make learning to style less difficult.`,
-  7: `Below you will find some html and a console where you can apply some custom CSS styles to that html.`,
+  7: `Below you will find some html and a text box where you can define and apply custom CSS styles to your html.`,
   8: `<div class="?">
   <p>
     <i>Simba</i> 
   </p>`,
   9: `Here is an example of CSS class code you can add to the textArea below. Go ahead and try it out.`,
-  10: `.upgrade {
+  10: `.color {
     color: red;
-    font-size: 20px;
-    font-family: Arial;
-    font-weight: bold;
-  }`,
+  }
+  
+.large {
+  font-size: 20px; 
+}`,
 };
 
 export { paragraphs };

@@ -6,14 +6,13 @@ const { cssToCamelizedJson } = require("convert-css");
 
 export default function CssContainer({ html }) {
   const [state, setState] = useState({
-    className: "none",
+    classes: [],
     cssText: "",
     text: "Simba",
-    styleObject: {},
+    styles: {},
   });
 
   const applyStyles = (cssClassText) => {
-    console.info("cssClassText", cssClassText);
     let transformation;
     try {
       transformation = cssToCamelizedJson(cssClassText);
@@ -22,15 +21,21 @@ export default function CssContainer({ html }) {
     }
 
     if (!transformation.length) return null;
-    const className = Object.keys(transformation[0])[0].replace(".", "");
-    console.info("className", className);
-    const cssObject = Object.values(transformation[0]);
-    let result = {};
-    cssObject.forEach((style) => {
-      result = { ...result, ...style };
+
+    let classNames = [];
+    transformation.forEach((classObj) => {
+      let className = Object.keys(classObj)[0].replace(".", "");
+
+      classNames.push(className);
     });
-    console.info("cssObject", result);
-    return { styles: result, className };
+
+    let styles;
+    transformation.forEach((classObj) => {
+      Object.values(classObj).forEach((stylePropertyGroup) => {
+        styles = { ...styles, ...stylePropertyGroup };
+      });
+    });
+    return { styles, classNames };
   };
 
   return (
@@ -46,11 +51,12 @@ export default function CssContainer({ html }) {
           color="teal"
           onClick={() => {
             const generatedStyles = applyStyles(state.cssText);
+
             if (generatedStyles) {
               setState({
                 ...state,
-                styleObject: generatedStyles.styles,
-                className: generatedStyles.className,
+                styles: generatedStyles.styles,
+                classes: generatedStyles.classNames,
               });
             }
           }}
@@ -62,8 +68,8 @@ export default function CssContainer({ html }) {
         <CssOutput
           html={html}
           defaultHtmlOutput="Simba"
-          styleObject={state.styleObject}
-          className={state.className}
+          styles={state.styles}
+          classes={state.classes}
         />
       </Grid.Row>
     </Grid.Row>

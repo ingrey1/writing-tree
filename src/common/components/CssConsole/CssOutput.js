@@ -1,33 +1,43 @@
 import { Grid, Header, ListHeader, ListItem, List } from "semantic-ui-react";
 import ReactHtmlParser from "react-html-parser";
 
-const setCustomClassAndText = (className, html) => {
-  let customClassHtml = html.replace("?", className);
+const setCustomClassAndText = (classes, html) => {
+  let classStr = "";
+  classes.forEach((className, index) => {
+    if (index !== 0) {
+      classStr += `,${className}`;
+    } else {
+      classStr += className;
+    }
+  });
+  const customClassHtml = html.replace("?", classStr);
 
-  //const result = customClassHtml.replace("`", "");
-  console.info("html String", customClassHtml);
   return customClassHtml;
 };
 
 export default function CssOutput({
   html,
   defaultHtmlOutput,
-  className,
-  styleObject,
+  classes,
+  styles,
 }) {
   let formattedHtml;
   if (html) {
-    formattedHtml = setCustomClassAndText(className, html);
+    formattedHtml = setCustomClassAndText(classes, html);
   }
   return (
     <Grid.Row>
-      <Header as="h4">Rendered HTML Element With Your Css Class Applied</Header>
-      <div style={styleObject}>
+      <Header as="h4">
+        Rendered HTML Element With Your Css Classes Applied
+      </Header>
+      <div style={styles}>
         {ReactHtmlParser(formattedHtml) || defaultHtmlOutput}
       </div>
       <List bulleted>
         <ListHeader as="h5">Classes Currently Applied</ListHeader>
-        <ListItem>{className}</ListItem>
+        {classes.map((className) => (
+          <ListItem key={Math.random()}>{className}</ListItem>
+        ))}
       </List>
     </Grid.Row>
   );
