@@ -10,9 +10,6 @@ function Intro() {
       {Object.keys(paragraphs).map((paragraphKey, index) => (
         <Paragraph key={index} content={paragraphs[paragraphKey]} />
       ))}
-      <p>
-        <b>art by shawnlart, maybe</b>
-      </p>
     </Container>
   );
 }

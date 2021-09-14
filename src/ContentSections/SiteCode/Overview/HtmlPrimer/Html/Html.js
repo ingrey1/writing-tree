@@ -21,6 +21,7 @@ import {
 } from "../../../../../common/constants";
 import IconButtonLink from "../../../../../common/components/IconButtonLink";
 import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
+import CopyTextToClipboard from "../../../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
 import IconButtonContentLink from "../../../../../common/components/IconButtonContentLink";
 import codeblock1Image from "./images/codeblock1.png";
 import codeblock2Image from "./images/codeblock2.png";
@@ -90,14 +91,12 @@ export default function Html({
           <Message floating compact>
             <p>
               cat-kingdom.html{"   "}
-              <Button
+              <CopyTextToClipboard
                 inverted
-                onClick={() => {
-                  navigator.clipboard.writeText("cat-kingdom.html");
-                }}
-              >
-                <Icon color="teal" name="copy"></Icon>
-              </Button>
+                text="cat-kingdom.html"
+                iconSize="small"
+                buttonSize="small"
+              />
             </p>
           </Message>
         </Grid.Column>
@@ -113,14 +112,12 @@ export default function Html({
           text={paragraphs[4]}
           highlight={codeBlock1LinesToHighlight}
         />
-        <Button
+        <CopyTextToClipboard
           inverted
-          onClick={() => {
-            navigator.clipboard.writeText(paragraphs[4]);
-          }}
-        >
-          <Icon color="teal" name="copy"></Icon>
-        </Button>
+          text={paragraphs[4]}
+          iconSize="small"
+          buttonSize="small"
+        />
       </Segment>
       <Paragraph content={paragraphs[5]} />
       <Paragraph content={paragraphs[6]} />
@@ -161,14 +158,12 @@ export default function Html({
           text={paragraphs[19]}
           highlight={codeBlock2LinesToHighlight}
         />
-        <Button
+        <CopyTextToClipboard
           inverted
-          onClick={() => {
-            navigator.clipboard.writeText(paragraphs[19]);
-          }}
-        >
-          <Icon color="teal" name="copy"></Icon>
-        </Button>
+          text={paragraphs[19]}
+          iconSize="small"
+          buttonSize="small"
+        />
       </Segment>
       <Paragraph content={paragraphs[20]} />
       <Segment>
@@ -224,14 +219,12 @@ export default function Html({
       <Paragraph content={paragraphs[34]} />
       <Segment>
         <CodeBlock language="html" text={paragraphs[35]} />
-        <Button
+        <CopyTextToClipboard
           inverted
-          onClick={() => {
-            navigator.clipboard.writeText(paragraphs[35]);
-          }}
-        >
-          <Icon color="teal" name="copy"></Icon>
-        </Button>
+          text={paragraphs[35]}
+          iconSize="small"
+          buttonSize="small"
+        />
       </Segment>
       <Paragraph content={paragraphs[36]} />
       <Image src={codeblock3Image} width="50%"></Image>
@@ -273,14 +266,12 @@ export default function Html({
       <Paragraph content={paragraphs[45]} />
       <Segment>
         <CodeBlock language="html" text={paragraphs[46]} />
-        <Button
+        <CopyTextToClipboard
           inverted
-          onClick={() => {
-            navigator.clipboard.writeText(paragraphs[46]);
-          }}
-        >
-          <Icon color="teal" name="copy"></Icon>
-        </Button>
+          text={paragraphs[46]}
+          iconSize="small"
+          buttonSize="small"
+        />
       </Segment>
       <Paragraph content={paragraphs[47]} />
       <Image src={codeblock4Image} />
@@ -293,20 +284,20 @@ export default function Html({
       <List bulleted>
         <ListItem>
           <ListContent>
-            <b>Styling</b>:&#160;We want to be able to change how our content
+            <b>Styling</b>&#160;We want to be able to change how our content
             looks.
           </ListContent>
         </ListItem>
         <ListItem>
           <ListContent>
-            <b>User Interaction:</b>:&#160; we want our users to be able to
+            <b>User Interaction:</b>&#160; we want our users to be able to
             interact with our web app in various ways.
           </ListContent>
         </ListItem>
         <ListItem>
           <ListContent>
-            <b>Dynamic Content:</b>:&#160; We need to be able to generate HTML
-            on the fly when users interact with our web app.
+            <b>Dynamic Content:</b>&#160; We need to be able to generate HTML on
+            the fly when users interact with our web app.
           </ListContent>
         </ListItem>
       </List>

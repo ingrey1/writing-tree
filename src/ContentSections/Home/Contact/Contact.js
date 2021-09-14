@@ -16,9 +16,7 @@ function Contact() {
           ingrey1@gmail.com{" "}
           <CopyTextToClipboard
             inverted
-            buttonColor="white"
             buttonSize="small"
-            iconSize=""
             text="ingrey1@gmail.com"
           />
         </Message>

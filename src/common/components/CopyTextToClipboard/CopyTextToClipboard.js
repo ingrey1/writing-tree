@@ -28,18 +28,16 @@ export default function CopyTextToClipboard({
   return (
     <>
       <Button
-        
         inverted={inverted}
-        color={buttonColor || "teal"}
-        style={buttonStyle || {marginRight: "10px"}}
+        color={buttonColor}
+        style={buttonStyle || { margin: "5px", borderStyle: "none" }}
         size={buttonSize || "large"}
         onClick={() => {
           navigator.clipboard.writeText(text);
           setIsCopied(true);
         }}
-      >
-        {icon}
-      </Button>
+        icon={icon}
+      ></Button>
       {isCopied && (
         <Icon
           size={checkSize || "small"}
