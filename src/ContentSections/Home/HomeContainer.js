@@ -9,7 +9,7 @@ export default function HomeContainer({
   setMainContent,
 }) {
   return (
-    <Grid.Row>
+    <Grid.Row className="home-container">
       <HomeMenu
         mainContent={mainContent}
         setMainContent={setMainContent}

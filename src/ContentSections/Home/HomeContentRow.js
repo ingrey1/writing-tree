@@ -42,9 +42,7 @@ export default function HomeContentRow({
   };
 
   return (
-    <Grid.Row
-      style={{ overflowY: "auto", overflowX: "hidden", height: "85vh" }}
-    >
+    <Grid.Row style={{ overflowX: "hidden" }}>
       {component(mainContent)}
     </Grid.Row>
   );
