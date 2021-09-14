@@ -15,6 +15,7 @@ import {
   ListContent,
 } from "semantic-ui-react";
 import { CodeBlock } from "@atlaskit/code";
+import AnimalKingdomTree from "./AnimalKingdomTree";
 import "./Css.css";
 
 export default function Css() {
@@ -30,6 +31,8 @@ export default function Css() {
       </Header>
       <Paragraph content={paragraphs[2]} />
       <CodeBlock language="html" text={paragraphs[3]} />
+      <Paragraph content={paragraphs[4]} />
+      <AnimalKingdomTree />
       <Divider />
     </Container>
   );

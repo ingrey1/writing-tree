@@ -66,6 +66,7 @@ const paragraphs = {
     </body>
   </html>
   `,
+  4: `It can be a bit difficult to see the parent-child relationships within the html. So, I've provided the following tree for you to refer back to as we do the styling.`
 };
 
 export { paragraphs };
