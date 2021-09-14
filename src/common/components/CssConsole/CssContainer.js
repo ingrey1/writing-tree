@@ -6,15 +6,19 @@ import CssOutput from "./CssOutput";
 const transformTextToStyle = (cssText) => {};
 
 export default function CssContainer() {
-  const [state, setState] = useState({ className: "blue", text: "cat" });
+  const [state, setState] = useState({ className: "blue", text: "Simba" });
 
   return (
     <Grid.Row>
       <Grid.Row>
-        <CssConsole />
+        <CssConsole state={state} setState={setState} userText={state.text} />
       </Grid.Row>
       <Grid.Row>
-        <CssOutput defaultHtmlOutput="Simba" text={state.text} className={state.className} />
+        <CssOutput
+          defaultHtmlOutput="Simba"
+          text={state.text}
+          className={state.className}
+        />
       </Grid.Row>
     </Grid.Row>
   );
