@@ -6,7 +6,7 @@ const { cssToCamelizedJson } = require("convert-css");
 
 export default function CssContainer({ html }) {
   const [state, setState] = useState({
-    className: "blue",
+    className: "none",
     cssText: "",
     text: "Simba",
     styleObject: {},

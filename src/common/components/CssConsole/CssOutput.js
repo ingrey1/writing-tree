@@ -1,4 +1,5 @@
-import { Grid, Header } from "semantic-ui-react";
+import { Grid, Header, ListHeader, ListItem, List } from "semantic-ui-react";
+import ReactHtmlParser from "react-html-parser";
 
 const setCustomClassAndText = (className, html) => {
   let customClassHtml = html.replace("?", className);
@@ -21,7 +22,13 @@ export default function CssOutput({
   return (
     <Grid.Row>
       <Header as="h4">Rendered HTML Element With Your Css Class Applied</Header>
-      <div style={styleObject}>{formattedHtml || defaultHtmlOutput}</div>
+      <div style={styleObject}>
+        {ReactHtmlParser(formattedHtml) || defaultHtmlOutput}
+      </div>
+      <List bulleted>
+        <ListHeader as="h5">Classes Currently Applied</ListHeader>
+        <ListItem>{className}</ListItem>
+      </List>
     </Grid.Row>
   );
 }

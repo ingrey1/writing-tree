@@ -74,6 +74,13 @@ const paragraphs = {
   <p>
     <i>Simba</i> 
   </p>`,
+  9: `Here is an example of CSS class code you can add to the textArea below. Go ahead and try it out.`,
+  10: `.upgrade {
+    color: red;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+  }`,
 };
 
 export { paragraphs };

@@ -52,6 +52,16 @@ export default function Css() {
       </Header>
       <Paragraph content={paragraphs[7]} />
       <CodeBlock language="html" text={paragraphs[8]} />
+      <Paragraph content={paragraphs[9]} />
+      <Segment>
+        <CodeBlock language="css" text={paragraphs[10]} />
+        <CopyTextToClipboard
+          inverted
+          text={paragraphs[10]}
+          iconSize="small"
+          buttonSize="small"
+        />
+      </Segment>
       <CssContainer html={paragraphs[8]} />
     </Container>
   );
