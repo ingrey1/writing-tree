@@ -1,41 +1,52 @@
-import { useRef, useState } from "react";
-import "./CopyTextToClipboard.css";
-import { Button, Icon } from "semantic-ui-react";
+import { useState } from "react";
+import { Button, Icon, Segment } from "semantic-ui-react";
 
-export default function CopyTextToClipboard({ text }) {
-  const [copySuccess, setCopySuccess] = useState(false);
-  const textAreaRef = useRef(null);
+export default function CopyTextToClipboard({
+  text,
+  iconName,
+  buttonColor,
+  iconColor,
+  buttonStyle,
+  iconStyle,
+  buttonSize,
+  iconSize,
+  inverted,
+  checkColor,
+  checkSize,
+}) {
+  const [isCopied, setIsCopied] = useState(false);
 
-  function copyToClipboard(e) {
-    textAreaRef.current.select();
-    document.execCommand("copy");
-    setCopySuccess(true);
-  }
+  const icon = (
+    <Icon
+      style={iconStyle || {}}
+      name={iconName || "copy"}
+      size={iconSize || "large"}
+      color={iconColor || "teal"}
+    ></Icon>
+  );
 
   return (
-    <div id="container">
-      <div>
-        <form>
-          <textarea
-            className="disable-resize"
-            name="email"
-            ref={textAreaRef}
-            defaultValue={text}
-            readOnly
-          />
-        </form>
-      </div>
-      <div>
-        <Button
-          inverted
-          style={{ marginLeft: "5px" }}
-          onClick={copyToClipboard}
-          color="white"
-        >
-          <Icon name="copy" color="teal"></Icon>
-        </Button>
-      </div>
-      <div>{copySuccess && <Icon name="check" color="green"></Icon>}</div>
-    </div>
+    <>
+      <Button
+        
+        inverted={inverted}
+        color={buttonColor || "teal"}
+        style={buttonStyle || {marginRight: "10px"}}
+        size={buttonSize || "large"}
+        onClick={() => {
+          navigator.clipboard.writeText(text);
+          setIsCopied(true);
+        }}
+      >
+        {icon}
+      </Button>
+      {isCopied && (
+        <Icon
+          size={checkSize || "small"}
+          name="check"
+          color={checkColor || "teal"}
+        ></Icon>
+      )}
+    </>
   );
 }

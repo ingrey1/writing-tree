@@ -1,5 +1,5 @@
 import "./Contact.css";
-import { Header, Container, Grid } from "semantic-ui-react";
+import { Header, Container, Grid, Message } from "semantic-ui-react";
 import IconButtonLink from "../../../common/components/IconButtonLink";
 import { linkedinUrl } from "../../../common/constants";
 import CopyTextToClipboard from "../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
@@ -12,12 +12,19 @@ function Contact() {
         <Header as="h4" name="email">
           Email
         </Header>
-        <div className="copy-email-container">
-          <CopyTextToClipboard text="ingrey1@gmail.com" />
-        </div>
+        <Message compact style={{ marginBottom: "10px" }}>
+          ingrey1@gmail.com{" "}
+          <CopyTextToClipboard
+            inverted
+            buttonColor="white"
+            buttonSize="small"
+            iconSize=""
+            text="ingrey1@gmail.com"
+          />
+        </Message>
       </Grid.Row>
       <Grid.Row>
-        <Header as="h4">Social Links</Header>
+        <Header as="h3">Social Links</Header>
         <IconButtonLink
           inverted
           iconName="linkedin in"

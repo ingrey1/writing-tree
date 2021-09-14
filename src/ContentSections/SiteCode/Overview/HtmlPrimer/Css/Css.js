@@ -17,6 +17,7 @@ import {
 import { CodeBlock } from "@atlaskit/code";
 import AnimalKingdomTree from "./AnimalKingdomTree";
 import "./Css.css";
+import domExample from "./images/chrome-dom-example.png";
 
 export default function Css() {
   return (
@@ -33,7 +34,14 @@ export default function Css() {
       <CodeBlock language="html" text={paragraphs[3]} />
       <Paragraph content={paragraphs[4]} />
       <AnimalKingdomTree />
+      <Paragraph content={paragraphs[5]} />
+      <Image src={domExample} />
       <Divider />
+      <Paragraph content={paragraphs[6]} />
+      <Divider />
+      <Header as="h2" textAlign="center">
+        Multiple Ways to Style Elements
+      </Header>
     </Container>
   );
 }
