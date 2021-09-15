@@ -23,7 +23,7 @@ import domExample from "./images/chrome-dom-example.png";
 
 export default function Css() {
   return (
-    <Container>
+    <Container text style={{ textSize: "1.2em" }}>
       <Header as="h2" textAlign="center">
         Introduction
       </Header>

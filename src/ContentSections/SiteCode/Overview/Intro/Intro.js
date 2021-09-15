@@ -4,7 +4,7 @@ import { paragraphs } from "./text";
 
 export default function Intro() {
   return (
-    <Container text>
+    <Container text style={{ textSize: "1.2em" }}>
       <Header as="h2" textAlign="center">
         Instructions
       </Header>

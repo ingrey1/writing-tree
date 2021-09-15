@@ -11,19 +11,21 @@ export default function ActionsColumn({
       <Header as="h2" textAlign="center">
         Actions
       </Header>
-      <Grid.Row centered>
-        <ToggleSupplementalContentAction
-          supplementalContent={supplementalContent}
-          setSupplementalContent={setSupplementalContent}
-        />
-        <Divider />
+      <Grid>
+        <Grid.Column textAlign="center">
+          <ToggleSupplementalContentAction
+            supplementalContent={supplementalContent}
+            setSupplementalContent={setSupplementalContent}
+          />
+          <Divider />
 
-        <IconButtonLink
-          url={githubRootUrl}
-          iconName="github"
-          buttonSize="huge"
-        />
-      </Grid.Row>
+          <IconButtonLink
+            url={githubRootUrl}
+            iconName="github"
+            buttonSize="huge"
+          />
+        </Grid.Column>
+      </Grid>
     </Grid.Column>
   );
 }

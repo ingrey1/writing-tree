@@ -65,7 +65,7 @@ const paragraphs23To28 = generateArrayFromRange(23, 28, 1).map((key) => (
 
 export default function FunFacts() {
   return (
-    <Container text>
+    <Container text style={{ textSize: "1.2em" }}>
       <p></p>
       <Header as="h3">Appeal to Scientific Authority: A Cautionary Tale</Header>
       <Paragraph content={paragraphs[1]} />

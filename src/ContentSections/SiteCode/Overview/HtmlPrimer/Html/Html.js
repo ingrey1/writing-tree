@@ -41,7 +41,7 @@ export default function Html({
   setMainContent,
 }) {
   return (
-    <Container>
+    <Container text style={{ textSize: "1.2em" }}>
       <Header as="h2" textAlign="center">
         Introduction
       </Header>

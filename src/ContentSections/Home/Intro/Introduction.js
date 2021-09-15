@@ -3,7 +3,11 @@ import Paragraph from "../../../common/components/Paragraph/Paragraph";
 import { paragraphs } from "./text";
 function Intro() {
   return (
-    <Container className="introduction-container" text>
+    <Container
+      className="introduction-container"
+      text
+      style={{ textSize: "1.2em" }}
+    >
       <Header as="h3" textAlign="center">
         The Parable of the Forgotten Documentation
       </Header>

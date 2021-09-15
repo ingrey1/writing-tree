@@ -6,7 +6,7 @@ import IconButtonContentLink from "../../../common/components/IconButtonContentL
 
 function Methodology({ supplementalContent, setSupplementalContent }) {
   return (
-    <Container text>
+    <Container text style={{ textSize: "1.2em" }}>
       <Header as="h3" textAlign="center">
         Methodology
       </Header>
