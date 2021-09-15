@@ -82,6 +82,13 @@ const paragraphs = {
 .large {
   font-size: 20px; 
 }`,
+  11: `Go ahead and create the following file, and place it in the same folder as your animal-kingdom.html file.`,
+  12: `In The head section of your animal-kingdom.html file, add the following line of code.`,
+  13: `<html>
+<head>
+  <title>Cat Kingdom</title>
+  <link rel="stylesheet" href="animal-kingdom.css">
+</head>`,
 };
 
 export { paragraphs };

@@ -21,6 +21,8 @@ import AnimalKingdomTree from "./AnimalKingdomTree";
 import "./Css.css";
 import domExample from "./images/chrome-dom-example.png";
 
+const codeBlock1LinesToHighlight = "4";
+
 export default function Css() {
   return (
     <Container text style={{ textSize: "1.2em" }}>
@@ -48,7 +50,38 @@ export default function Css() {
       <Paragraph content={paragraphs[6]} />
       <Divider />
       <Header as="h2" textAlign="center">
-        Multiple Ways to Style Elements
+        Adding The CSS File
+      </Header>
+      <Paragraph content={paragraphs[11]} />
+      <Grid
+        textAlign="center"
+        style={{ marginTop: "10px", marginBottom: "10px" }}
+      >
+        <Grid.Column>
+          <Message floating compact>
+            <p>
+              cat-kingdom.css{"   "}
+              <CopyTextToClipboard
+                inverted
+                text="cat-kingdom.css"
+                iconSize="small"
+                buttonSize="small"
+              />
+            </p>
+          </Message>
+        </Grid.Column>
+      </Grid>
+      <Paragraph content={paragraphs[12]} />
+      <Segment>
+        <CodeBlock
+          language="css"
+          text={paragraphs[13]}
+          highlight={codeBlock1LinesToHighlight}
+        />
+      </Segment>
+      <Divider />
+      <Header as="h2" textAlign="center">
+        Try Out Some Interactive Styling
       </Header>
       <Paragraph content={paragraphs[7]} />
       <CodeBlock language="html" text={paragraphs[8]} />
