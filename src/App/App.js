@@ -64,7 +64,7 @@ function App() {
     name: "Home",
     mainContentSection: {
       name: "Introduction",
-      subsection: "NoSupplementalContent",
+      subsection: "Code",
     },
   });
 

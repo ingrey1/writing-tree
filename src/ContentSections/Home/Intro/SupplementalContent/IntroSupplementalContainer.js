@@ -17,7 +17,10 @@ export default function IntroSupplementalContainer({
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <IntroSupplementalContentRow componentKey={componentKey} />
+      <IntroSupplementalContentRow
+        componentKey={componentKey}
+        supplementalContent={supplementalContent}
+      />
     </Grid.Row>
   );
 }
