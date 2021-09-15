@@ -6,9 +6,11 @@ export default function CssConsole({ userText, state, setState }) {
       <Form>
         <TextArea
           placeholder="Define your CSS class here"
-          style={{ minHeight: 100 }}
+          style={{ minHeight: 100, backgroundColor: "teal", color: "white" }}
           value={userText}
-          onChange={(event) => setState({ ...state, cssText: event.target.value })}
+          onChange={(event) =>
+            setState({ ...state, cssText: event.target.value })
+          }
         />
       </Form>
     </Grid.Row>

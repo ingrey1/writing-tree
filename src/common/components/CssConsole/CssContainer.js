@@ -39,7 +39,7 @@ export default function CssContainer({ html }) {
   };
 
   return (
-    <Grid.Row>
+    <Grid.Row style={{ marginBottom: "10px", marginTop: "10px" }}>
       <Grid.Row>
         <CssConsole
           state={state}
@@ -48,6 +48,7 @@ export default function CssContainer({ html }) {
         />
         <Button
           basic
+          style={{ margin: "10px" }}
           color="teal"
           onClick={() => {
             const generatedStyles = applyStyles(state.cssText);
@@ -61,7 +62,22 @@ export default function CssContainer({ html }) {
             }
           }}
         >
-          Apply CSS Class
+          Apply CSS Classes
+        </Button>
+        <Button
+          style={{ margin: "10px" }}
+          basic
+          color="teal"
+          onClick={() => {
+            setState({
+              ...state,
+              cssText: "",
+              classes: [],
+              styles: {}
+            });
+          }}
+        >
+          Clear CSS Text
         </Button>
       </Grid.Row>
       <Grid.Row>

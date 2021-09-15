@@ -35,9 +35,11 @@ export default function CssOutput({
       </div>
       <List bulleted>
         <ListHeader as="h5">Classes Currently Applied</ListHeader>
-        {classes.map((className) => (
-          <ListItem key={Math.random()}>{className}</ListItem>
-        ))}
+        {classes.length
+          ? classes.map((className) => (
+              <ListItem key={Math.random()}>{className}</ListItem>
+            ))
+          : <ListItem key={Math.random()}>None</ListItem>}
       </List>
     </Grid.Row>
   );
