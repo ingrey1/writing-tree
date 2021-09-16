@@ -391,7 +391,7 @@ const methodologyCodeCode = `export default function MethodologyCode() {
 
 export default function MethodologyCode() {
   return (
-    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
+    <Segment>
       <Grid.Row>
         <Header as="h2">
           File Structure{" "}

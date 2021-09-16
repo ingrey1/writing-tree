@@ -17,7 +17,10 @@ export default function MethodologySupplementalContainer({
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <MethodologySupplementalContentRow componentKey={componentKey} />
+      <MethodologySupplementalContentRow
+        componentKey={componentKey}
+        supplementalContent={supplementalContent}
+      />
     </Grid.Row>
   );
 }
