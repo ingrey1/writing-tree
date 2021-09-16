@@ -80,7 +80,7 @@ function App() {
 
   return (
     <Grid celled="internally">
-      <Grid.Row>
+      <Grid.Row style={{ overflow: "hidden" }}>
         {isLargeScreen && (
           <MainMenuColumn
             mainContent={mainContent}
@@ -101,13 +101,15 @@ function App() {
                   ? "0vh"
                   : "60vh"
                 : "100vh",
-              overflow: "hidden",
+              overflowX: "hidden",
+              overflowY: "auto",
             }}
           >
             <Grid.Column
               width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
               style={{
                 overflowX: "hidden",
+                overflowY: "auto",
                 maxHeight: calculateMainContentHeight(supplementalContent.show),
                 height: calculateMainContentHeight(supplementalContent.show),
               }}
