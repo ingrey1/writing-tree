@@ -43,7 +43,9 @@ export default function Css() {
         buttonSize="small"
       />
       <Paragraph content={paragraphs[4]} />
-      <AnimalKingdomTree />
+      <Message compact style={{ backgroundColor: "teal", fontSize: "1.5em" }}>
+        <AnimalKingdomTree />
+      </Message>
       <Paragraph content={paragraphs[5]} />
       <Image src={domExample} />
       <Divider />
@@ -72,13 +74,71 @@ export default function Css() {
         </Grid.Column>
       </Grid>
       <Paragraph content={paragraphs[12]} />
-      <Segment>
-        <CodeBlock
-          language="css"
-          text={paragraphs[13]}
-          highlight={codeBlock1LinesToHighlight}
-        />
-      </Segment>
+      <CodeBlock
+        language="css"
+        text={paragraphs[13]}
+        highlight={codeBlock1LinesToHighlight}
+      />
+      <Paragraph content={paragraphs[14]} />
+      <List bulleted style={{ fontSize: "1.3em" }}>
+        <List.Item>Makes the code messy and hard to read</List.Item>
+        <List.Item>
+          Introduces opportunity for more error as you have to add the style
+          properties, and not just an identifier
+        </List.Item>
+        <List.Item>Changing the styles can take a lot more time</List.Item>
+      </List>
+      <Divider />
+      <Header as="h2" textAlign="center">
+        Different Ways To Style An HTML Element
+      </Header>
+      <Header as="h3" textAlign="center">
+        Styling An Element By Id
+      </Header>
+      <Paragraph content={paragraphs[16]} />
+      <CodeBlock language="html" text={paragraphs[17]} />
+      <Paragraph content={paragraphs[18]} />
+      <CodeBlock language="css" text={paragraphs[19]} />
+      <List bulleted style={{ fontSize: "1.3em" }}>
+        <List.Item>
+          The "#" means that the identifier that follows is an 'id' attribute
+        </List.Item>
+        <List.Item>
+          The curly braces "&#123;&#125;" contain the CSS properties you want to
+          apply. You should have at least one CSS property inside these braces.
+        </List.Item>
+        <List.Item>
+          "color" is the name of the CSS property, its value is "teal"
+        </List.Item>
+        <List.Item>
+          Always add a semicolon ";" after specifying the property and its value
+        </List.Item>
+      </List>
+      <Header as="h3" textAlign="center">
+        Styling An Element By Type
+      </Header>
+      <Paragraph content={paragraphs[20]} />
+      <CodeBlock language="html" text={paragraphs[21]} />
+      <Paragraph content={paragraphs[22]} />
+      <CodeBlock language="css" text={paragraphs[23]} />
+      <Paragraph content={paragraphs[28]} />
+      <Header as="h3" textAlign="center">
+        Styling An Element By Class
+      </Header>
+      <Paragraph content={paragraphs[24]} />
+      <CodeBlock language="html" text={paragraphs[25]} />
+      <Paragraph content={paragraphs[26]} />
+      <CodeBlock language="css" text={paragraphs[27]} />
+      <Paragraph content={paragraphs[29]} />
+      <Paragraph content={paragraphs[30]} />
+      <CodeBlock language="css" text={paragraphs[31]} />
+      <CopyTextToClipboard
+        inverted
+        text={paragraphs[31]}
+        iconSize="small"
+        buttonSize="small"
+      />
+      <Paragraph content={paragraphs[32]} />
       <Divider />
       <Header as="h2" textAlign="center">
         Try Out Some Interactive Styling
