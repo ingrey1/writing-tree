@@ -20,6 +20,7 @@ import { CodeBlock } from "@atlaskit/code";
 import AnimalKingdomTree from "./AnimalKingdomTree";
 import "./Css.css";
 import domExample from "./images/chrome-dom-example.png";
+import animalKingdom1 from "./images/animal-kingdom-html1.png";
 
 const codeBlock1LinesToHighlight = "4";
 
@@ -139,6 +140,9 @@ export default function Css() {
         buttonSize="small"
       />
       <Paragraph content={paragraphs[32]} />
+      <Paragraph content={paragraphs[33]} />
+      <Image src={animalKingdom1} />
+
       <Divider />
       <Header as="h2" textAlign="center">
         Try Out Some Interactive Styling

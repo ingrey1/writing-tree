@@ -122,17 +122,18 @@ const paragraphs = {
   30: `Your CSS file should look like this now.`,
   31: `#page-title {
     color: teal;
-  }
+}
   
-  th {
-    color: blue; 
-  }
+th {
+  color: blue; 
+}
 
-  .animal-friends-ordered-list {
-    color: green; 
-  }
+.animal-friends-ordered-list {
+  color: green; 
+}
   `,
   32: `Before testing this out in the browser, look over the CSS and HTML to remind yourself what you expect to happen.`,
+  33: `With our styles applied, our webpage is a bit more colorful.`
 };
 
 export { paragraphs };
