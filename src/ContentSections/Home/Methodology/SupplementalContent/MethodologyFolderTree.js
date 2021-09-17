@@ -13,6 +13,7 @@ const relativeFolderStructure = {
         { name: "MethodologyFolderTree.js" },
         { name: "MethodologyComponentTree.js" },
         { name: "funFactsText.js" },
+        { name: "methdologyCodeText.js"},
         { name: "MethodologyFunFacts.js" },
         { name: "MethodologyMenu.js" },
         { name: "MethodologySupplementalContainer.js" },
