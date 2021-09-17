@@ -4,7 +4,7 @@ import IconButtonLink from "../../../common/components/IconButtonLink";
 import { linkedinUrl } from "../../../common/constants";
 import CopyTextToClipboard from "../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
 
-function Contact() {
+export default function Contact() {
   return (
     <Container text textAlign="center">
       <Header as="h3">Contact</Header>
@@ -36,4 +36,3 @@ function Contact() {
   );
 }
 
-export default Contact;

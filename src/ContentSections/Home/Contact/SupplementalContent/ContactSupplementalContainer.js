@@ -14,7 +14,9 @@ export default function ContactSupplementalContainer({
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <ContactSupplementalContentRow />
+      <ContactSupplementalContentRow
+        supplementalContent={supplementalContent}
+      />
     </Grid.Row>
   );
 }
