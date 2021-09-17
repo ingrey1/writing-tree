@@ -1,0 +1,40 @@
+.outer-most-content-row {
+  overflow: hidden;
+}
+
+.main-menu-col {
+  overflow: auto;
+  height: 100%;
+}
+
+.all-content-col {
+  height: 100vh;
+}
+
+.main-content-row {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mobile-main-menu-col {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mobile-main-menu-col {
+  overflow: auto;
+  overflow-y: hidden;
+  height: 10vh;
+}
+
+.mobile-main-menu-row {
+  height: 10vh;
+}
+
+.supplemental-content-row {
+
+}
+
+.actions-col {
+
+}

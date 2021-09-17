@@ -78,11 +78,25 @@ function App() {
     },
   });
 
+  const mainContentRowStyles = {
+    height: supplementalContent.show
+      ? supplementalContent.expand
+        ? "0vh"
+        : "60vh"
+      : "100vh",
+  };
+
+  const mobileMainMenuStyles = {
+    maxHeight: calculateMainContentHeight(supplementalContent.show),
+    height: calculateMainContentHeight(supplementalContent.show),
+  };
+
   return (
     <Grid celled="internally">
-      <Grid.Row style={{ overflow: "hidden" }}>
+      <Grid.Row className="outer-most-content-row">
         {isLargeScreen && (
           <MainMenuColumn
+            className="main-menu-col"
             mainContent={mainContent}
             setMainContent={setMainContent}
             supplementalContent={supplementalContent}
@@ -90,44 +104,22 @@ function App() {
           />
         )}
         <Grid.Column
+          className="all-content-col"
           width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
-          style={{ height: "100vh" }}
         >
-          <Grid.Row
-            className="outer-content-row"
-            style={{
-              height: supplementalContent.show
-                ? supplementalContent.expand
-                  ? "0vh"
-                  : "60vh"
-                : "100vh",
-              overflowX: "hidden",
-              overflowY: "auto",
-            }}
-          >
+          <Grid.Row className="main-content-row" style={mainContentRowStyles}>
             <Grid.Column
+              className="mobile-main-menu-col"
               width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
-              style={{
-                overflowX: "hidden",
-                overflowY: "auto",
-                maxHeight: calculateMainContentHeight(supplementalContent.show),
-                height: calculateMainContentHeight(supplementalContent.show),
-              }}
+              style={mobileMainMenuStyles}
             >
               {window.screen.width <= 650 && (
-                <Grid.Column
-                  width={3}
-                  style={{
-                    overflow: "auto",
-                    overflowY: "hidden",
-                    height: "10vh",
-                  }}
-                >
+                <Grid.Column className="mobile-main-menu-col" width={3}>
                   <ToggleSupplementalContentAction
                     supplementalContent={supplementalContent}
                     setSupplementalContent={setSupplementalContent}
                   />
-                  <Grid.Row style={{ height: "10vh" }}>
+                  <Grid.Row className="mobile-main-menu-col">
                     <MobileMainMenu
                       mainContent={mainContent}
                       setMainContent={setMainContent}
@@ -145,7 +137,7 @@ function App() {
             </Grid.Column>
           </Grid.Row>
           {supplementalContent.show && (
-            <div>
+            <Grid.Row className="supplemental-content-row">
               <IconButtonExpand
                 inverted
                 iconName="expand"
@@ -157,11 +149,11 @@ function App() {
                 mainContent,
                 setMainContent,
               })}
-            </div>
+            </Grid.Row>
           )}
         </Grid.Column>
         {isLargeScreen && (
-          <ActionsColumn
+          <ActionsColumn className="actions-column"
             supplementalContent={supplementalContent}
             setSupplementalContent={setSupplementalContent}
           />

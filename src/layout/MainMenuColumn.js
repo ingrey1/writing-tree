@@ -7,9 +7,10 @@ export default function MainMenuColumn({
   supplementalContent,
   setMainContent,
   setSupplementalContent,
+  className
 }) {
   return (
-    <Grid.Column width={3} style={{ overflow: "auto", height: "100%" }}>
+    <Grid.Column className={className} width={3}>
       <Grid.Row style={{ height: "20%" }}>
         <WritingTreeHeader />
       </Grid.Row>
