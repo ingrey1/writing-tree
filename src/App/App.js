@@ -16,7 +16,6 @@ import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalConten
 import IconButtonExpand from "../common/components/IconButtonExpand";
 import OverviewIntroSupplementalCode from "../ContentSections/SiteCode/Overview/Intro/SupplementalContent/IntroSupplementalContainer";
 
-import { calculateMainContentHeight } from "../utils/components";
 import {
   isLargeScreen,
   fullHorizontalSize,
@@ -87,9 +86,11 @@ function App() {
   };
 
   const mobileMainMenuStyles = {
-    maxHeight: calculateMainContentHeight(supplementalContent.show),
-    height: calculateMainContentHeight(supplementalContent.show),
+    maxHeight:
+      supplementalContent.show && supplementalContent.expand ? "0vh" : "10vh",
   };
+
+  const mainContentColStyles = mainContentRowStyles;
 
   return (
     <Grid celled="internally">
@@ -109,12 +110,16 @@ function App() {
         >
           <Grid.Row className="main-content-row" style={mainContentRowStyles}>
             <Grid.Column
-              className="mobile-main-menu-col"
+              className="main-content-col"
               width={isLargeScreen ? contentColumnSize : fullHorizontalSize}
-              style={mobileMainMenuStyles}
+              style={mainContentColStyles}
             >
               {window.screen.width <= 650 && (
-                <Grid.Column className="mobile-main-menu-col" width={3}>
+                <Grid.Column
+                  className="mobile-main-menu-col"
+                  width={3}
+                  style={mobileMainMenuStyles}
+                >
                   <ToggleSupplementalContentAction
                     supplementalContent={supplementalContent}
                     setSupplementalContent={setSupplementalContent}
@@ -153,7 +158,8 @@ function App() {
           )}
         </Grid.Column>
         {isLargeScreen && (
-          <ActionsColumn className="actions-column"
+          <ActionsColumn
+            className="actions-column"
             supplementalContent={supplementalContent}
             setSupplementalContent={setSupplementalContent}
           />
