@@ -29,7 +29,7 @@ const componentStructure = {
   ],
 };
 
-const NavigationComponentTree = () => {
+export default function NavigationComponentTree() {
   return (
     <FolderTree
       data={componentStructure}
@@ -40,4 +40,3 @@ const NavigationComponentTree = () => {
   );
 };
 
-export default NavigationComponentTree;

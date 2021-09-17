@@ -13,6 +13,7 @@ const relativeFolderStructure = {
         { name: "NavigationFolderTree.js" },
         { name: "NavigationComponentTree.js" },
         { name: "NavigationMenu.js" },
+        { name: "navigationCodeText.js"},
         { name: "NavigationSupplementalContainer.js" },
       ],
     },

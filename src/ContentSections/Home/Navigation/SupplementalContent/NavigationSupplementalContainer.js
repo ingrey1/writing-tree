@@ -6,7 +6,6 @@ export default function NavigationSupplementalContainer({
   supplementalContent,
   setSupplementalContent,
 }) {
-
   return (
     <Grid.Row>
       <Grid.Row>
@@ -15,7 +14,9 @@ export default function NavigationSupplementalContainer({
           supplementalContent={supplementalContent}
         />
       </Grid.Row>
-      <NavigationSupplementalContentRow />
+      <NavigationSupplementalContentRow
+        supplementalContent={supplementalContent}
+      />
     </Grid.Row>
   );
 }

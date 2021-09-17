@@ -13,7 +13,7 @@ export default function ContactMenu({
         active={activeItem === "Code"}
         onClick={() => {
           setSupplementalContent({
-            supplementalContent,
+            ...supplementalContent,
             show: true,
             name: "Home",
             supplementalContentSection: {
