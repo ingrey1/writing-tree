@@ -1,5 +1,6 @@
 import { Container, Header } from "semantic-ui-react";
 import Paragraph from "../../../common/components/Paragraph/Paragraph";
+import "./Intro.css";
 import { paragraphs } from "./text";
 function Intro() {
   return (

@@ -1,233 +1,14 @@
 import { CodeBlock } from "@atlaskit/code";
-import { Grid, Header, Segment } from "semantic-ui-react";
+import { Grid, Header, Container } from "semantic-ui-react";
 import IntroFolderTree from "./IntroFolderTree";
 import IntroComponentTree from "./IntroComponentTree";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
 import { githubHomeIntroUrl } from "../../../../common/constants";
-
-const introCode = `import { Container, Header } from "semantic-ui-react";
-import Paragraph from "../../../common/components/Paragraph/Paragraph";
-import { paragraphs } from "./text";
-function Intro() {
-  return (
-    <Container className="introduction-container" text>
-      <Header as="h3" textAlign="center">
-        The Parable of the Forgotten Documentation
-      </Header>
-      {Object.keys(paragraphs).map((paragraphKey, index) => (
-        <Paragraph key={index} content={paragraphs[paragraphKey]} />
-      ))}
-    </Container>
-  );
-}
-
-export default Intro;
-`;
-
-const introMenuCode = `import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
-
-export default class IntroMenu extends Component {
-  render() {
-    const activeItem = "Code";
-
-    return (
-      <Menu fluid tabular widths={2}>
-        <Menu.Item
-          name="Code"
-          active={activeItem === "Code"}
-          onClick={(e, state) => {
-            this.props.setSupplementalContent({
-              ...this.props.supplementalContent,
-              show: true,
-              name: "Home",
-              supplementalContentSection: {
-                name: "Introduction",
-                subsection: "Code",
-              },
-            });
-          }}
-        />
-      </Menu>
-    );
-  }
-}
-`;
-
-const introComponentTreeCode = `import FolderTree from "react-folder-tree";
-import "react-folder-tree/dist/style.css";
-
-const FileIcon = (...args) => null;
-const FolderIcon = (...args) => null;
-
-const componentStructure = {
-  name: "SupplementalContentRow",
-  isOpen: false,
-  children: [
-    {
-      name: "GridRow",
-      isOpen: false,
-      children: [
-        {
-          name: "SupplementalContent",
-          children: [
-            {
-              name: "IntroSupplementalContainer",
-              children: [
-                { name: "IntroMenu" },
-                { name: "IntroSupplementalContentRow" },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
-
-const IntroComponentTree = () => {
-  return (
-    <FolderTree
-      data={componentStructure}
-      iconComponents={{ FileIcon, FolderIcon }}
-      showCheckbox={false}
-      readOnly
-    />
-  );
-};
-
-export default IntroComponentTree;
-`;
-
-const introFolderTreeCode = `import FolderTree from "react-folder-tree";
-import "react-folder-tree/dist/style.css";
-
-const relativeFolderStructure = {
-  name: "Intro",
-  isOpen: false,
-  children: [
-    {
-      name: "SupplementalContent",
-      isOpen: false,
-      children: [
-        { name: "IntroCode.js" },
-        { name: "IntroFolderTree.js" },
-        { name: "IntroComponentTree.js" },
-        { name: "IntroMenu.js" },
-        { name: "IntroSupplementalContainer.js" },
-      ],
-    },
-    { name: "Intro.css" },
-    { name: "Intro.js" },
-    { name: "text.js" },
-  ],
-};
-
-const IntroFolderTree = () => {
-  return (
-    <FolderTree data={relativeFolderStructure} showCheckbox={false} readOnly />
-  );
-};
-
-export default IntroFolderTree;
-`;
-
-const introSupplementalContainerCode = `import { Grid } from "semantic-ui-react";
-import IntroMenu from "./IntroMenu";
-import IntroSupplementalContentRow from "./IntroSupplementalContentRow";
-
-export default function IntroSupplementalContainer({
-  supplementalContent,
-  setSupplementalContent,
-}) {
-  const { subsection: componentKey } =
-    supplementalContent.supplementalContentSection;
-  return (
-    <Grid.Row>
-      <Grid.Row>
-        <IntroMenu
-          introMenuSelection={componentKey}
-          setSupplementalContent={setSupplementalContent}
-          supplementalContent={supplementalContent}
-        />
-      </Grid.Row>
-      <IntroSupplementalContentRow componentKey={componentKey} />
-    </Grid.Row>
-  );
-}
-`;
-
-const introSupplementalContentRowCode = `import { Grid } from "semantic-ui-react";
-import IntroCode from "./IntroCode";
-
-export default function IntroSupplementalContentRow() {
-  return (
-    <Grid.Row>
-      <IntroCode />
-    </Grid.Row>
-  );
-}
-`;
-
-const introCodeCode = `export default function IntroCode() {
-  return (
-    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
-      <Grid.Row>
-        <Header as="h2">
-          File Structure{" "}
-          <IconButtonLink
-            size="large"
-            iconName="github"
-            url={githubHomeIntroUrl}
-          />
-        </Header>
-        <IntroFolderTree />
-        <Header as="h2">Simplified Component Hierarchy</Header>
-        <IntroComponentTree />
-        <Header as="h2">Main Content Code</Header>
-
-        <Header as="h3">Intro.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introCode} />
-      </Grid.Row>
-      <Grid.Row>
-        <Header as="h2">Supplemental Content Code</Header>
-        <Header as="h3">IntroSupplementalContentRow.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introSupplementalContentRowCode}
-        />
-        <Header as="h3">IntroSupplementalContainer.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introSupplementalContainerCode}
-        />
-        <Header as="h3">IntroMenu.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introMenuCode} />
-        <Header as="h3">IntroCode.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introCodeCode} />
-        <Header as="h3">IntroFolderTree.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introFolderTreeCode}
-        />
-        <Header as="h3">IntroComponentTree.js</Header>
-        <CodeBlock
-          language="jsx"
-          showLineNumbers={true}
-          text={introComponentTreeCode}
-        />
-      </Grid.Row>
-    </Segment>
-  );
-}
-`;
+import { code } from "./introCodeText";
 
 export default function IntroCode() {
   return (
-    <Segment style={{ overflow: "auto", maxHeight: "100vh" }}>
+    <Container text>
       <Grid.Row>
         <Header as="h2">
           File Structure{" "}
@@ -243,7 +24,7 @@ export default function IntroCode() {
         <Header as="h2">Main Content Code</Header>
 
         <Header as="h3">Intro.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introCode} />
+        <CodeBlock language="jsx" showLineNumbers={true} text={code.intro} />
       </Grid.Row>
       <Grid.Row>
         <Header as="h2">Supplemental Content Code</Header>
@@ -251,31 +32,41 @@ export default function IntroCode() {
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
-          text={introSupplementalContentRowCode}
+          text={code.introSupplementalContentRow}
         />
         <Header as="h3">IntroSupplementalContainer.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
-          text={introSupplementalContainerCode}
+          text={code.introSupplementalContainer}
         />
         <Header as="h3">IntroMenu.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introMenuCode} />
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={code.introMenu}
+        />
         <Header as="h3">IntroCode.js</Header>
-        <CodeBlock language="jsx" showLineNumbers={true} text={introCodeCode} />
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={code.introCode}
+        />
         <Header as="h3">IntroFolderTree.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
-          text={introFolderTreeCode}
+          text={code.introFolderTree}
         />
         <Header as="h3">IntroComponentTree.js</Header>
         <CodeBlock
           language="jsx"
           showLineNumbers={true}
-          text={introComponentTreeCode}
+          text={code.introComponentTree}
         />
+        <Header as="h3">Credits.js</Header>
+        <CodeBlock language="jsx" showLineNumbers={true} text={code.credits} />
       </Grid.Row>
-    </Segment>
+    </Container>
   );
 }

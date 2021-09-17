@@ -1,5 +1,5 @@
 import { Grid } from "semantic-ui-react";
-import Introduction from "./Intro/Introduction";
+import Introduction from "./Intro/Intro";
 import Navigation from "./Navigation/Navigation";
 import Contact from "./Contact/Contact";
 import Methodology from "./Methodology/Methodology";

@@ -4,10 +4,13 @@ import Credits from "./Credits";
 
 export default function IntroSupplementalContentRow({
   supplementalContent: {
+    expand,
     supplementalContentSection: { subsection },
   },
 }) {
   return (
-    <Grid.Row>{subsection === "Code" ? <IntroCode /> : <Credits />}</Grid.Row>
+    <Grid.Row style={{ overflow: "auto", maxHeight: expand ? "80vh" : "40vh" }}>
+      {subsection === "Code" ? <IntroCode /> : <Credits />}
+    </Grid.Row>
   );
 }
