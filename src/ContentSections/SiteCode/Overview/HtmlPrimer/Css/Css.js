@@ -44,7 +44,7 @@ export default function Css() {
         buttonSize="small"
       />
       <Paragraph content={paragraphs[4]} />
-      <Message compact style={{ backgroundColor: "teal", fontSize: "1.5em" }}>
+      <Message compact style={{ backgroundColor: "teal" }}>
         <AnimalKingdomTree />
       </Message>
       <Paragraph content={paragraphs[5]} />
