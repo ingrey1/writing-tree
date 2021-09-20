@@ -187,7 +187,7 @@ export default function Css() {
       <Header as="h2" textAlign="center">
         To Be Continued...
       </Header>
-      <Divider />
+      <div style={{ height: "5vh" }}></div>
     </Container>
   );
 }
