@@ -160,7 +160,7 @@ export default function Css() {
       </p>
       <Paragraph content={paragraphs[39]} />
       <Paragraph content={paragraphs[40]} />
-      <List bulleted>
+      <List bulleted style={{ fontSize: "1.3em" }}>
         <List.Item>Two classes applied to the same element</List.Item>
         <List.Item>CSS 'class' versus element 'id' </List.Item>
         <List.Item>CSS 'class' versus selecting element by kind</List.Item>
@@ -183,6 +183,11 @@ export default function Css() {
         />
       </Segment>
       <CssContainer html={paragraphs[8]} />
+      <Divider />
+      <Header as="h2" textAlign="center">
+        To Be Continued...
+      </Header>
+      <Divider />
     </Container>
   );
 }
