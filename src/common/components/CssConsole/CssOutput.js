@@ -28,7 +28,7 @@ export default function CssOutput({
   return (
     <Grid.Row>
       <Header as="h4">
-        Rendered HTML Element With Your Css Classes Applied
+        Rendered HTML Element With CSS Applied
       </Header>
       <div style={styles}>
         {ReactHtmlParser(formattedHtml) || defaultHtmlOutput}

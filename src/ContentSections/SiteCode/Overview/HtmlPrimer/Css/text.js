@@ -69,12 +69,12 @@ const paragraphs = {
   4: `It can be a bit difficult to see the parent-child relationships within the html. So, I've provided the following tree for you to refer back to as we do the styling.`,
   5: `Alternatively, you can always view the DOM (document object model) tree using your browser dev tools. This has the added advantage of showing you all the properties of each DOM node (element). If you're using Chrome, you can simply right click on a visual element and select 'inspect'. It will look something like this.`,
   6: `In CSS, styles cascade from parents to children. So, we can apply styles to all the descendants of an ancestor by styling the ancestor. This is convenient, as we'll see, but it can be confusing at times. Easy access to the parent-child relationships your HTML elements exhibit via the DOM tree will make learning to style less difficult.`,
-  7: `Below you will find some html and a text box where you can define and apply custom CSS styles to your html.`,
+  7: `Below you will find some HTML and a textarea where you can define and apply custom CSS styles.`,
   8: `<div class="?">
   <p>
     <i>Simba</i> 
   </p>`,
-  9: `Here is an example of CSS class code you can add to the textArea below. Go ahead and try it out.`,
+  9: `Here is an example of CSS class code you can paste into the textarea. Go ahead and try it out.`,
   10: `.color {
     color: red;
   }
@@ -133,7 +133,20 @@ th {
 }
   `,
   32: `Before testing this out in the browser, look over the CSS and HTML to remind yourself what you expect to happen.`,
-  33: `With our styles applied, our webpage is a bit more colorful.`
+  33: `With our styles applied, our webpage is a bit more colorful.`,
+  34: `It's possible for the styles you apply to conflict. Consider the following code blocks.`,
+  35: `<div class="parent">
+  <p class="child">some text</p>
+</div>`,
+  36: `.child {
+  color: green; 
+}`,
+  37: `.parent {
+  color: red;
+}`,
+  38: `And here is the output.`,
+  39: `This example shows us that, in general, the child's styles take priority over the parent's cascaded styles.`,
+  40: `There are other ways in which styles can conflict. Here are some cases of conflicting styles for you to construct and try out.`,
 };
 
 export { paragraphs };

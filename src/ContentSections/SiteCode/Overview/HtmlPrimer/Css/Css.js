@@ -145,6 +145,29 @@ export default function Css() {
 
       <Divider />
       <Header as="h2" textAlign="center">
+        Styling Priority
+      </Header>
+      <Paragraph content={paragraphs[34]} />
+
+      <CodeBlock language="html" text={paragraphs[35]} />
+      <p></p>
+      <CodeBlock language="css" text={paragraphs[36]} />
+      <p></p>
+      <CodeBlock language="css" text={paragraphs[37]} />
+      <Paragraph content={paragraphs[38]} />
+      <p class="child" style={{ color: "green" }}>
+        some text
+      </p>
+      <Paragraph content={paragraphs[39]} />
+      <Paragraph content={paragraphs[40]} />
+      <List bulleted>
+        <List.Item>Two classes applied to the same element</List.Item>
+        <List.Item>CSS 'class' versus element 'id' </List.Item>
+        <List.Item>CSS 'class' versus selecting element by kind</List.Item>
+        <List.Item>Element 'id' versus selecting element by kind</List.Item>
+      </List>
+      <Divider />
+      <Header as="h2" textAlign="center">
         Try Out Some Interactive Styling
       </Header>
       <Paragraph content={paragraphs[7]} />
