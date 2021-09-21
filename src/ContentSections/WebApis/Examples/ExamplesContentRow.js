@@ -1,0 +1,45 @@
+import { Grid } from "semantic-ui-react";
+import BookHeroApiContainer from "./Examples/BookHeroApiContainer";
+
+
+const mappings = {
+  BookHeroApi: BookHeroApiContainer,
+};
+
+const Component = ({
+  mainContent,
+  setMainContent,
+  supplementalContent,
+  setSupplementalContent,
+}) => {
+  const {
+    mainContentSection: { name },
+  } = mainContent;
+  const Comp = mappings[name];
+  return (
+    <Comp
+      mainContent={mainContent}
+      setMainContent={setMainContent}
+      supplementalContent={supplementalContent}
+      setSupplementalContent={setSupplementalContent}
+    />
+  );
+};
+
+export default function ExamplesContentRow({
+  mainContent,
+  setMainContent,
+  supplementalContent,
+  setSupplementalContent,
+}) {
+  return (
+    <Grid.Row>
+      {Component({
+        mainContent,
+        setMainContent,
+        setSupplementalContent,
+        supplementalContent,
+      })}
+    </Grid.Row>
+  );
+}

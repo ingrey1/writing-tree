@@ -1,0 +1,5 @@
+const paragraphs = {
+
+}
+
+export { paragraphs }

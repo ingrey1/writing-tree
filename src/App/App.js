@@ -15,6 +15,7 @@ import MobileMainMenu from "../Menus/MobileMainMenu/MobileMainMenu";
 import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalContentAction";
 import IconButtonExpand from "../common/components/IconButtonExpand";
 import OverviewIntroSupplementalCode from "../ContentSections/SiteCode/Overview/Intro/SupplementalContent/IntroSupplementalContainer";
+import ExamplesContainer from "../ContentSections/WebApis/Examples/ExamplesContainer";
 
 import {
   isLargeScreen,
@@ -26,6 +27,7 @@ const mainContentMappings = {
   Overview: OverviewContainer,
   Home: HomeContainer,
   Resources: ResourcesContainer,
+  WebApisExamples: ExamplesContainer,
 };
 
 const MainComponent = (mainContent, props) => {
@@ -44,6 +46,7 @@ const supplementalContentMappings = {
   "Overview.HtmlPrimer": NoSupplementalContent,
   "Overview.Resources": NoSupplementalContent,
   "Resources.References": NoSupplementalContent,
+  "WebApisExamples.BookHeroApi": NoSupplementalContent
 };
 
 const SupplementalComponent = (supplementalContent, props) => {
