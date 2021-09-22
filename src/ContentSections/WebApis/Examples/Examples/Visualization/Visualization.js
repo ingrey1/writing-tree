@@ -13,10 +13,12 @@ export default function Visualization({
 }) {
   return (
     <div>
+      <div style={{ height: "5vh" }}></div>
       <Header as="h2">Swagger UI</Header>
       <SwaggerUI spec={document} />
-      <div style={{ height: "10vh" }}></div>
+      <div style={{ height: "5vh" }}></div>
       <Header as="h2">Redoc UI</Header>
+      <div style={{ height: "5vh" }}></div>
       <RedocStandalone specUrl={document} />
     </div>
   );

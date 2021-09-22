@@ -3,7 +3,7 @@ import { Dropdown } from "semantic-ui-react";
 import {
   generateHomeMenuItem,
   generateOverviewMenuItem,
-  generateReferencesMenuItem
+  generateReferencesMenuItem,
 } from "../commonMenuItems";
 
 const dropDownstyle = {
@@ -55,7 +55,26 @@ export default class MobileMainMenu extends Component {
               <Dropdown.Item>Introduction</Dropdown.Item>
               <Dropdown.Item>Open API</Dropdown.Item>
               <Dropdown.Item>Tutorials</Dropdown.Item>
-              <Dropdown.Item>Examples</Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  setMainContent({
+                    ...mainContent,
+                    name: "WebApisExamples",
+                    mainContentSection: {
+                      ...mainContent.mainContentSection,
+                      name: "BookHeroApi",
+                      subsection: "Visualization",
+                    },
+                  });
+                  setSupplementalContent({
+                    ...supplementalContent,
+                    show: false,
+                    expand: false,
+                  });
+                }}
+              >
+                Examples
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
@@ -107,7 +126,6 @@ export default class MobileMainMenu extends Component {
                 setMainContent,
                 setSupplementalContent,
               })}
-
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown.Divider />

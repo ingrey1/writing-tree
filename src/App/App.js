@@ -46,7 +46,7 @@ const supplementalContentMappings = {
   "Overview.HtmlPrimer": NoSupplementalContent,
   "Overview.Resources": NoSupplementalContent,
   "Resources.References": NoSupplementalContent,
-  "WebApisExamples.BookHeroApi": NoSupplementalContent
+  "WebApisExamples.BookHeroApi": NoSupplementalContent,
 };
 
 const SupplementalComponent = (supplementalContent, props) => {
