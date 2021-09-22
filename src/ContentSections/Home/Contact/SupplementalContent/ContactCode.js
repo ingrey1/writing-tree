@@ -4,6 +4,7 @@ import ContactFolderTree from "./ContactFolderTree";
 import ContactComponentTree from "./ContactComponentTree";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
 import { githubHomeContactUrl } from "../../../../common/constants";
+
 import { code } from "./contactCodeText"
 
 export default function ContactCode() {

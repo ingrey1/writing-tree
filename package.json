@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "convert-css": "^0.1.3",
+    "raw.macro": "^0.4.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-folder-tree": "^5.0.3",
