@@ -1,3 +1,0 @@
-const paragraphs = {};
-
-export { paragraphs };

@@ -1,6 +1,7 @@
 import { paragraphs } from "./text";
 import { Container } from "semantic-ui-react";
-
+import { CodeBlock } from "@atlaskit/code";
+import { docString } from "../BookHeroApiDocument";
 
 export default function Document({
   supplementalContent,
@@ -10,7 +11,7 @@ export default function Document({
 }) {
   return (
     <Container text style={{ textSize: "1.2em" }}>
-      <p>Document</p>
+      <CodeBlock language="json" text={docString} />
     </Container>
   );
 }
