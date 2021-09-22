@@ -1,8 +1,9 @@
+import { RedocStandalone } from "redoc";
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
 import { paragraphs } from "./text";
-import { Container } from "semantic-ui-react";
-import document  from "../BookHeroApiDocument";
+import { Header } from "semantic-ui-react";
+import document from "../BookHeroApiDocument";
 
 export default function Visualization({
   supplementalContent,
@@ -11,8 +12,12 @@ export default function Visualization({
   setMainContent,
 }) {
   return (
-    <Container text style={{ textSize: "1.2em" }}>
+    <div>
+      <Header as="h2">Swagger UI</Header>
       <SwaggerUI spec={document} />
-    </Container>
+      <div style={{ height: "10vh" }}></div>
+      <Header as="h2">Redoc UI</Header>
+      <RedocStandalone specUrl={document} />
+    </div>
   );
 }
