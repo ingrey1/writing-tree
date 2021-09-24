@@ -40,8 +40,8 @@ const document = {
             content: {
               "application/json": {
                 schema: {
-                  type: "array",
-                  items: { $ref: "#/components/schemas/Book" },
+                  $ref: "#/components/schemas/GetBooksResponse"
+                
                 },
                 examples: {
                   books: {
@@ -56,7 +56,7 @@ const document = {
             content: {
               "application/json": {
                 schema: {
-                  $ref: "#/components/schemas/validationErrorResponse",
+                  $ref: "#/components/schemas/ValidationErrorResponse",
                 },
                 examples: {
                   unknownQueryParam: {
@@ -72,7 +72,22 @@ const document = {
   },
   components: {
     schemas: {
-      validationErrorResponse: {
+      GetBooksResponse: {
+         type: "object",
+         "properties": {
+           "status_code": {
+             "type": "integer",
+             "example": 200
+           },
+           "data": {
+              "type": "array",
+              "items": {
+                $ref: "#/components/schemas/Book"
+              }
+           }
+         }
+      },
+      ValidationErrorResponse: {
         type: "object",
         properties: {
           status_code: { type: "integer", example: " 400" },
