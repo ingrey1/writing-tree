@@ -16,6 +16,7 @@ import ToggleSupplementalContentAction from "../Actions/ToggleSupplementalConten
 import IconButtonExpand from "../common/components/IconButtonExpand";
 import OverviewIntroSupplementalCode from "../ContentSections/SiteCode/Overview/Intro/SupplementalContent/IntroSupplementalContainer";
 import ExamplesContainer from "../ContentSections/WebApis/Examples/ExamplesContainer";
+import TutorialsContainer from "../ContentSections/WebApis/Tutorials/TutorialsContainer"
 
 import {
   isLargeScreen,
@@ -28,6 +29,7 @@ const mainContentMappings = {
   Home: HomeContainer,
   Resources: ResourcesContainer,
   WebApisExamples: ExamplesContainer,
+  WebApisTutorials: TutorialsContainer
 };
 
 const MainComponent = (mainContent, props) => {

@@ -60,8 +60,30 @@ export default class MainMenu extends Component {
               active={activeItem === "introduction"}
             />
             <Menu.Item name="open api" active={activeItem === "open api"} />
-            <Menu.Item name="tutorials" active={activeItem === "tutorials"} />
-            <Menu.Item name="examples" active={activeItem === "examples"}           onClick={() => {
+            <Menu.Item
+              name="tutorials"
+              active={activeItem === "tutorials"}
+              onClick={() => {
+                setMainContent({
+                  ...mainContent,
+                  name: "WebApisTutorials",
+                  mainContentSection: {
+                    ...mainContent.mainContentSection,
+                    name: "VisualizationTool",
+                    subsection: "VisualizationTool",
+                  },
+                });
+                setSupplementalContent({
+                  ...supplementalContent,
+                  show: false,
+                  expand: false,
+                });
+              }}
+            />
+            <Menu.Item
+              name="examples"
+              active={activeItem === "examples"}
+              onClick={() => {
                 setMainContent({
                   ...mainContent,
                   name: "WebApisExamples",
@@ -76,7 +98,8 @@ export default class MainMenu extends Component {
                   show: false,
                   expand: false,
                 });
-              }} />
+              }}
+            />
           </Menu.Menu>
         </Menu.Item>
 
