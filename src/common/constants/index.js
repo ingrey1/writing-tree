@@ -11,7 +11,8 @@ import {
   githubRootUrl,
   visualCodeStudioUrl,
   sublimeTextUrl,
-  htmlAccessibilityUrl
+  htmlAccessibilityUrl,
+  nodeUrl
 } from "./urls";
 
 export {
@@ -29,5 +30,6 @@ export {
   githubRootUrl,
   visualCodeStudioUrl,
   sublimeTextUrl,
-  htmlAccessibilityUrl
+  htmlAccessibilityUrl,
+  nodeUrl
 };

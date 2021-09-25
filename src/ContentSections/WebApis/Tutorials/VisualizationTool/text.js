@@ -5,6 +5,9 @@ const content = {
     3: `While it may be difficult to build a tool that's general enough to successfully visualize all the documents that adhere to the Open API standard, we don't need to do anything that complex. In most cases, you have a small set of documents, with some specific styling and behavior you want to implement which the popular tools on the market dont provide.`,
     4: `In this tutorial, we'll walk through building a simplified visualization tool as a React Component. This will provide an opportunity for you to learn more about the structure of the Open Api document, and set the foundation for building your own custom tool that fits your own visualization needs.`,
   },
+  requirements: {
+      1: `Before we get started, let's make sure that you have the right tools for the job.`
+  }
 };
 
 export { content };

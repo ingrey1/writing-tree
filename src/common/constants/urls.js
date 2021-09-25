@@ -29,6 +29,7 @@ const htmlAccessibilityUrl = "https://developer.mozilla.org/en-US/docs/Learn/Acc
 // tool links
 const sublimeTextUrl = "https://www.sublimetext.com/download"
 const visualCodeStudioUrl = "https://code.visualstudio.com/"
+const nodeUrl = "https://nodejs.org/"
 
 export {
   githubRootUrl,
@@ -42,5 +43,6 @@ export {
   philosophyScientificRepresentation,
   sublimeTextUrl,
   visualCodeStudioUrl,
-  htmlAccessibilityUrl
+  htmlAccessibilityUrl,
+  nodeUrl
 };

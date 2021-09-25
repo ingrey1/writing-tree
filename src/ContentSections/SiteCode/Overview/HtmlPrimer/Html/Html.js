@@ -22,7 +22,6 @@ import {
 import IconButtonLink from "../../../../../common/components/IconButtonLink";
 import Paragraph from "../../../../../common/components/Paragraph/Paragraph";
 import CopyTextToClipboard from "../../../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
-import IconButtonContentLink from "../../../../../common/components/IconButtonContentLink";
 import codeblock1Image from "./images/codeblock1.png";
 import codeblock2Image from "./images/codeblock2.png";
 import codeblock3Image from "./images/codeblock3.png";
