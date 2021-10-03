@@ -99,6 +99,10 @@ import VisualizationTool from "./VisualizationTool"
     27: `You will want to restart the web app at this point. Click on your Terminal, and press "Control + C" and then type "Y" and hit "Enter". Now, run "npm start" again.`,
     28: `Our setup is now complete. We're ready to start planning and building our visualization component.`,
   },
+  componentFeatures: {
+    1: `Before we decide what our component will do, let's take a look at the Swagger UI visualization for my "Book Hero" example API.`,
+    2: `This document contains a lot of information. Before we consider the particular visual elements, I'll say a little bit about the "Book Hero" RESTful API being visualized here. This API allows a client to interact with the book hero collection. By making requests to the API, you can perform CRUD operations for book-related resources. The resources accessible via the API include Book, Author, and a few more. These terms might come across as confusing, if you're not already familiar with them. That's okay. We'll focus on the Book resource, and use it to explain the functionality the API provides with respect to that resource.`,
+  },
 };
 
 export { content };

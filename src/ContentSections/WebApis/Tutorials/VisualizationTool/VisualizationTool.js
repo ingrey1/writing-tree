@@ -11,6 +11,9 @@ import { CodeBlock, monokai } from "react-code-blocks";
 import Paragraph from "../../../../common/components/Paragraph/Paragraph";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
 import { visualCodeStudioUrl, nodeUrl } from "../../../../common/constants";
+import document from "../../Examples/Examples/BookHeroApiDocument";
+import SwaggerUI from "swagger-ui-react";
+import "swagger-ui-react/swagger-ui.css";
 import visualizationTool1 from "./images/visualization-tool1.png";
 import visualizationTool2 from "./images/visualization-tool2.png";
 import visualizationTool3 from "./images/visualization-tool3.png";
@@ -129,9 +132,11 @@ export default function VisualizationTool() {
         Building The Component
       </Header>
       <Header as="h3" textAlign="center">
-        Describing The Component's Features
+        Component Features
       </Header>
-
+      <Paragraph content={content.componentFeatures[1]} />
+      <SwaggerUI spec={document} />
+      <Paragraph content={content.componentFeatures[2]} />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...
