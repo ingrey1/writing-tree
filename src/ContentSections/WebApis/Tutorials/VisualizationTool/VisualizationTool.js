@@ -10,6 +10,7 @@ import { content } from "./text";
 import { CodeBlock, monokai } from "react-code-blocks";
 import Paragraph from "../../../../common/components/Paragraph/Paragraph";
 import IconButtonLink from "../../../../common/components/IconButtonLink";
+import CopyTextToClipboard from "../../../../common/components/CopyTextToClipboard/CopyTextToClipboard";
 import { visualCodeStudioUrl, nodeUrl } from "../../../../common/constants";
 import document from "../../Examples/Examples/BookHeroApiDocument";
 import SwaggerUI from "swagger-ui-react";
@@ -19,6 +20,9 @@ import visualizationTool2 from "./images/visualization-tool2.png";
 import visualizationTool3 from "./images/visualization-tool3.png";
 import visualizationTool4 from "./images/visualization-tool4.png";
 import visualizationTool5 from "./images/visualization-tool5.png";
+import visualizationTool6 from "./images/visualization-tool6.png";
+import visualizationTool7 from "./images/visualization-tool7.png";
+import visualizationTool8 from "./images/visualization-tool8.png";
 
 export default function VisualizationTool() {
   return (
@@ -137,6 +141,43 @@ export default function VisualizationTool() {
       <Paragraph content={content.componentFeatures[1]} />
       <SwaggerUI spec={document} />
       <Paragraph content={content.componentFeatures[2]} />
+      <Header as="h4" textAlign="center">
+        The API Base URL
+      </Header>
+      <Image src={visualizationTool6} />
+      <Paragraph content={content.componentFeatures[3]} />
+      <Header as="h4" textAlign="center">
+        The Complete URL And HTTP Action For An API Route
+      </Header>
+      <Image src={visualizationTool7} />
+      <Paragraph content={content.componentFeatures[4]} />
+      <Message>
+        <p>{content.componentFeatures[5]}</p>
+      </Message>
+      <Paragraph content={content.componentFeatures[6]} />
+      <Header as="h4" textAlign="center">
+        The GET "/book" Route Information
+      </Header>
+      <Paragraph content={content.componentFeatures[7]} />
+      <Header as="h5" textAlign="center">
+        Information Characterizing The Request
+      </Header>
+      <Image src={visualizationTool8} />
+      <Paragraph content={content.componentFeatures[8]} />
+      <Paragraph content={content.componentFeatures[9]} />
+      <Paragraph content={content.componentFeatures[10]} />
+      <Message>
+        <p>{content.componentFeatures[11]}</p>
+      </Message>
+      <Paragraph content={content.componentFeatures[12]} />
+      <Paragraph content={content.componentFeatures[13]} />
+      <Message style={{ backgroundColor: "black", color: "white" }}>
+        <p>{content.componentFeatures[14]}</p>
+      </Message>
+      <CopyTextToClipboard text={content.componentFeatures[14]} />
+      <Header as="h5" textAlign="center">
+        Information Characterizing The Response
+      </Header>
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...

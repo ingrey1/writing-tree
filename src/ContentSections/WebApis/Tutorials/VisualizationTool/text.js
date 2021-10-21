@@ -101,7 +101,20 @@ import VisualizationTool from "./VisualizationTool"
   },
   componentFeatures: {
     1: `Before we decide what our component will do, let's take a look at the Swagger UI visualization for my "Book Hero" example API.`,
-    2: `This document contains a lot of information. Before we consider the particular visual elements, I'll say a little bit about the "Book Hero" RESTful API being visualized here. This API allows a client to interact with the book hero collection. By making requests to the API, you can perform CRUD operations for book-related resources. The resources accessible via the API include Book, Author, and a few more. These terms might come across as confusing, if you're not already familiar with them. That's okay. We'll focus on the Book resource, and use it to explain the functionality the API provides with respect to that resource.`,
+    2: `This visualization provides us with information about the Book Hero API. This API allows a client to interact with the book hero collection. By making requests to the API, you can perform CRUD operations for book-related resources. The resources accessible via the API include Book, Author, and a few more.`,
+    3: `In order to make requests to the API, we need to know the base URL. If we know the base URL, and the relative URL for our resource, we can construct a complete URL and send an HTTP request to that url to initiate an action, such as retrieving all the books in the book collection.`,
+    4: `We can see that for the Book resource, there are two separate routes, both of which happen to have the same relative URL, "/book". Here is the complete URl for these two routes.`,
+    5: `https://whispering-chamber-02312.herokuapp.com/book`,
+    6: `Although the URL is the same for these two routes, they have different HTTP actions associated with them. The first route is reachable via an HTTP 'GET' request, while the second route requires an HTTP 'POST' request. By making a GET request to the complete url, we will receive data for the existing books as the response. However, if we want to add a book to the collection, we can make a POST request to the URL instead.`,
+    7: `In addition to the URLs and HTTP verbs for all of the routes in the API, the visualization also contains more information about each route. Let's take a look at GET "/book".`,
+    8: `The information for each route can be divided into two basic parts: (a) the options and requirements for making the request, and (b) the kinds of responses the client will receive after making the request. In the screenshot above, we can see that part of characterizing how to make the GET "/book" request involves specifying parameters.`,
+    9: `There are different kinds of parameters, including "path" and "query" parameters. Parameters can also be required or optional. In this visualization, if a parameter doesn't specify that it's required, then it's optional. So, we have two optional query parameters, "id", and "title".`,
+    10: `For this route, if query parameters are supplied, all the books in the collection are returned. However, suppose that we want to retrieve just those books that have the title, "Tigana". we can tack a query parameter onto our url to achieve this functionality.`,
+    11: `GET https://whispering-chamber-02312.herokuapp.com/book?title=Tigana`,
+    12: `the query parameters go to the right of the "?". Each query parameter has a name and a value. The name goes to the left of the "=", while the value goes to the right.`,
+    13: `We now have all the information we need to make a request to this route. If you'd like to try it out go ahead and run the following code from your command line.`,
+    14: `curl -X GET \
+    'https://whispering-chamber-02312.herokuapp.com/book?title=Tigana'`,
   },
 };
 
