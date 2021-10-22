@@ -28,7 +28,7 @@ export default function VisualizationTool() {
   return (
     <Container text style={{ fontSize: "1.2em" }}>
       <Header as="h2" textAlign="center">
-        Introduction
+        1. Introduction
       </Header>
       <Paragraph content={content.introduction[1]} />
       <Paragraph content={content.introduction[2]} />
@@ -36,7 +36,7 @@ export default function VisualizationTool() {
       <Paragraph content={content.introduction[4]} />
       <Divider />
       <Header as="h2" textAlign="center">
-        Requirements
+        2. Requirements
       </Header>
       <Paragraph content={content.requirements[1]} />
       <List bulleted>
@@ -63,7 +63,7 @@ export default function VisualizationTool() {
       </List>
       <Divider />
       <Header as="h2" textAlign="center">
-        Project Setup
+        3. Project Setup
       </Header>
       <Paragraph content={content.projectSetup[1]} />
       <Paragraph content={content.projectSetup[2]} />
@@ -133,21 +133,21 @@ export default function VisualizationTool() {
       <Paragraph content={content.projectSetup[28]} />
       <Divider />
       <Header as="h2" textAlign="center">
-        Building The Component
+        4. Building The Component
       </Header>
       <Header as="h3" textAlign="center">
-        Component Features
+        4.1. Component Features
       </Header>
       <Paragraph content={content.componentFeatures[1]} />
       <SwaggerUI spec={document} />
       <Paragraph content={content.componentFeatures[2]} />
       <Header as="h4" textAlign="center">
-        The API Base URL
+        4.1.1. The API Base URL
       </Header>
       <Image src={visualizationTool6} />
       <Paragraph content={content.componentFeatures[3]} />
       <Header as="h4" textAlign="center">
-        The Complete URL And HTTP Action For An API Route
+        4.1.2. The Complete URL And HTTP Action For An API Route
       </Header>
       <Image src={visualizationTool7} />
       <Paragraph content={content.componentFeatures[4]} />
@@ -156,11 +156,11 @@ export default function VisualizationTool() {
       </Message>
       <Paragraph content={content.componentFeatures[6]} />
       <Header as="h4" textAlign="center">
-        The GET "/book" Route Information
+        4.1.3. The GET "/book" Route Information
       </Header>
       <Paragraph content={content.componentFeatures[7]} />
       <Header as="h5" textAlign="center">
-        Information Characterizing The Request
+        4.1.3.1. Information Characterizing The Request
       </Header>
       <Image src={visualizationTool8} />
       <Paragraph content={content.componentFeatures[8]} />
@@ -176,7 +176,7 @@ export default function VisualizationTool() {
       </Message>
       <CopyTextToClipboard text={content.componentFeatures[14]} />
       <Header as="h5" textAlign="center">
-        Information Characterizing The Response
+        4.1.3.2. Information Characterizing The Response
       </Header>
       <Divider />
       <Header as="h2" textAlign="center">
