@@ -23,6 +23,9 @@ import visualizationTool5 from "./images/visualization-tool5.png";
 import visualizationTool6 from "./images/visualization-tool6.png";
 import visualizationTool7 from "./images/visualization-tool7.png";
 import visualizationTool8 from "./images/visualization-tool8.png";
+import visualizationTool9 from "./images/visualization-tool9.png";
+import visualizationTool10 from "./images/visualization-tool10.png";
+import visualizationTool11 from "./images/visualization-tool11.png";
 
 export default function VisualizationTool() {
   return (
@@ -178,6 +181,17 @@ export default function VisualizationTool() {
       <Header as="h5" textAlign="center">
         4.1.3.2. Information Characterizing The Response
       </Header>
+      <Paragraph content={content.componentFeatures[15]} />
+      <Image src={visualizationTool9} />
+      <Paragraph content={content.componentFeatures[16]} />
+      <Image src={visualizationTool10} />
+      <Paragraph content={content.componentFeatures[17]} />
+      <Header as="h5" textAlign="center">
+        4.1.3.3. Schemas
+      </Header>
+      <Paragraph content={content.componentFeatures[18]} />
+      <Image src={visualizationTool11} />
+      <Paragraph content={content.componentFeatures[19]} />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...
