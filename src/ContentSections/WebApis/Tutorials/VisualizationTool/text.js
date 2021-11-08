@@ -479,6 +479,47 @@ import document from "./api-test-doc.js"
     
     export default App;
     `,
+    8: `The next step is to make our API document available inside of the VisualizationTool component, so we can access the information in it. Go ahead and open 'VisualizationTool.js, and add the following code snippet`,
+    9: `
+    export default function VisualizationTool({doc}) {
+      return (
+        <div>
+          <h2>Our Code Will live In This Component</h2>
+        </div>
+      );
+    }
+    `,
+    10: `Now, the 'doc' prop gives us access to the Open API document. Let's use it to access the 'title', 'version', and 'description' of the API inside our functional component. These values live in the 'info' section of the document.`,
+    11: `
+    export default function VisualizationTool({doc}) {
+      
+      const title = doc.info.title
+      const version = doc.info.version
+      const description = doc.info.description
+      
+      return (
+        <div>
+          <h2>Our Code Will live In This Component</h2>
+        </div>
+      );
+    }`,
+    12: `The HTML elements in the return value will be visible on the screen when the component is rendered. So, let's add the 'title' as an 'H2' element, 'version' as an 'H3' element, and 'description' as a 'p' element`,
+    13: `export default function VisualizationTool({ doc }) {
+      const title = doc.info.title;
+      const version = doc.info.version;
+      const description = doc.info.description;
+    
+      return (
+        <div>
+          <h2>{title}</h2>
+          <h3>Version {version}</h3>
+          <p>{description}</p>
+        </div>
+      );
+    }
+    `,
+    14: `Before we continue further, let's start the application and verify the document data is rendered correctly. After running 'npm start' from the project directory, you should see something like this.`,
+    15: `We can see that the 'title', 'version', and 'description' are visible. Let's use the Chrome dev tools to make sure the HTML elements match what our 'VisualizationTool' component returns.`,
   },
 };
 

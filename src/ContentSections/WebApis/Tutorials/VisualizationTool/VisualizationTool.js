@@ -27,6 +27,8 @@ import visualizationTool9 from "./images/visualization-tool9.png";
 import visualizationTool10 from "./images/visualization-tool10.png";
 import visualizationTool11 from "./images/visualization-tool11.png";
 import visualizationTool12 from "./images/visualization-tool12.png";
+import visualizationTool13 from "./images/visualization-tool13.png";
+import visualizationTool14 from "./images/visualization-tool14.png";
 
 export default function VisualizationTool() {
   return (
@@ -215,7 +217,7 @@ export default function VisualizationTool() {
       <Paragraph content={content.componentFeatures[21]} />
       <Divider />
       <Header as="h2" textAlign="center">
-        5. Passing The Open API Doc To the VisualizationTool Component As Input
+        5. Component Code
       </Header>
       <Paragraph content={content.componentCode[1]} />
       <Image src={visualizationTool12} />
@@ -240,6 +242,30 @@ export default function VisualizationTool() {
         theme={monokai}
         text={content.componentCode[7]}
       />
+      <Paragraph content={content.componentCode[8]} />
+      <CodeBlock
+        language="jsx"
+        highlight="2"
+        theme={monokai}
+        text={content.componentCode[9]}
+      />
+      <Paragraph content={content.componentCode[10]} />
+      <CodeBlock
+        language="jsx"
+        highlight="2, 4-6"
+        theme={monokai}
+        text={content.componentCode[11]}
+      />
+      <Paragraph content={content.componentCode[12]} />
+      <CodeBlock
+        language="jsx"
+        theme={monokai}
+        text={content.componentCode[13]}
+      />
+      <Paragraph content={content.componentCode[14]} />
+      <Image src={visualizationTool13} />
+      <Paragraph content={content.componentCode[15]} />
+      <Image src={visualizationTool14} />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...
