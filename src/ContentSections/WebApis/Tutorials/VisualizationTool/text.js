@@ -120,6 +120,365 @@ import VisualizationTool from "./VisualizationTool"
     17: `400 failure responses generally entail that a "Bad Request" was made. This means that the request didn't follow the rules the API route it was sent to abides by. For the example above, remember that a request to the GET "/book" route is valid only if a query parameter is "id" or "title". So, the API responded with an error message that explains what's wrong with the request -- "price" isn't a valid query parameter.`,
     18: `Schemas serve a few important roles in Open API docs: (a) characterizing the data structure and data types of the components for requests and responses,(b) avoiding duplicate code, and (c) increasing readability. Let's take a look what the schema looks like for the GET /"books" 200 success response.`,
     19: `We can see here that this schema tells us the about the structure of the data, and the types of its parts, for the success response to the GET "/books" route. While we sometimes need to look at the schema to learn about how to formulate requests or parse responses, most of the time, the examples are sufficient. Therefore, in order to reduce the complexity of the code we'll write for this tutorial, we will use examples to visualize the relevant information about our routes.`,
+    20: `Now that we're more familiar with some of the visual elements of an Open API component, we can specify the features our own component will have. Our component will take an Open API doc in .js file format as input, and display the following elements.`,
+    21: `Because we will be relying on examples (and ignoring schemas) for our component, this means that we need to make sure all the routes in the Open API Doc we will be passing as a prop to our component have at least one example. So, keep this in mind if you decide to use this component with an Open API doc other than the Book Hero example we'll be working with.`,
+  },
+  componentCode: {
+    1: `The first thing we need to do is add an Open API doc to our 'src' folder. That way, as we write the code, we can view the visual output of our component, and make sure things are working as intended.`,
+    2: `Open up the 'api-test-doc.js' file, and paste the following code into it. Then save your document.`,
+    3: `const document = {
+      openapi: "3.0.0",
+      info: {
+        version: "1.0.0",
+        title: "Book Hero API",
+        description: "A RESTful Book API for CRUD Operations",
+      },
+      servers: [
+        {
+          url: "https://whispering-chamber-02312.herokuapp.com/",
+        },
+      ],
+      paths: {
+        "/book": {
+          get: {
+            operationId: "GET Books",
+            summary:
+              "Retrieve books from the Book Hero collection. Use query parameters to retrieve a specific subset of the book collection.",
+            parameters: [
+              {
+                in: "query",
+                name: "id",
+                schema: {
+                  type: "integer",
+                },
+                description: "Find a book by its primary key/id.",
+              },
+              {
+                in: "query",
+                name: "title",
+                schema: {
+                  type: "string",
+                },
+                description: "Find a book by its title.",
+              },
+            ],
+            tags: ["Books"],
+            responses: {
+              200: {
+                description:
+                  "A Successful response with a list of the books in the Book Hero collection.",
+                content: {
+                  "application/json": {
+                    schema: {
+                      $ref: "#/components/schemas/GetBooksResponse",
+                    },
+                    examples: {
+                      books: {
+                        $ref: "#/components/examples/responses/getBooks",
+                      },
+                    },
+                  },
+                },
+              },
+              400: {
+                description: "Validation error",
+                content: {
+                  "application/json": {
+                    schema: {
+                      $ref: "#/components/schemas/ValidationErrorResponse",
+                    },
+                    examples: {
+                      "Unknown Query Parameter": {
+                        $ref: "#/components/examples/errors/400/unknownQueryParam",
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          post: {
+            operationId: "POST books",
+            summary: "Create a new book in the Book Hero collection.",
+            tags: ["Books"],
+            requestBody: {
+              description:
+                "Object that contains the data used to create a new book in the Book Hero collection.",
+              required: true,
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/CreateBookRequestBody" },
+                  examples: {
+                    "Request Body": {
+                      $ref: "#/components/examples/requestBodies/createBook/theBriefWondrousLifeOfOscarWao",
+                    },
+                  },
+                },
+              },
+            },
+            responses: {
+              201: {
+                description: "The newly created Book",
+                content: {
+                  "application/json": {
+                    schema: {
+                      $ref: "#/components/schemas/PostBooksResponse",
+                    },
+                    examples: {
+                      "The Brief Wondrous Life of Oscar Wao": {
+                        $ref: "#/components/examples/responses/postBooks",
+                      },
+                    },
+                  },
+                },
+              },
+              400: {
+                description: "Validation error",
+                content: {
+                  "application/json": {
+                    schema: {
+                      $ref: "#/components/schemas/ValidationErrorResponse",
+                    },
+                    examples: {
+                      "Required Request Body Parameter": {
+                        $ref: "#/components/examples/errors/400/requiredParam",
+                      },
+                      "Unique Request Body Parameter": {
+                        $ref: "#/components/examples/errors/400/uniqueParam",
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      components: {
+        schemas: {
+          GetBooksResponse: {
+            type: "object",
+            properties: {
+              status_code: {
+                type: "integer",
+                example: 200,
+              },
+              data: {
+                type: "array",
+                items: {
+                  $ref: "#/components/schemas/Book",
+                },
+              },
+            },
+          },
+          PostBooksResponse: {
+            type: "object",
+            properties: {
+              status_code: {
+                type: "integer",
+                example: 201,
+              },
+              data: {
+                $ref: "#/components/schemas/Book",
+              },
+            },
+          },
+          ValidationErrorResponse: {
+            type: "object",
+            properties: {
+              status_code: { type: "integer", example: " 400" },
+              type: { type: "string", example: "validation_error" },
+              param: { type: "string", example: "price" },
+              message: { type: "string", example: '"price" is not allowed' },
+            },
+          },
+          CreateBookRequestBody: {
+            type: "object",
+            required: ["title", "about"],
+            properties: {
+              title: {
+                type: "string",
+                example: "A book title.",
+              },
+              about: {
+                type: "string",
+                example: "A book description.",
+              },
+            },
+          },
+          Book: {
+            type: "object",
+            required: ["title", "about"],
+            properties: {
+              id: {
+                type: "integer",
+                format: "int32",
+                uniqueItems: true,
+                readOnly: true,
+              },
+              title: {
+                type: "string",
+                uniqueItems: true,
+                maxLength: 255,
+              },
+              about: {
+                type: "string",
+                maxLength: 2550,
+              },
+              authors: {
+                type: "array",
+                items: {
+                  type: "integer",
+                  format: "int32",
+                },
+                uniqueItems: true,
+              },
+              genres: {
+                type: "array",
+                items: {
+                  type: "integer",
+                  format: "int32",
+                },
+                uniqueItems: true,
+              },
+              tags: {
+                type: "array",
+                items: {
+                  type: "integer",
+                  format: "int32",
+                },
+                uniqueItems: true,
+              },
+              createdAt: {
+                type: "string",
+                format: "date-time",
+              },
+              updatedAt: {
+                type: "string",
+                format: "date-time",
+              },
+            },
+          },
+        },
+        examples: {
+          requestBodies: {
+            createBook: {
+              theBriefWondrousLifeOfOscarWao: {
+                value: {
+                  title: "The Brief Wondrous Life of Oscar Wao",
+                  about:
+                    "A unique blend of cultural critique and coming-of-age story with an interesting Dominican twist.",
+                },
+              },
+            },
+          },
+          errors: {
+            400: {
+              unknownQueryParam: {
+                value: {
+                  status_code: 400,
+                  type: "validation_error",
+                  param: "price",
+                  message: '"price" is not allowed',
+                },
+              },
+              requiredParam: {
+                value: {
+                  status_code: 400,
+                  type: "validation_error",
+                  param: "about",
+                  message: '"about" is required',
+                },
+              },
+              uniqueParam: {
+                value: {
+                  status_code: 400,
+                  type: "validation_error",
+                  message: "title must be unique",
+                },
+              },
+            },
+          },
+          responses: {
+            getBooks: {
+              value: {
+                status_code: 200,
+                data: [
+                  {
+                    id: 1,
+                    title: "Tigana",
+                    about: "Amazing Novel by one of the world's greatest artists",
+                    createdAt: "2021-08-27T12:22:23.088Z",
+                    updatedAt: "2021-08-27T12:22:23.088Z",
+                    authors: [],
+                    genres: [],
+                    tags: [],
+                  },
+                  {
+                    id: 3,
+                    title: "A Song or Arbonne",
+                    about: "Amazing Novel by one of the world's greatest writers",
+                    createdAt: "2021-08-27T12:25:58.770Z",
+                    updatedAt: "2021-08-27T12:25:58.770Z",
+                    authors: [],
+                    genres: [],
+                    tags: [],
+                  },
+                ],
+              },
+            },
+            postBooks: {
+              value: {
+                status_code: 201,
+                data: {
+                  id: 8,
+                  title: "The Brief Wondrous Life of Oscar Wao",
+                  about:
+                    "A unique blend of cultural critique and coming-of-age story with an interesting Dominican twist.",
+                  updatedAt: "2021-09-28T02:26:34.443Z",
+                  createdAt: "2021-09-28T02:26:34.443Z",
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+    
+    export default document;
+    `,
+    4: `Open up the 'App.js' file, and add this code to import our Open API doc file.`,
+    5: `import './App.css';
+import VisualizationTool from "./VisualizationTool"
+import document from "./api-test-doc.js"
+    
+    function App() {
+      return (
+        <div className="App">
+          <h1>Open API Visualization Tool</h1>
+          <VisualizationTool />
+        </div>
+      );
+    }
+    
+    export default App;
+    `,
+    6: `Pass the 'document' import as a prop (input) named 'doc' to the VisualizationTool component.`,
+    7: `import './App.css';
+import VisualizationTool from "./VisualizationTool"
+import document from "./api-test-doc.js"
+    
+    function App() {
+      return (
+        <div className="App">
+          <h1>Open API Visualization Tool</h1>
+          <VisualizationTool doc={document} />
+        </div>
+      );
+    }
+    
+    export default App;
+    `,
   },
 };
 

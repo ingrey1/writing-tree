@@ -26,6 +26,7 @@ import visualizationTool8 from "./images/visualization-tool8.png";
 import visualizationTool9 from "./images/visualization-tool9.png";
 import visualizationTool10 from "./images/visualization-tool10.png";
 import visualizationTool11 from "./images/visualization-tool11.png";
+import visualizationTool12 from "./images/visualization-tool12.png";
 
 export default function VisualizationTool() {
   return (
@@ -136,21 +137,18 @@ export default function VisualizationTool() {
       <Paragraph content={content.projectSetup[28]} />
       <Divider />
       <Header as="h2" textAlign="center">
-        4. Building The Component
-      </Header>
-      <Header as="h3" textAlign="center">
-        4.1. Component Features
+        4. Component Features
       </Header>
       <Paragraph content={content.componentFeatures[1]} />
       <SwaggerUI spec={document} />
       <Paragraph content={content.componentFeatures[2]} />
       <Header as="h4" textAlign="center">
-        4.1.1. The API Base URL
+        4.1. The API Base URL
       </Header>
       <Image src={visualizationTool6} />
       <Paragraph content={content.componentFeatures[3]} />
       <Header as="h4" textAlign="center">
-        4.1.2. The Complete URL And HTTP Action For An API Route
+        4.2. The Complete URL And HTTP Action For An API Route
       </Header>
       <Image src={visualizationTool7} />
       <Paragraph content={content.componentFeatures[4]} />
@@ -159,11 +157,11 @@ export default function VisualizationTool() {
       </Message>
       <Paragraph content={content.componentFeatures[6]} />
       <Header as="h4" textAlign="center">
-        4.1.3. The GET "/book" Route Information
+        4.3. The GET "/book" Route Information
       </Header>
       <Paragraph content={content.componentFeatures[7]} />
       <Header as="h5" textAlign="center">
-        4.1.3.1. Information Characterizing The Request
+        4.3.1. Information Characterizing The Request
       </Header>
       <Image src={visualizationTool8} />
       <Paragraph content={content.componentFeatures[8]} />
@@ -179,7 +177,7 @@ export default function VisualizationTool() {
       </Message>
       <CopyTextToClipboard text={content.componentFeatures[14]} />
       <Header as="h5" textAlign="center">
-        4.1.3.2. Information Characterizing The Response
+        4.3.2. Information Characterizing The Response
       </Header>
       <Paragraph content={content.componentFeatures[15]} />
       <Image src={visualizationTool9} />
@@ -187,11 +185,61 @@ export default function VisualizationTool() {
       <Image src={visualizationTool10} />
       <Paragraph content={content.componentFeatures[17]} />
       <Header as="h5" textAlign="center">
-        4.1.3.3. Schemas
+        4.4. Schemas
       </Header>
       <Paragraph content={content.componentFeatures[18]} />
       <Image src={visualizationTool11} />
       <Paragraph content={content.componentFeatures[19]} />
+      <Header as="h4" textAlign="center">
+        4.5. Requirements
+      </Header>
+      <Paragraph content={content.componentFeatures[20]} />
+      <List bulleted>
+        <List.Item>Base URL</List.Item>
+        <List.Item>
+          Information For Each Route:
+          <List bulleted>
+            <List.Item>The Full Route URL</List.Item>
+            <List.Item>The HTTP Verb/Action</List.Item>
+            <List.Item>Route Parameters (if any)</List.Item>
+            <List.Item>Request Body (if any)</List.Item>
+            <List.Item>One Complete Request Example</List.Item>
+            <List.Item>One Complete Response Example</List.Item>
+          </List>
+        </List.Item>
+        <List.Item>
+          A 'Try It Out' button for the 'GET' routes that make a GET request and
+          display the response
+        </List.Item>
+      </List>
+      <Paragraph content={content.componentFeatures[21]} />
+      <Divider />
+      <Header as="h2" textAlign="center">
+        5. Passing The Open API Doc To the VisualizationTool Component As Input
+      </Header>
+      <Paragraph content={content.componentCode[1]} />
+      <Image src={visualizationTool12} />
+      <Paragraph content={content.componentCode[2]} />
+      <CodeBlock
+        language="jsx"
+        theme={monokai}
+        text={content.componentCode[3]}
+      />
+      <CopyTextToClipboard text={content.componentCode[3]} />
+      <Paragraph content={content.componentCode[4]} />
+      <CodeBlock
+        language="jsx"
+        highlight="3"
+        theme={monokai}
+        text={content.componentCode[5]}
+      />
+      <Paragraph content={content.componentCode[6]} />
+      <CodeBlock
+        language="jsx"
+        highlight="3,9"
+        theme={monokai}
+        text={content.componentCode[7]}
+      />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...
