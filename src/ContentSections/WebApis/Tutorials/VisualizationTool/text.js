@@ -520,6 +520,99 @@ import document from "./api-test-doc.js"
     `,
     14: `Before we continue further, let's start the application and verify the document data is rendered correctly. After running 'npm start' from the project directory, you should see something like this.`,
     15: `We can see that the 'title', 'version', and 'description' are visible. Let's use the Chrome dev tools to make sure the HTML elements match what our 'VisualizationTool' component returns.`,
+    16: `So far, so good. An Open API Doc may have multiple base URLs, which all live in the 'servers' array. We'll add the base URLs in an unordered list. Since we'll need to iterate over the 'servers' array, we'll write a small helper function to generate the JSX for our urls.`,
+    17: `const displayBaseUrls = (baseUrls) => {
+      return (
+        <ul>
+          {baseUrls.map((baseUrl) => {
+            return <li key={Math.random()}>{baseUrl.url}</li>;
+          })}
+        </ul>
+      );
+    };
+    
+    export default function VisualizationTool({ doc }) {
+      const title = doc.info.title;
+      const version = doc.info.version;
+      const description = doc.info.description;
+    
+      return (
+        <div>
+          <h2>{title}</h2>
+          <h3>Version {version}</h3>
+          <p>{description}</p>
+        </div>
+      );
+    }
+    `,
+    18: `Our helper function returns an unordered list with all of the base urls as 'li' elements. Now, let's use this function to display those urls in the component.`,
+    19: `const displayBaseUrls = (baseUrls) => {
+      return (
+        <ul>
+          {baseUrls.map((baseUrl) => {
+            return <li key={Math.random()}>{baseUrl.url}</li>;
+          })}
+        </ul>
+      );
+    };
+    
+    export default function VisualizationTool({ doc }) {
+      const title = doc.info.title;
+      const version = doc.info.version;
+      const description = doc.info.description;
+      const baseUrls = doc.servers;
+    
+      return (
+        <div>
+          <h2>{title}</h2>
+          <h3>Version {version}</h3>
+          <p>{description}</p>
+          <h3>Base URLs:</h3>
+          {displayBaseUrls(baseUrls)}
+        </div>
+      );
+    }
+    `,
+    20: `Let's open the application in the browser and verify the visual elements are rendered correctly.`,
+    21: `We've now successfully rendered all of the general info for our Book Hero API. Before we start writing code to display the route info, let's place the general info in a 'section' element, and do a little styling.`,
+    22: `const displayBaseUrls = (baseUrls) => {
+      return (
+        <ul>
+          {baseUrls.map((baseUrl) => {
+            return <li key={Math.random()}>{baseUrl.url}</li>;
+          })}
+        </ul>
+      );
+    };
+    
+    export default function VisualizationTool({ doc }) {
+      const title = doc.info.title;
+      const version = doc.info.version;
+      const description = doc.info.description;
+      const baseUrls = doc.servers;
+    
+      return (
+        <div>
+          <section id="api-general-info">
+          <h2>{title}</h2>
+          <h3>Version {version}</h3>
+          <p>{description}</p>
+          <h3>Base URLs:</h3>
+          {displayBaseUrls(baseUrls)}
+          </section>
+        </div>
+      );
+    }
+    `,
+    23: `We've given the section an 'id' attribute so we can reference it in our stylesheet. Currently, our application has one CSS file, 'App.css'. While we could do our styling in that file, we're going to make a separate CSS file for our VisualizationTool component. This way it's clear what component the styles directly apply to. Go ahead and create a 'VisualizationTool.css' file in the 'src' folder.`,
+    24: `Open the 'VisualizationTool.css' file, and add the following CSS code. When applied, it will create a teal border around the general info 'section' element`,
+    25: `#api-general-info {
+      border: 2px solid teal;
+    }`,
+    26: `Now, before our styles can be applied, we have to connect the CSS file to our component file. We can do this by importing the CSS file in the 'VisualizationTool.js' component file.`,
+    27: `import './VisualizationTool.css`,
+    28: `Let's verify in the browser that the styles have been applied.`,
+    29: `We can see that the teal border has been applied. Although we won't be focusing on styling in this tutorial, feel free to add any styles for the component in the 'VisualizationTool.css' file.`,
   },
 };
 

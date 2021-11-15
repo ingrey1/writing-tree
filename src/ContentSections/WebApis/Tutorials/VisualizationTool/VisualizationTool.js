@@ -29,6 +29,9 @@ import visualizationTool11 from "./images/visualization-tool11.png";
 import visualizationTool12 from "./images/visualization-tool12.png";
 import visualizationTool13 from "./images/visualization-tool13.png";
 import visualizationTool14 from "./images/visualization-tool14.png";
+import visualizationTool15 from "./images/visualization-tool15.png";
+import visualizationTool16 from "./images/visualization-tool16.png";
+import visualizationTool17 from "./images/visualization-tool17.png";
 
 export default function VisualizationTool() {
   return (
@@ -266,6 +269,47 @@ export default function VisualizationTool() {
       <Image src={visualizationTool13} />
       <Paragraph content={content.componentCode[15]} />
       <Image src={visualizationTool14} />
+      <Paragraph content={content.componentCode[16]} />
+      <CodeBlock
+        language="jsx"
+        highlight="1-9"
+        theme={monokai}
+        text={content.componentCode[17]}
+      />
+      <Paragraph content={content.componentCode[18]} />
+      <CodeBlock
+        language="jsx"
+        highlight="15,22-23"
+        theme={monokai}
+        text={content.componentCode[19]}
+      />
+      <Paragraph content={content.componentCode[20]} />
+      <Image src={visualizationTool15} />
+      <Paragraph content={content.componentCode[21]} />
+      <CodeBlock
+        language="jsx"
+        highlight="19,25"
+        theme={monokai}
+        text={content.componentCode[22]}
+      />
+      <Paragraph content={content.componentCode[23]} />
+      <Image src={visualizationTool16} />
+      <Paragraph content={content.componentCode[24]} />
+      <CodeBlock
+        language="css"
+        theme={monokai}
+        text={content.componentCode[25]}
+      />
+      <Paragraph content={content.componentCode[26]} />
+      <CodeBlock
+        language="jsx"
+        highlight="1"
+        theme={monokai}
+        text={content.componentCode[27]}
+      />
+      <Paragraph content={content.componentCode[28]} />
+      <Image src={visualizationTool17} />
+      <Paragraph content={content.componentCode[29]} />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...
