@@ -613,6 +613,179 @@ import document from "./api-test-doc.js"
     27: `import './VisualizationTool.css`,
     28: `Let's verify in the browser that the styles have been applied.`,
     29: `We can see that the teal border has been applied. Although we won't be focusing on styling in this tutorial, feel free to add any styles for the component in the 'VisualizationTool.css' file.`,
+    30: `Before we start writing any code to display the routes, let's review the Open API document 'paths' section, which contains all of the route info for the API.`,
+    31: `{
+      paths: {
+        url1: {
+          get: {
+            operationId: 'GET Books',
+            parameters: [],
+            responses: {},
+          },
+          post: {
+            operationId: 'POST Books',
+            requestBody: {},
+            responses: {},
+          },
+        },
+        url2: {},
+      },
+    }`,
+    32: `In the 'paths' object above, 'url1' contains two keys, 'get', and 'post', which correspond to the two routes GET 'url1' and POST 'url1'. The HTTP verb keys (get, post, patch etc.) have objects containing all of the information for that specific [http action/verb + route].`,
+    33: `Because we're going to need to write a fair amount of code to display all this information, it will help us to have a strategy to follow. Here's the algorithm we'll rely on for the general structure.`,
+    34: `We'll start from the top down, and create a function called 'displayApi' in our 'VisualizationTool.js' file.`,
+    35: `import "./VisualizationTool.css";
+
+    const displayBaseUrls = (baseUrls) => {
+      return (
+        <ul>
+          {baseUrls.map((baseUrl) => {
+            return <li key={Math.random()}>{baseUrl.url}</li>;
+          })}
+        </ul>
+      );
+    };
+    
+    const displayApi = (document) => {
+      const { paths } = document;
+      // go through each of the urls, display the routes for that url
+      return (
+        <div id="urls">
+          {Object.keys(paths).map((url) => displayRoutes(paths[url]))}
+        </div>
+      );
+    };
+    
+    export default function VisualizationTool({ doc }) {
+      const title = doc.info.title;
+      const version = doc.info.version;
+      const description = doc.info.description;
+      const baseUrls = doc.servers;
+    
+      return (
+        <div>
+          <section id="api-general-info">
+            <h2>{title}</h2>
+            <h3>Version {version}</h3>
+            <p>{description}</p>
+            <h3>Base URLs:</h3>
+            {displayBaseUrls(baseUrls)}
+          </section>
+          <section id="api-route-info">{displayApi(doc)}</section>
+        </div>
+      );
+    }
+    `,
+    36: `Notice that we define our 'displayApi' function on line 13, and call it on line 39, passing the function the document as input. On line 18, you can see that we map over each of the urls in the 'paths' object. For each 'url', we return a call to the 'displayRoutes' function, which we're going to write next.`,
+    37: `import "./VisualizationTool.css";
+
+  const displayBaseUrls = (baseUrls) => {
+    return (
+      <ul>
+        {baseUrls.map((baseUrl) => {
+          return <li key={Math.random()}>{baseUrl.url}</li>;
+        })}
+      </ul>
+    );
+  };
+  
+  const displayRoutes = (url) => {
+    // go through each of the httpActions in the url, display the route for the httpAction + url
+    return (
+      <div class="routes">
+        {Object.keys(url).map((httpAction) => displayRoute(url[httpAction]))}
+      </div>
+    );
+  };
+  
+  const displayApi = (document) => {
+    const { paths } = document;
+    // go through each of the urls, display the routes for that url
+    return (
+      <div id="urls">
+        {Object.keys(paths).map((url) => displayRoutes(paths[url]))}
+      </div>
+    );
+  };
+  
+  export default function VisualizationTool({ doc }) {
+    const title = doc.info.title;
+    const version = doc.info.version;
+    const description = doc.info.description;
+    const baseUrls = doc.servers;
+  
+    return (
+      <div>
+        <section id="api-general-info">
+          <h2>{title}</h2>
+          <h3>Version {version}</h3>
+          <p>{description}</p>
+          <h3>Base URLs:</h3>
+          {displayBaseUrls(baseUrls)}
+        </section>
+        <section id="api-route-info">{displayApi(doc)}</section>
+      </div>
+    );
+  }
+  `,
+    38: `displayRoutes takes a url object as input, and returns a call to 'displayRoute' for each http action key in the url object; we'll add 'displayRoute' next.`,
+    39: `import "./VisualizationTool.css";
+
+    const displayBaseUrls = (baseUrls) => {
+      return (
+        <ul>
+          {baseUrls.map((baseUrl) => {
+            return <li key={Math.random()}>{baseUrl.url}</li>;
+          })}
+        </ul>
+      );
+    };
+    
+    const displayRoute = (route) => {
+      // TO-DO: add the rest of the route information
+      return <div class="route">{route.operationId}</div>;
+    };
+    
+    const displayRoutes = (url) => {
+      // go through each of the httpActions in the url, display the route for the httpAction + url
+      return (
+        <div class="routes">
+          {Object.keys(url).map((httpAction) => displayRoute(url[httpAction]))}
+        </div>
+      );
+    };
+    
+    const displayApi = (document) => {
+      const { paths } = document;
+      // go through each of the urls, display the routes for that url
+      return (
+        <div id="urls">
+          {Object.keys(paths).map((url) => displayRoutes(paths[url]))}
+        </div>
+      );
+    };
+    
+    export default function VisualizationTool({ doc }) {
+      const title = doc.info.title;
+      const version = doc.info.version;
+      const description = doc.info.description;
+      const baseUrls = doc.servers;
+    
+      return (
+        <div>
+          <section id="api-general-info">
+            <h2>{title}</h2>
+            <h3>Version {version}</h3>
+            <p>{description}</p>
+            <h3>Base URLs:</h3>
+            {displayBaseUrls(baseUrls)}
+          </section>
+          <section id="api-route-info">{displayApi(doc)}</section>
+        </div>
+      );
+    }
+    `,
+    40: `Now that we've added 'displayRoute', our fledgling component should display the 'operationId' for every route in the API. The Book Hero API document only has two routes, 'GET books' and 'POST books', so that's what we should expect to see now. If it's not already running, go ahead and start up the web app via the command line. You see something like this.`,
   },
 };
 

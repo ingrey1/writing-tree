@@ -70,7 +70,7 @@ const document = {
         },
       },
       post: {
-        operationId: "POST books",
+        operationId: "POST Books",
         summary: "Create a new book in the Book Hero collection.",
         tags: ["Books"],
         requestBody: {
