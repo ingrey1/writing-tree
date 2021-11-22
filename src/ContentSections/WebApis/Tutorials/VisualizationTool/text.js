@@ -786,6 +786,69 @@ import document from "./api-test-doc.js"
     }
     `,
     40: `Now that we've added 'displayRoute', our fledgling component should display the 'operationId' for every route in the API. The Book Hero API document only has two routes, 'GET books' and 'POST books', so that's what we should expect to see now. If it's not already running, go ahead and start up the web app via the command line. You see something like this.`,
+    41: `Although our focus isn't CSS in this tutorial, let's go ahead and add a border around each of the distinct route 'div' elements, so it's clear which information belongs to which route. The route 'div' has a class called 'route', so we can add our border by referencing that class in our 'VisualizationTool.css' file. Go ahead add this piece of css, and save the file.`,
+    42: `.route {
+      border: 2px solid black;
+    }`,
+    43: `After adding the styles for 'route', your page should look like this. Notice that both of our routes are separated by a black border.`,
+    44: `Right now, our 'displayRoute' function only displays the 'operationaId'. As the next step, let's add the route 'summary' as a 'p' element.`,
+    45: `const displayRoute = (route) => {
+      // TO-DO: add the rest of the route information
+      return (
+        <div class="route">
+          <h3>{route.operationId}</h3>
+          <p>{route.summary}</p>
+        </div>
+      );
+    };`,
+    46: `Before we move on, let's verify the summary is displayed for each route.`,
+    47: `That's looking a bit better. Now, we'll add the full URL for each route. The full URL consists of [base URL/path + relative route URL/path]. Because of the way we've structured our helper functions, inside the 'displayRoute' function, we don't currently have access to either of those pieces of information. So, what we're going to do is update our helper functions, passing down those values as arguments, so they're available in the scope of 'displayRoute'. We'll start by updating 'displayRoute'.`,
+    48: `const displayRoute = (route, baseUrl, relativeUrl) => {
+      // TO-DO: add the rest of the route information
+      return (
+        <div class="route">
+          <h3>{route.operationId}</h3>
+          <p>{route.summary}</p>
+        </div>
+      );
+    };`,
+    49: `Now that we've added 'baseUrl' and 'relativeUrl' as arguments to 'displayRoute', we need to update 'displayRoutes', to make sure when 'displayRoute' is called, those new values are passed in as arguments.`,
+    50: `const displayRoutes = (url, baseUrl, relativeUrl) => {
+      // go through each of the httpActions in the url, display the route for the httpAction + url
+      return (
+        <div class="routes">
+          {Object.keys(url).map((httpAction) => displayRoute(url[httpAction], baseUrl, relativeUrl))}
+        </div>
+      );
+    };`,
+    51: `There are two changes to this function. The first is that when we call 'displayRoute' we pass it two additional arguments: 'baseUrl' and 'relativeUrl'. We don't have access to either of these values in the scope of the function. That's why, on line 1, we update the arguments this function accepts, adding 'baseUrl' and 'relativeUrl'. Now, we can pass the 'baseUrl' and 'relativeUrl' to 'displayRoutes' when it's called inside 'displayApi'. Let's do that next.`,
+    52: `const displayApi = (document) => {
+      const { paths } = document;
+      const baseUrl = document.servers[0].url
+      // go through each of the urls, display the routes for that url
+      return (
+        <div id="urls">
+          {Object.keys(paths).map((url) => displayRoutes(paths[url], baseUrl, url))}
+        </div>
+      );
+    };`,
+    53: `On line 3, we retrieve the first base URL from the 'servers' array. On line 7, we pass the 'baseUrl' and 'url' (this is the relative url) variables to the 'displayRoutes' function. Now, we've made the changes needed to have the full url available in the 'displayRoute' function.`,
+    54: `Right now we're just passing the first 'baseUrl' down. However, there are often multiple base URLs, each of which correspond to a different iteration of the API (test, production, staging etc.). If you want to display the URLs for all of these, you can pass down the 'servers' array, instead of just the first element of that array.`,
+    55: `Let's add some code to display the full URL in the 'displayRoute' function.`,
+    56: `const displayRoute = (route, baseUrl, relativeUrl) => {
+      // TO-DO: add the rest of the route information
+      const fullUrl = baseUrl + relativeUrl.substring(1)
+      
+      return (
+        <div class="route">
+          <h3>{route.operationId}</h3>
+          <h3>URL: {fullUrl}</h3>
+          <p>{route.summary}</p>
+        </div>
+      );
+    };`,
+    57: `On line 3, we concatenate the 'baseUrl' and the 'relativeUrl' to create the full URL. The call to 'substring' is just used to strip off the additional '/'. On line 8, we display the full URL. Let's verify our code in the browser.`,
+    58: ``,
   },
 };
 

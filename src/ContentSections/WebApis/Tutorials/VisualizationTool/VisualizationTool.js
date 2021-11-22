@@ -5,7 +5,6 @@ import {
   List,
   Message,
   Image,
-  ListItem,
 } from "semantic-ui-react";
 import { content } from "./text";
 import { CodeBlock, monokai } from "react-code-blocks";
@@ -34,6 +33,9 @@ import visualizationTool15 from "./images/visualization-tool15.png";
 import visualizationTool16 from "./images/visualization-tool16.png";
 import visualizationTool17 from "./images/visualization-tool17.png";
 import visualizationTool18 from "./images/visualization-tool18.png";
+import visualizationTool19 from "./images/visualization-tool19.png";
+import visualizationTool20 from "./images/visualization-tool20.png";
+import visualizationTool21 from "./images/visualization-tool21.png";
 
 export default function VisualizationTool() {
   return (
@@ -360,6 +362,54 @@ export default function VisualizationTool() {
       />
       <Paragraph content={content.componentCode[40]} />
       <Image src={visualizationTool18} />
+      <Paragraph content={content.componentCode[41]} />
+      <CodeBlock
+        language="css"
+        theme={monokai}
+        text={content.componentCode[42]}
+      />
+      <Image src={visualizationTool19} />
+      <Paragraph content={content.componentCode[43]} />
+      <Paragraph content={content.componentCode[44]} />
+      <CodeBlock
+        language="jsx"
+        theme={monokai}
+        text={content.componentCode[45]}
+      />
+      <Paragraph content={content.componentCode[46]} />
+      <Image src={visualizationTool20} />
+      <Paragraph content={content.componentCode[47]} />
+      <CodeBlock
+        language="jsx"
+        highlight="1"
+        theme={monokai}
+        text={content.componentCode[48]}
+      />
+      <Paragraph content={content.componentCode[49]} />
+      <CodeBlock
+        language="jsx"
+        highlight="1,5"
+        theme={monokai}
+        text={content.componentCode[50]}
+      />
+      <Paragraph content={content.componentCode[51]} />
+      <CodeBlock
+        language="jsx"
+        highlight="3,7"
+        theme={monokai}
+        text={content.componentCode[52]}
+      />
+      <Paragraph content={content.componentCode[53]} />
+      <Paragraph content={content.componentCode[54]} />
+      <Paragraph content={content.componentCode[55]} />
+      <CodeBlock
+        language="jsx"
+        highlight="1,3,8"
+        theme={monokai}
+        text={content.componentCode[56]}
+      />
+      <Paragraph content={content.componentCode[57]} />
+      <Image src={visualizationTool21} />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...
