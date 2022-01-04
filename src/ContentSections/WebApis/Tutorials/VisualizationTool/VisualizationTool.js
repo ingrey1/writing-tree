@@ -410,6 +410,32 @@ export default function VisualizationTool() {
       />
       <Paragraph content={content.componentCode[57]} />
       <Image src={visualizationTool21} />
+      <Paragraph content={content.componentCode[58]} />
+      <CodeBlock
+        language="jsx"
+        theme={monokai}
+        text={content.componentCode[59]}
+      />
+      <Paragraph content={content.componentCode[60]} />
+      <CodeBlock
+        language="jsx"
+        theme={monokai}
+        text={content.componentCode[61]}
+      />
+      <Paragraph content={content.componentCode[62]} />
+      <CodeBlock
+        language="jsx"
+        theme={monokai}
+        text={content.componentCode[63]}
+      />
+      <Paragraph content={content.componentCode[64]} />
+      <CodeBlock
+        language="jsx"
+        highlight="37"
+        theme={monokai}
+        text={content.componentCode[65]}
+      />
+      <Paragraph content={content.componentCode[66]} />
       <Divider />
       <Header as="h2" textAlign="center">
         To Be Continued...

@@ -848,8 +848,96 @@ import document from "./api-test-doc.js"
       );
     };`,
     57: `On line 3, we concatenate the 'baseUrl' and the 'relativeUrl' to create the full URL. The call to 'substring' is just used to strip off the additional '/'. On line 8, we display the full URL. Let's verify our code in the browser.`,
-    58: ``,
+    58: `The URL for each route is now displayed. Now, we're going to add another piece of information to our 'displayRoute' function: parameters. Before we write our 'displayParameters' function, let's take a look at what the parameters array for a route in our Book Hero API example doc looks like.`,
+    59: `[
+      {
+        in: "query",
+        name: "id",
+        schema: {
+          type: "integer",
+        },
+        description: "Find a book by its primary key/id.",
+      },
+      {
+        in: "query",
+        name: "title",
+        schema: {
+          type: "string",
+        },
+        description: "Find a book by its title.",
+      },
+    ]`,
+    60: `Notice that each parameter is an object with a few fields that characterize the parameter. The "in" property tells us the type of parameter it is. For example, "path" parameters are part of the full URL, while "query" parameters are tacked onto the full URL, and separated from the URL by a '?' character. The "type" property in the "schema" tells us what the data type for the parameters is; for example, a string or integer. Now, let's write the 'displayParameters' function.`,
+    61: `const displayParameters = (route) => {
+      return (
+        <div className="parameters">
+          <h2>Parameters</h2>
+          {route.parameters.map((parameter) => displayParameter(parameter))}
+        </div>
+      );
+    };`,
+    62: `We map through the parameters, and return a call to 'displayParameter' for each parameter object in the 'parameters' array. Now, let's write the 'displayParameter' function.`,
+    63: `const displayParameter = (parameter) => {
+      const {
+        in: type,
+        name,
+        description,
+        schema: { type: dataType },
+      } = parameter;
+    
+      return (
+        <div className="parameter">
+          <h3>{name}</h3>
+          <h4>Type: {type}</h4>
+          <h4>Data Type: {dataType}</h4>
+          <p>Description: {description}</p>
+        </div>
+      );
+    };`,
+    64: `The 'displayParameter' function accepts a 'parameter' object as input, and returns a piece of JSX, which will display that information when it's rendered in the browser. On lines 2-7, the relevant properties are retrieved from the parameter object via destructuring. In the process of destructuring, the 'in' property is renamed as 'type', and the 'type' property is renamed as 'dataType' to make their meanings clearer. Now that we have our two helper functions, we can call 'displayParameters' inside of 'displayRoute' like this.`,
+    65: `const displayParameter = (parameter) => {
+      const {
+        in: type,
+        name,
+        description,
+        schema: { type: dataType },
+      } = parameter;
+    
+      return (
+        <div className="parameter">
+          <h3>{name}</h3>
+          <h4>Type: {type}</h4>
+          <h4>Data Type: {dataType}</h4>
+          <p>Description: {description}</p>
+        </div>
+      );
+    };
+    
+    const displayParameters = (route) => {
+      return (
+        <div className="parameters">
+          <h2>Parameters</h2>
+          {route.parameters.map((parameter) => displayParameter(parameter))}
+        </div>
+      );
+    };
+    
+    const displayRoute = (route, baseUrl, relativeUrl) => {
+      // TO-DO: add the rest of the route information
+      const fullUrl = baseUrl + relativeUrl.substring(1);
+    
+      return (
+        <div className="route">
+          <h3>{route.operationId}</h3>
+          <h3>URL: {fullUrl}</h3>
+          <p>{route.summary}</p>
+          {route.parameters && displayParameters(route)}
+        </div>
+      );
+    };`,
+  66: `Not every route has parameters. On line 37, we call 'displayParameters' only if 'route.parameters' exists.`
   },
+
 };
 
 export { content };
